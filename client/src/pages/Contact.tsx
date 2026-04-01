@@ -62,8 +62,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Contact Numbers</h3>
                     <p className="text-muted-foreground">
-                      +91 98765 43210<br />
-                      +91 98765 43211
+                      +91 75585 99155
                     </p>
                   </div>
                 </div>
@@ -75,8 +74,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Email</h3>
                     <p className="text-muted-foreground">
-                      hello@priyaartgallery.com<br />
-                      orders@priyaartgallery.com
+                      priya03kabra@gmail.com
                     </p>
                   </div>
                 </div>

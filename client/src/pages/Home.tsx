@@ -136,9 +136,9 @@ export default function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { name: "Carved Ganesha Idol", price: "₹4,500", image: prodArtifact, category: "Artifacts" },
-                { name: "Kundan Bridal Set", price: "₹25,000", image: prodJewelry, category: "Jewelry" },
-                { name: "Wooden Wall Panel", price: "₹8,200", image: prodDecor, category: "Home Decor" },
+                { name: "Carved Ganesha Idol", image: prodArtifact, category: "Artifacts" },
+                { name: "Kundan Bridal Set", image: prodJewelry, category: "Jewelry" },
+                { name: "Wooden Wall Panel", image: prodDecor, category: "Home Decor" },
               ].map((product, i) => (
                 <div key={i} className="group cursor-pointer">
                   <div className="relative aspect-square overflow-hidden bg-muted mb-4">
@@ -154,7 +154,6 @@ export default function Home() {
                     </div>
                   </div>
                   <h3 className="font-serif text-xl mb-1 group-hover:text-primary transition-colors">{product.name}</h3>
-                  <p className="text-muted-foreground">{product.price}</p>
                 </div>
               ))}
             </div>

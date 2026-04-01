@@ -11,12 +11,12 @@ import prodJewelry from "@/assets/images/product-jewelry.png";
 import prodDecor from "@/assets/images/product-decor.png";
 
 const allProducts = [
-  { id: 1, name: "Carved Ganesha Idol", price: "₹4,500", image: prodArtifact, category: "artifacts" },
-  { id: 2, name: "Kundan Bridal Set", price: "₹25,000", image: prodJewelry, category: "jewelry" },
-  { id: 3, name: "Wooden Wall Panel", price: "₹8,200", image: prodDecor, category: "decor" },
-  { id: 4, name: "Brass Nataraja", price: "₹12,000", image: prodArtifact, category: "artifacts" },
-  { id: 5, name: "Temple Temple Necklace", price: "₹18,500", image: prodJewelry, category: "jewelry" },
-  { id: 6, name: "Brass Hanging Diya", price: "₹3,400", image: prodDecor, category: "decor" },
+  { id: 1, name: "Carved Ganesha Idol", image: prodArtifact, category: "artifacts" },
+  { id: 2, name: "Kundan Bridal Set", image: prodJewelry, category: "jewelry" },
+  { id: 3, name: "Wooden Wall Panel", image: prodDecor, category: "decor" },
+  { id: 4, name: "Brass Nataraja", image: prodArtifact, category: "artifacts" },
+  { id: 5, name: "Temple Temple Necklace", image: prodJewelry, category: "jewelry" },
+  { id: 6, name: "Brass Hanging Diya", image: prodDecor, category: "decor" },
 ];
 
 export default function Products() {
@@ -85,7 +85,6 @@ export default function Products() {
                 </div>
                 <div className="text-center">
                   <h3 className="font-serif text-lg mb-1">{product.name}</h3>
-                  <p className="text-primary font-medium">{product.price}</p>
                 </div>
               </div>
             ))}

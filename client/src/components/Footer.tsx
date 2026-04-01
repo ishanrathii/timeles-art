@@ -13,7 +13,7 @@ export default function Footer() {
               Bringing the rich heritage of Maharashtra to your home.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="p-2 rounded-full bg-secondary-foreground/10 hover:bg-primary transition-colors">
+              <a href="https://www.instagram.com/priyaaartgalery?igsh=MWtidjR3NjhqZWwyNw==" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary-foreground/10 hover:bg-primary transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="p-2 rounded-full bg-secondary-foreground/10 hover:bg-primary transition-colors">
@@ -53,11 +53,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <span className="text-secondary-foreground/80 text-sm">+91 98765 43210</span>
+                <span className="text-secondary-foreground/80 text-sm">+91 75585 99155</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <span className="text-secondary-foreground/80 text-sm">hello@priyaartgallery.com</span>
+                <span className="text-secondary-foreground/80 text-sm">priya03kabra@gmail.com</span>
               </li>
             </ul>
           </div>
