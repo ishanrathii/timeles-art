@@ -22,6 +22,9 @@ const allProducts = [
 export default function Products() {
   const [location] = useLocation();
   // Very simple parsing of query string for mockup purposes
+  const searchParams = new URLSearchParams(window.location.search);
+  const searchQuery = searchParams.get('search')?.toLowerCase() || "";
+  
   const defaultCategory = location.includes("category=jewelry") ? "jewelry" 
                         : location.includes("category=decor") ? "decor" 
                         : location.includes("category=artifacts") ? "artifacts" 
@@ -29,9 +32,11 @@ export default function Products() {
 
   const [activeCategory, setActiveCategory] = React.useState(defaultCategory);
 
-  const filteredProducts = activeCategory === "all" 
-    ? allProducts 
-    : allProducts.filter(p => p.category === activeCategory);
+  const filteredProducts = allProducts.filter(p => {
+    const matchesCategory = activeCategory === "all" || p.category === activeCategory;
+    const matchesSearch = searchQuery ? p.name.toLowerCase().includes(searchQuery) : true;
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
