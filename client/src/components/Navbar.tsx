@@ -76,7 +76,7 @@ export default function Navbar() {
                     
                     <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">About Us</div>
                     <Link href="/contact"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Our Story</a></Link>
-                    <Link href="/products"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Artisan Portfolio</a></Link>
+                    <Link href="/contact"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Artisan Portfolio</a></Link>
                     
                     <div className="w-full h-px bg-border/40 my-4"></div>
                     
