@@ -3,8 +3,9 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 import NotFound from "@/pages/not-found";
+import { useRef } from "react";
 
 // Pages
 import Home from "@/pages/Home";
@@ -13,24 +14,29 @@ import Contact from "@/pages/Contact";
 
 function Router() {
   const [location] = useLocation();
+  const nodeRef = useRef(null);
   
   return (
-    <TransitionGroup className="relative w-full min-h-screen overflow-hidden">
-      <CSSTransition
-        key={location}
-        timeout={600}
-        classNames="page-transition"
-      >
-        <div className="absolute top-0 left-0 w-full min-h-screen bg-background">
-          <Switch location={location}>
-            <Route path="/" component={Home} />
-            <Route path="/products" component={Products} />
-            <Route path="/contact" component={Contact} />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
-      </CSSTransition>
-    </TransitionGroup>
+    <div className="relative w-full min-h-screen overflow-hidden">
+      <SwitchTransition mode="out-in">
+        <CSSTransition
+          key={location}
+          nodeRef={nodeRef}
+          timeout={600}
+          classNames="page-transition"
+          unmountOnExit
+        >
+          <div ref={nodeRef} className="absolute top-0 left-0 w-full min-h-screen bg-background">
+            <Switch location={location}>
+              <Route path="/" component={Home} />
+              <Route path="/products" component={Products} />
+              <Route path="/contact" component={Contact} />
+              <Route component={NotFound} />
+            </Switch>
+          </div>
+        </CSSTransition>
+      </SwitchTransition>
+    </div>
   );
 }
 
