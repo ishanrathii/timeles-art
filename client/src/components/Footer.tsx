@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Footer() {
@@ -33,6 +33,16 @@ export default function Footer() {
                 className="group p-3 rounded-full bg-white/5 hover:bg-primary transition-all duration-300 hover:scale-105 border border-white/10"
               >
                 <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              </a>
+
+              <a
+                href="https://chat.whatsapp.com/J6cBgFFQkLA5VsMZT1Zt32"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Join our WhatsApp Group"
+                className="group p-3 rounded-full bg-white/5 hover:bg-[#25D366] transition-all duration-300 hover:scale-105 border border-white/10"
+              >
+                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
           </div>

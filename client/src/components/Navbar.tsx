@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Search, ShoppingBag, Menu, Download, MapPin, Phone, Instagram } from "lucide-react";
+import { Search, ShoppingBag, Menu, Download, MapPin, Phone, Instagram, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import jsPDF from "jspdf";
@@ -57,49 +57,53 @@ export default function Navbar() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-background border-r border-border/40 p-0">
-              <div className="flex flex-col h-full">
-                <div className="p-6 border-b border-border/40">
-                  <SheetTitle className="font-serif text-2xl font-bold text-primary">
-                    Priya <span className="text-foreground">Gallery</span>
-                  </SheetTitle>
-                </div>
-                
-                <div className="flex-1 overflow-y-auto py-6">
-                  <nav className="flex flex-col gap-2 px-4">
-                    <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Collections</div>
-                    <Link href="/products?category=artifacts"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Brass Artifacts</a></Link>
-                    <Link href="/products?category=jewelry"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Traditional Jewelry</a></Link>
-                    <Link href="/products?category=decor"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Home Decor</a></Link>
-                    
-                    <div className="w-full h-px bg-border/40 my-4"></div>
-                    
-                    <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">About Us</div>
-                    <Link href="/contact"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Our Story</a></Link>
-                    <Link href="/contact"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Artisan Portfolio</a></Link>
-                    
-                    <div className="w-full h-px bg-border/40 my-4"></div>
-                    
-                    <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Contact</div>
-                    <div className="px-4 py-2 flex items-start gap-3">
-                      <MapPin className="w-4 h-4 text-primary shrink-0 mt-1" />
-                      <span className="text-sm text-foreground/80">Main Market Road,<br/>Hingoli, MH 431513</span>
-                    </div>
-                    <div className="px-4 py-2 flex items-center gap-3">
-                      <Phone className="w-4 h-4 text-primary shrink-0" />
-                      <span className="text-sm text-foreground/80">+91 75585 99155</span>
-                    </div>
-                  </nav>
-                </div>
-                
-                <div className="p-6 border-t border-border/40 bg-muted/20">
-                  <a href="https://www.instagram.com/priyaaartgalery?igsh=MWtidjR3NjhqZWwyNw==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors">
-                    <div className="p-2 rounded-full bg-primary/10">
-                      <Instagram className="w-4 h-4 text-primary" />
-                    </div>
-                    Follow on Instagram
-                  </a>
-                </div>
+            <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-background border-r border-border/40 p-0 flex flex-col">
+              <div className="p-6 border-b border-border/40">
+                <SheetTitle className="font-serif text-2xl font-bold text-primary">
+                  Priya <span className="text-foreground">Gallery</span>
+                </SheetTitle>
+              </div>
+              
+              <div className="flex-1 overflow-y-auto py-6">
+                <nav className="flex flex-col gap-2 px-4">
+                  <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Collections</div>
+                  <Link href="/products?category=artifacts"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Brass Artifacts</a></Link>
+                  <Link href="/products?category=jewelry"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Traditional Jewelry</a></Link>
+                  <Link href="/products?category=decor"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Home Decor</a></Link>
+                  
+                  <div className="w-full h-px bg-border/40 my-4"></div>
+                  
+                  <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">About Us</div>
+                  <Link href="/contact"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Our Story</a></Link>
+                  <Link href="/contact"><a className="px-4 py-3 rounded-md hover:bg-muted/50 transition-colors font-medium">Artisan Portfolio</a></Link>
+                  
+                  <div className="w-full h-px bg-border/40 my-4"></div>
+                  
+                  <div className="px-2 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Contact</div>
+                  <div className="px-4 py-2 flex items-start gap-3">
+                    <MapPin className="w-4 h-4 text-primary shrink-0 mt-1" />
+                    <span className="text-sm text-foreground/80">Main Market Road,<br/>Hingoli, MH 431513</span>
+                  </div>
+                  <div className="px-4 py-2 flex items-center gap-3">
+                    <Phone className="w-4 h-4 text-primary shrink-0" />
+                    <span className="text-sm text-foreground/80">+91 75585 99155</span>
+                  </div>
+                </nav>
+              </div>
+              
+              <div className="p-6 border-t border-border/40 bg-muted/20 flex flex-col gap-3">
+                <a href="https://www.instagram.com/priyaaartgalery?igsh=MWtidjR3NjhqZWwyNw==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors">
+                  <div className="p-2 rounded-full bg-primary/10">
+                    <Instagram className="w-4 h-4 text-primary" />
+                  </div>
+                  Follow on Instagram
+                </a>
+                <a href="https://chat.whatsapp.com/J6cBgFFQkLA5VsMZT1Zt32" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:text-[#25D366] transition-colors">
+                  <div className="p-2 rounded-full bg-[#25D366]/10">
+                    <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                  </div>
+                  Join WhatsApp Group
+                </a>
               </div>
             </SheetContent>
           </Sheet>

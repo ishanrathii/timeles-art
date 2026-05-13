@@ -6,10 +6,10 @@ export default function IntroOverlay() {
   const [fade, setFade] = useState(false);
 
   useEffect(() => {
-    // Start fading out after 4 seconds
-    const fadeTimer = setTimeout(() => setFade(true), 4000);
-    // Remove from DOM after 5.5 seconds
-    const removeTimer = setTimeout(() => setShow(false), 5500);
+    // Start fading out after 8 seconds (made longer)
+    const fadeTimer = setTimeout(() => setFade(true), 8000);
+    // Remove from DOM after 9.5 seconds
+    const removeTimer = setTimeout(() => setShow(false), 9500);
 
     return () => {
       clearTimeout(fadeTimer);
