@@ -92,7 +92,7 @@ export default function Navbar() {
               </div>
               
               <div className="p-6 border-t border-border/40 bg-muted/20 flex flex-col gap-3">
-                <a href="https://www.instagram.com/priyaaartgalery?igsh=MWtidjR3NjhqZWwyNw==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors">
+                <a href="https://www.instagram.com/timeles_art_?igsh=MWtidjR3NjhqZWwyNw==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors">
                   <div className="p-2 rounded-full bg-primary/10">
                     <Instagram className="w-4 h-4 text-primary" />
                   </div>

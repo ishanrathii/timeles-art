@@ -18,7 +18,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-3">
               <a
-                href="https://www.instagram.com/priyaaartgalery?igsh=MWtidjR3NjhqZWwyNw=="
+                href="https://www.instagram.com/timeles_art_?igsh=MWtidjR3NjhqZWwyNw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit Priya Art Gallery on Instagram"
