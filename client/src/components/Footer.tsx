@@ -1,5 +1,9 @@
-import { MapPin, Phone, Mail, Instagram, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import { Link } from "wouter";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
+
+const MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=Main+Market+Road,+Hingoli,+Maharashtra+431513,+India";
 
 export default function Footer() {
   return (
@@ -27,14 +31,14 @@ export default function Footer() {
                 <Instagram className="w-5 h-5 text-[#E1306C] group-hover:text-white group-hover:scale-110 transition-all" />
               </a>
 
-<a
+              <a
                 href="https://wa.me/917558599155"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat with us on WhatsApp"
                 className="group p-3 rounded-full bg-[#25D366]/10 hover:bg-[#25D366] transition-all duration-300 hover:scale-105 border border-[#25D366]/20"
               >
-                <MessageCircle className="w-5 h-5 text-[#25D366] group-hover:text-white group-hover:scale-110 transition-all" />
+                <WhatsAppIcon className="w-5 h-5 text-[#25D366] group-hover:text-white group-hover:scale-110 transition-all" />
               </a>
             </div>
           </div>
@@ -80,14 +84,37 @@ export default function Footer() {
               Visit Us
             </h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-secondary-foreground/90 text-sm leading-6">
-                  Main Market Road,<br />
-                  Hingoli, Maharashtra 431513<br />
-                  India
-                </span>
+              {/* Clickable address → opens Google Maps */}
+              <li>
+                <a
+                  href={MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 group"
+                  aria-label="Open location in Google Maps"
+                >
+                  <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <span className="text-secondary-foreground/90 text-sm leading-6 group-hover:text-primary transition-colors underline-offset-2 group-hover:underline">
+                    Main Market Road,<br />
+                    Hingoli, Maharashtra 431513<br />
+                    India
+                  </span>
+                </a>
               </li>
+
+              {/* Get Directions button */}
+              <li>
+                <a
+                  href={MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                >
+                  <MapPin className="w-3.5 h-3.5" />
+                  Get Directions
+                </a>
+              </li>
+
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
                 <a

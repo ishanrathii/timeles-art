@@ -29,17 +29,45 @@ export default function Contact() {
               
               <div className="space-y-8">
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 shrink-0">
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Our Address</h3>
-                    <p className="text-muted-foreground">
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Main+Market+Road,+Hingoli,+Maharashtra+431513,+India"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
                       Main Market Road, Near Gandhi Chowk<br />
                       Hingoli, Maharashtra 431513<br />
                       India
-                    </p>
+                    </a>
+                    <a
+                      href="https://www.google.com/maps/dir/?api=1&destination=Main+Market+Road,+Hingoli,+Maharashtra+431513,+India"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    >
+                      <MapPin className="w-3.5 h-3.5" />
+                      Get Directions
+                    </a>
                   </div>
+                </div>
+
+                {/* Google Maps Embed */}
+                <div className="rounded overflow-hidden border border-border/50 shadow-md w-full h-52">
+                  <iframe
+                    title="Priya Art Gallery location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.5!2d77.1497!3d19.7167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd1d3b7a1a1a1a1%3A0x1!2sMain+Market+Road%2C+Hingoli%2C+Maharashtra+431513!5e0!3m2!1sen!2sin!4v1"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
 
                 <div className="flex gap-4">

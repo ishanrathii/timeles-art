@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { Search, ShoppingBag, Menu, Download, MapPin, Phone, Instagram, MessageCircle } from "lucide-react";
+import { Search, ShoppingBag, Menu, Download, MapPin, Phone, Instagram } from "lucide-react";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import jsPDF from "jspdf";
@@ -100,7 +101,7 @@ export default function Navbar() {
                 </a>
                 <a href="https://wa.me/917558599155" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:text-[#25D366] transition-colors">
                   <div className="p-2 rounded-full bg-[#25D366]/10">
-                    <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                   </div>
                   Chat on WhatsApp
                 </a>
