@@ -30,10 +30,10 @@ export default function IntroOverlay() {
 
       <div className="relative z-10 text-center flex flex-col items-center px-4">
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white tracking-widest uppercase animate-in zoom-in duration-1000 delay-300 fill-mode-both">
-          Timeless <span className="text-[#B8860B] italic">Art</span>
+          Timeless <span className="text-[#C8700A] italic">Art</span>
         </h1>
-        <div className="w-24 h-px bg-[#B8860B] my-6 animate-in fade-in duration-1000 delay-700 fill-mode-both" />
-        <p className="text-[#B8860B] tracking-[0.3em] uppercase text-xs md:text-sm lg:text-base font-light animate-in slide-in-from-bottom-4 fade-in duration-1000 delay-1000 fill-mode-both">
+        <div className="w-24 h-px bg-[#C8700A] my-6 animate-in fade-in duration-1000 delay-700 fill-mode-both" />
+        <p className="text-[#C8700A] tracking-[0.3em] uppercase text-xs md:text-sm lg:text-base font-light animate-in slide-in-from-bottom-4 fade-in duration-1000 delay-1000 fill-mode-both">
           Where every masterpiece whispers a story of the past.
         </p>
       </div>
