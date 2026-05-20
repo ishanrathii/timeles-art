@@ -61,9 +61,9 @@
   --primary: 42 70% 40%;
   --primary-foreground: 42 48% 97%;
 
-  /* Royal navy — like Indian royal robes */
-  --secondary: 225 52% 20%;
-  --secondary-foreground: 42 48% 95%;
+  /* Terracotta / Maroon */
+  --secondary: 15 35% 35%;
+  --secondary-foreground: 40 33% 98%;
 
   /* Soft warm muted */
   --muted: 40 30% 90%;
