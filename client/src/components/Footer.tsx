@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, MessageCircle } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
               Priya Art Gallery
             </h3>
 
-            <p className="text-secondary-foreground/75 max-w-md leading-7">
+            <p className="text-secondary-foreground/90 max-w-md leading-7">
               Curators of fine Indian artifacts, traditional jewelry, and elegant home decor.
               Bringing the rich heritage of Maharashtra to your home.
             </p>
@@ -27,15 +27,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5 text-[#E1306C] group-hover:text-white group-hover:scale-110 transition-all" />
               </a>
 
-              <a
-                href="#"
-                aria-label="Visit Priya Art Gallery on Facebook"
-                className="group p-3 rounded-full bg-[#1877F2]/10 hover:bg-[#1877F2] transition-all duration-300 hover:scale-105 border border-[#1877F2]/20"
-              >
-                <Facebook className="w-5 h-5 text-[#1877F2] group-hover:text-white group-hover:scale-110 transition-all" />
-              </a>
-
-              <a
+<a
                 href="https://wa.me/917558599155"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -54,28 +46,28 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/">
-                  <a className="text-secondary-foreground/75 hover:text-white transition-colors duration-300">
+                  <a className="text-secondary-foreground/90 hover:text-white transition-colors duration-300">
                     Home
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/products?category=artifacts">
-                  <a className="text-secondary-foreground/75 hover:text-white transition-colors duration-300">
+                  <a className="text-secondary-foreground/90 hover:text-white transition-colors duration-300">
                     Brass Artifacts
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/products?category=jewelry">
-                  <a className="text-secondary-foreground/75 hover:text-white transition-colors duration-300">
+                  <a className="text-secondary-foreground/90 hover:text-white transition-colors duration-300">
                     Traditional Jewelry
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/products?category=decor">
-                  <a className="text-secondary-foreground/75 hover:text-white transition-colors duration-300">
+                  <a className="text-secondary-foreground/90 hover:text-white transition-colors duration-300">
                     Home Decor
                   </a>
                 </Link>
@@ -90,7 +82,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-secondary-foreground/75 text-sm leading-6">
+                <span className="text-secondary-foreground/90 text-sm leading-6">
                   Main Market Road,<br />
                   Hingoli, Maharashtra 431513<br />
                   India
@@ -102,14 +94,14 @@ export default function Footer() {
                   href="https://wa.me/917558599155"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-secondary-foreground/75 text-sm hover:text-[#25D366] transition-colors"
+                  className="text-secondary-foreground/90 text-sm hover:text-[#25D366] transition-colors"
                 >
                   +91 75585 99155
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <span className="text-secondary-foreground/75 text-sm">
+                <span className="text-secondary-foreground/90 text-sm">
                   priya03kabra@gmail.com
                 </span>
               </li>
@@ -117,7 +109,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 text-center text-sm text-secondary-foreground/55">
+        <div className="border-t border-white/10 mt-12 pt-8 text-center text-sm text-secondary-foreground/80">
           <p>&copy; {new Date().getFullYear()} Priya Art Gallery, Hingoli. All rights reserved.</p>
         </div>
       </div>

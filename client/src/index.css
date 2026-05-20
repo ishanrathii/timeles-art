@@ -35,54 +35,54 @@
   --font-serif: 'Playfair Display', serif;
 }
 
-/* LIGHT MODE */
+/* DARK LUXURY THEME */
 :root {
-  --button-outline: rgba(0,0,0, .10);
-  --badge-outline: rgba(0,0,0, .05);
+  --button-outline: rgba(255,255,255, .12);
+  --badge-outline: rgba(255,255,255, .07);
 
-  --opaque-button-border-intensity: -8;
+  --opaque-button-border-intensity: 8;
 
-  --elevate-1: rgba(0,0,0, .03);
-  --elevate-2: rgba(0,0,0, .08);
+  --elevate-1: rgba(255,255,255, .03);
+  --elevate-2: rgba(255,255,255, .07);
 
-  /* Warm elegant theme */
-  --background: 40 33% 98%;
-  --foreground: 20 14% 15%;
-  --border: 30 20% 85%;
-  --card: 0 0% 100%;
-  --card-foreground: 20 14% 15%;
-  --card-border: 30 20% 85%;
-  
-  --popover: 0 0% 100%;
-  --popover-foreground: 20 14% 15%;
-  --popover-border: 30 20% 85%;
+  /* Deep warm charcoal background */
+  --background: 30 8% 7%;
+  --foreground: 40 25% 94%;
+  --border: 35 12% 20%;
+  --card: 30 8% 10%;
+  --card-foreground: 40 25% 94%;
+  --card-border: 35 12% 22%;
 
-  /* Earthy Gold / Brass */
-  --primary: 38 40% 45%;
-  --primary-foreground: 40 33% 98%;
-  
-  /* Terracotta / Maroon */
-  --secondary: 15 35% 35%;
-  --secondary-foreground: 40 33% 98%;
+  --popover: 30 8% 10%;
+  --popover-foreground: 40 25% 94%;
+  --popover-border: 35 12% 22%;
 
-  --muted: 30 20% 90%;
-  --muted-foreground: 20 10% 40%;
-  
-  --accent: 38 40% 90%;
-  --accent-foreground: 38 40% 30%;
+  /* Vibrant gold */
+  --primary: 42 72% 58%;
+  --primary-foreground: 30 8% 7%;
 
-  --destructive: 0 60% 50%;
+  /* Deep wine / burgundy */
+  --secondary: 350 38% 18%;
+  --secondary-foreground: 40 25% 92%;
+
+  --muted: 30 8% 14%;
+  --muted-foreground: 35 15% 65%;
+
+  --accent: 42 40% 18%;
+  --accent-foreground: 42 72% 72%;
+
+  --destructive: 0 65% 55%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 30 20% 85%;
-  --ring: 38 40% 45%;
+  --input: 35 12% 20%;
+  --ring: 42 72% 58%;
 
-  --radius: 0rem;
+  --radius: 0.25rem;
 
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4);
+  --shadow: 0 4px 8px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 10px 20px -3px rgb(0 0 0 / 0.5), 0 4px 8px -4px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 20px 30px -5px rgb(0 0 0 / 0.6), 0 8px 12px -6px rgb(0 0 0 / 0.5);
 }
 
 @layer base {
@@ -99,12 +99,12 @@
 
 @layer utilities {
   .text-shadow {
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.9);
   }
   .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
+    @apply bg-black/30 backdrop-blur-md border border-white/10;
   }
   .border-bronze {
-    border: 1px solid rgba(184, 134, 11, 0.3);
+    border: 1px solid rgba(212, 170, 60, 0.35);
   }
 }
