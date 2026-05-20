@@ -14,7 +14,7 @@ export default function Contact() {
         <div className="bg-muted/30 py-16">
           <div className="container mx-auto px-4 text-center">
             <h1 className="font-serif text-4xl md:text-5xl mb-4">Contact Us</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-foreground/70 max-w-2xl mx-auto">
               Visit our gallery in Hingoli or reach out to us for inquiries about our collections, custom orders, or collaborations.
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function Contact() {
                       href="https://www.google.com/maps/search/?api=1&query=Main+Market+Road,+Hingoli,+Maharashtra+431513,+India"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-foreground/70 hover:text-primary transition-colors"
                     >
                       Main Market Road, Near Gandhi Chowk<br />
                       Hingoli, Maharashtra 431513<br />
@@ -76,7 +76,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Opening Hours</h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-foreground/70">
                       Monday - Saturday: 10:00 AM - 8:30 PM<br />
                       Sunday: 11:00 AM - 5:00 PM
                     </p>
@@ -89,7 +89,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Contact Numbers</h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-foreground/70">
                       +91 75585 99155
                     </p>
                   </div>
@@ -101,7 +101,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Email</h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-foreground/70">
                       priya03kabra@gmail.com
                     </p>
                   </div>

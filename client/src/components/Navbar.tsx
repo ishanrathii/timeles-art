@@ -49,8 +49,8 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background/98 backdrop-blur supports-[backdrop-filter]:bg-background/90 shadow-sm">
+      <div className="container mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Sheet>
             <SheetTrigger asChild>
@@ -109,7 +109,7 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
           <Link href="/">
-            <a className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-primary">
+            <a className="font-serif text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-primary">
               Priya <span className="text-foreground hidden sm:inline-block">Art Gallery</span>
             </a>
           </Link>
