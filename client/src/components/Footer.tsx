@@ -22,27 +22,27 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit Priya Art Gallery on Instagram"
-                className="group p-3 rounded-full bg-white/5 hover:bg-primary transition-all duration-300 hover:scale-105 border border-white/10"
+                className="group p-3 rounded-full bg-[#E1306C]/10 hover:bg-[#E1306C] transition-all duration-300 hover:scale-105 border border-[#E1306C]/20"
               >
-                <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <Instagram className="w-5 h-5 text-[#E1306C] group-hover:text-white group-hover:scale-110 transition-all" />
               </a>
 
               <a
                 href="#"
                 aria-label="Visit Priya Art Gallery on Facebook"
-                className="group p-3 rounded-full bg-white/5 hover:bg-primary transition-all duration-300 hover:scale-105 border border-white/10"
+                className="group p-3 rounded-full bg-[#1877F2]/10 hover:bg-[#1877F2] transition-all duration-300 hover:scale-105 border border-[#1877F2]/20"
               >
-                <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <Facebook className="w-5 h-5 text-[#1877F2] group-hover:text-white group-hover:scale-110 transition-all" />
               </a>
 
               <a
-                href="https://chat.whatsapp.com/J6cBgFFQkLA5VsMZT1Zt32"
+                href="https://wa.me/917558599155"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Join our WhatsApp Group"
-                className="group p-3 rounded-full bg-white/5 hover:bg-[#25D366] transition-all duration-300 hover:scale-105 border border-white/10"
+                aria-label="Chat with us on WhatsApp"
+                className="group p-3 rounded-full bg-[#25D366]/10 hover:bg-[#25D366] transition-all duration-300 hover:scale-105 border border-[#25D366]/20"
               >
-                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <MessageCircle className="w-5 h-5 text-[#25D366] group-hover:text-white group-hover:scale-110 transition-all" />
               </a>
             </div>
           </div>
@@ -98,9 +98,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <span className="text-secondary-foreground/75 text-sm">
+                <a
+                  href="https://wa.me/917558599155"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary-foreground/75 text-sm hover:text-[#25D366] transition-colors"
+                >
                   +91 75585 99155
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />

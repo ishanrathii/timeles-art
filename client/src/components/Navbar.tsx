@@ -92,17 +92,17 @@ export default function Navbar() {
               </div>
               
               <div className="p-6 border-t border-border/40 bg-muted/20 flex flex-col gap-3">
-                <a href="https://www.instagram.com/timeles_art_?igsh=MWtidjR3NjhqZWwyNw==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors">
-                  <div className="p-2 rounded-full bg-primary/10">
-                    <Instagram className="w-4 h-4 text-primary" />
+                <a href="https://www.instagram.com/timeles_art_?igsh=MWtidjR3NjhqZWwyNw==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:text-[#E1306C] transition-colors">
+                  <div className="p-2 rounded-full bg-[#E1306C]/10">
+                    <Instagram className="w-4 h-4 text-[#E1306C]" />
                   </div>
                   Follow on Instagram
                 </a>
-                <a href="https://chat.whatsapp.com/J6cBgFFQkLA5VsMZT1Zt32" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:text-[#25D366] transition-colors">
+                <a href="https://wa.me/917558599155" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-medium hover:text-[#25D366] transition-colors">
                   <div className="p-2 rounded-full bg-[#25D366]/10">
                     <MessageCircle className="w-4 h-4 text-[#25D366]" />
                   </div>
-                  Join WhatsApp Group
+                  Chat on WhatsApp
                 </a>
               </div>
             </SheetContent>
