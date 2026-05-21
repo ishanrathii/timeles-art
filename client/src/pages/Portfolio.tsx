@@ -22,6 +22,10 @@ import p15 from "@/assets/images/portfolio-15.png";
 import p16 from "@/assets/images/portfolio-16.png";
 import p17 from "@/assets/images/portfolio-17.png";
 import p18 from "@/assets/images/portfolio-18.png";
+import p19 from "@/assets/images/portfolio-19.jpg";
+import p20 from "@/assets/images/portfolio-20.jpg";
+import p21 from "@/assets/images/portfolio-21.jpg";
+import p22 from "@/assets/images/portfolio-22.jpg";
 
 const ITEMS = [
   { img: p01, label: "Radha Figurine",                  tag: "Artifacts" },
@@ -42,6 +46,10 @@ const ITEMS = [
   { img: p16, label: "Lotus Diya Set",                   tag: "Décor" },
   { img: p17, label: "Floral Gold Chain",                tag: "Hangings" },
   { img: p18, label: "Star Wall Hangings",               tag: "Hangings" },
+  { img: p19, label: "Ganesh Elephant Toran",            tag: "Hangings" },
+  { img: p20, label: "Rose Tealight Rangoli Set",        tag: "Décor"    },
+  { img: p21, label: "Pearl Hoop Floral Hangings",       tag: "Hangings" },
+  { img: p22, label: "Colorful Petal Diya Set",          tag: "Décor"    },
 ];
 
 const TAGS = ["All", "Artifacts", "Décor", "Hangings"];
