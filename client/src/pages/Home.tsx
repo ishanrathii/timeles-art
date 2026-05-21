@@ -8,12 +8,6 @@ import { useState } from "react";
 // Assets
 import heroBg from "@/assets/images/hero-bg.png";
 import textureBg from "@/assets/images/texture-bg.png";
-import catArtifacts from "@/assets/images/category-artifacts.png";
-import catJewelry from "@/assets/images/category-jewelry.png";
-import catDecor from "@/assets/images/category-decor.png";
-import prodArtifact from "@/assets/images/product-artifact.png";
-import prodJewelry from "@/assets/images/product-jewelry.png";
-import prodDecor from "@/assets/images/product-decor.png";
 
 // Trust badge icons
 const TRUST = [
@@ -25,19 +19,19 @@ const TRUST = [
 
 // Featured products
 const PRODUCTS = [
-  { name: "Carved Ganesha Idol",   img: prodArtifact, cat: "Brass Artifacts",    price: "₹3,499", compare: "₹4,299", sale: true },
-  { name: "Kundan Bridal Set",     img: prodJewelry,  cat: "Traditional Jewelry", price: "₹8,999", compare: "₹10,499", sale: true },
-  { name: "Wooden Wall Panel",     img: prodDecor,    cat: "Home Décor",          price: "₹2,799", compare: null,      sale: false, newIn: true },
-  { name: "Brass Diya Set",        img: prodArtifact, cat: "Brass Artifacts",    price: "₹1,899", compare: "₹2,299", sale: true },
-  { name: "Kundan Necklace",       img: prodJewelry,  cat: "Traditional Jewelry", price: "₹5,499", compare: null,      sale: false },
-  { name: "Rajasthani Wall Art",   img: prodDecor,    cat: "Home Décor",          price: "₹3,299", compare: "₹3,999", sale: true },
+  { name: "Carved Ganesha Idol",   cat: "Brass Artifacts",     price: "₹3,499", compare: "₹4,299", sale: true },
+  { name: "Kundan Bridal Set",     cat: "Traditional Jewelry", price: "₹8,999", compare: "₹10,499", sale: true },
+  { name: "Wooden Wall Panel",     cat: "Home Décor",          price: "₹2,799", compare: null,      sale: false, newIn: true },
+  { name: "Brass Diya Set",        cat: "Brass Artifacts",     price: "₹1,899", compare: "₹2,299", sale: true },
+  { name: "Kundan Necklace",       cat: "Traditional Jewelry", price: "₹5,499", compare: null,      sale: false },
+  { name: "Rajasthani Wall Art",   cat: "Home Décor",          price: "₹3,299", compare: "₹3,999", sale: true },
 ];
 
 // Collections
 const COLLECTIONS = [
-  { title: "Sacred Artifacts",  sub: "Brass & Bronze",  img: catArtifacts, href: "/products?category=artifacts" },
-  { title: "Royal Jewelry",     sub: "Kundan & Gold",   img: catJewelry,   href: "/products?category=jewelry" },
-  { title: "Heritage Décor",    sub: "Wood & Textiles", img: catDecor,     href: "/products?category=decor" },
+  { title: "Sacred Artifacts",  sub: "Brass & Bronze",  desc: "Handcrafted idols, diyas & temple pieces",  href: "/products?category=artifacts" },
+  { title: "Royal Jewelry",     sub: "Kundan & Gold",   desc: "Bridal sets, necklaces & gold-plated jewels", href: "/products?category=jewelry" },
+  { title: "Heritage Décor",    sub: "Wood & Textiles", desc: "Wall panels, Rajasthani art & home accents",  href: "/products?category=decor" },
 ];
 
 const FAQ_ITEMS = [
@@ -172,17 +166,14 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {COLLECTIONS.map((c, i) => (
               <Link key={i} href={c.href}>
-                <a className="group block relative overflow-hidden aspect-[3/4]">
-                  <img src={c.img} alt={c.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-white/70 text-[10px] font-semibold uppercase tracking-[0.25em] mb-1.5">{c.sub}</p>
-                    <h3 className="text-white font-serif text-2xl sm:text-3xl font-semibold leading-tight mb-3">{c.title}</h3>
-                    <span className="inline-flex items-center gap-2 text-white text-xs font-semibold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      Shop Now <ArrowRight className="w-3 h-3" />
-                    </span>
-                  </div>
+                <a className="group block border border-border hover:border-foreground transition-colors duration-300 p-8 sm:p-10">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-4">{c.sub}</p>
+                  <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground leading-tight mb-3 group-hover:text-muted-foreground transition-colors">{c.title}</h3>
+                  <div className="w-6 h-px bg-border group-hover:w-12 group-hover:bg-foreground transition-all duration-300 mb-4" />
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{c.desc}</p>
+                  <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-foreground group-hover:gap-3 transition-all duration-300">
+                    Shop Now <ArrowRight className="w-3 h-3" />
+                  </span>
                 </a>
               </Link>
             ))}
@@ -207,32 +198,22 @@ export default function Home() {
             {/* Product grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
               {PRODUCTS.map((p, i) => (
-                <div key={i} className="group cursor-pointer">
-                  <div className="product-img-wrap aspect-square mb-3 relative">
-                    <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
-                    {/* Badges */}
-                    {p.sale && (
-                      <span className="absolute top-2 left-2 badge-sale">10% off</span>
-                    )}
-                    {p.newIn && !p.sale && (
-                      <span className="absolute top-2 left-2 badge-new">New in</span>
-                    )}
-                    {/* Quick buy overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-foreground/90 py-2.5 text-center">
-                      <span className="text-background text-[11px] font-semibold uppercase tracking-widest">Quick View</span>
-                    </div>
+                <div key={i} className="group cursor-pointer border border-border hover:border-foreground transition-colors duration-300 p-4">
+                  {/* Badge row */}
+                  <div className="flex items-center gap-2 mb-3 h-5">
+                    {p.sale && <span className="badge-sale">10% off</span>}
+                    {p.newIn && !p.sale && <span className="badge-new">New in</span>}
                   </div>
-                  <div>
-                    <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground mb-1">{p.cat}</p>
-                    <h4 className="font-sans text-sm font-medium text-foreground leading-snug mb-1.5 line-clamp-2 group-hover:text-muted-foreground transition-colors">
-                      {p.name}
-                    </h4>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-sm font-semibold text-foreground">{p.price}</span>
-                      {p.compare && (
-                        <span className="text-xs text-muted-foreground line-through">{p.compare}</span>
-                      )}
-                    </div>
+                  <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground mb-1">{p.cat}</p>
+                  <h4 className="font-serif text-sm font-semibold text-foreground leading-snug mb-3 line-clamp-2 group-hover:text-muted-foreground transition-colors">
+                    {p.name}
+                  </h4>
+                  <div className="w-4 h-px bg-border group-hover:w-8 group-hover:bg-foreground transition-all duration-300 mb-3" />
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-sm font-semibold text-foreground">{p.price}</span>
+                    {p.compare && (
+                      <span className="text-xs text-muted-foreground line-through">{p.compare}</span>
+                    )}
                   </div>
                 </div>
               ))}
@@ -283,40 +264,32 @@ export default function Home() {
 
         {/* ── ABOUT / STORY BANNER ──────────────────────────────────────────── */}
         <section className="py-14 sm:py-20">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 items-center">
-              <div className="overflow-hidden">
-                <img src={catArtifacts} alt="Artisan Craftsmanship"
-                  className="w-full aspect-[4/3] object-cover transition-transform duration-700 hover:scale-105" />
-              </div>
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-4">Our Heritage</p>
-                <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground mb-6 leading-tight">
-                  The Essence of<br />Maharashtra
-                </h2>
-                <div className="w-8 h-px bg-foreground mb-6" />
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  Located in the heart of Hingoli, Priya Art Gallery has been a beacon of traditional craftsmanship
-                  for over two decades. We source directly from master artisans across India, ensuring every piece
-                  tells a story of heritage, devotion, and unparalleled skill.
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-8">
-                  Our collection spans sacred brass artifacts, royal Kundan jewelry, and hand-carved home décor —
-                  each piece a testament to India's living artistic tradition.
-                </p>
-                <div className="flex gap-3 flex-wrap">
-                  <Link href="/contact">
-                    <a className="inline-block bg-foreground text-background text-xs font-semibold uppercase tracking-widest px-7 py-3.5 hover:bg-foreground/85 transition-colors">
-                      Visit The Gallery
-                    </a>
-                  </Link>
-                  <Link href="/products">
-                    <a className="inline-block border border-foreground text-foreground text-xs font-semibold uppercase tracking-widest px-7 py-3.5 hover:bg-foreground hover:text-background transition-colors">
-                      Shop Collection
-                    </a>
-                  </Link>
-                </div>
-              </div>
+          <div className="container mx-auto px-4 sm:px-6 max-w-3xl text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-4">Our Heritage</p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground mb-6 leading-tight">
+              The Essence of Maharashtra
+            </h2>
+            <div className="w-8 h-px bg-foreground mx-auto mb-6" />
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              Located in the heart of Hingoli, Priya Art Gallery has been a beacon of traditional craftsmanship
+              for over two decades. We source directly from master artisans across India, ensuring every piece
+              tells a story of heritage, devotion, and unparalleled skill.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-8">
+              Our collection spans sacred brass artifacts, royal Kundan jewelry, and hand-carved home décor —
+              each piece a testament to India's living artistic tradition.
+            </p>
+            <div className="flex gap-3 flex-wrap justify-center">
+              <Link href="/contact">
+                <a className="inline-block bg-foreground text-background text-xs font-semibold uppercase tracking-widest px-7 py-3.5 hover:bg-foreground/85 transition-colors">
+                  Visit The Gallery
+                </a>
+              </Link>
+              <Link href="/products">
+                <a className="inline-block border border-foreground text-foreground text-xs font-semibold uppercase tracking-widest px-7 py-3.5 hover:bg-foreground hover:text-background transition-colors">
+                  Shop Collection
+                </a>
+              </Link>
             </div>
           </div>
         </section>
