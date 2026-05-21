@@ -10,14 +10,23 @@ import { Button } from "@/components/ui/button";
 import prodArtifact from "@/assets/images/product-artifact.jpg";
 import prodJewelry from "@/assets/images/product-jewelry.jpg";
 import prodDecor from "@/assets/images/product-decor.jpg";
+import prodShellKey from "@/assets/images/product-shell-key.jpg";
+import prodFairyHouseKey from "@/assets/images/product-fairy-house-key.jpg";
+import prodKrishnaCowKey from "@/assets/images/product-krishna-cow-key.jpg";
+import prodLotusCoasters from "@/assets/images/product-lotus-coasters.jpg";
+import prodRadhaKrishnaKey from "@/assets/images/product-radha-krishna-key.png";
 
 const allProducts = [
-  { id: 1, name: "Vitthal–Rukmini Murti Set", image: prodArtifact, category: "artifacts" },
-  { id: 2, name: "Pink Rose Mandala Tealight Set", image: prodJewelry, category: "jewelry" },
-  { id: 3, name: "Teal & Pink Mandala Coasters", image: prodDecor, category: "decor" },
-  { id: 4, name: "Vitthal–Rukmini Wall Art", image: prodArtifact, category: "artifacts" },
-  { id: 5, name: "Orange-Blue Tealight Holders", image: prodJewelry, category: "jewelry" },
-  { id: 6, name: "Lotus Mandala Coaster Set", image: prodDecor, category: "decor" },
+  { id: 1,  name: "Vitthal–Rukmini Murti Set",         image: prodArtifact,       category: "artifacts" },
+  { id: 2,  name: "Pink Rose Mandala Tealight Set",     image: prodJewelry,        category: "decor" },
+  { id: 3,  name: "Teal & Pink Mandala Coasters",       image: prodDecor,          category: "decor" },
+  { id: 4,  name: "Vitthal–Rukmini Wall Art",           image: prodArtifact,       category: "artifacts" },
+  { id: 5,  name: "Orange-Blue Tealight Holders",       image: prodJewelry,        category: "decor" },
+  { id: 6,  name: "Lotus Mandala Coaster Set",          image: prodLotusCoasters,  category: "decor" },
+  { id: 7,  name: "Seashell Coastal Scene Key Holder",  image: prodShellKey,       category: "decor" },
+  { id: 8,  name: "Enchanted Cottage Key Holder",       image: prodFairyHouseKey,  category: "decor" },
+  { id: 9,  name: "Little Krishna & Cow Key Holder",    image: prodKrishnaCowKey,  category: "artifacts" },
+  { id: 10, name: "Radha–Krishna Key Holder",           image: prodRadhaKrishnaKey, category: "artifacts" },
 ];
 
 export default function Products() {
