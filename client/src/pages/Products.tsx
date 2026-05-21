@@ -9,13 +9,16 @@ import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 // Assets
-import prodArtifact from "@/assets/images/product-artifact.png";
+import imgGanesha        from "@/assets/images/product-ganesha.jpg";
+import imgShiva          from "@/assets/images/product-nataraja.jpg";
+import imgKundanSet      from "@/assets/images/product-kundan-set.jpg";
+import imgKundanNecklace from "@/assets/images/product-kundan-necklace.jpg";
 
 const allProducts = [
-  { id: 1, name: "Carved Ganesha Idol", image: prodArtifact, category: "artifacts" },
-  { id: 2, name: "Kundan Bridal Set",   image: null,          category: "jewelry" },
-  { id: 4, name: "Brass Nataraja",      image: prodArtifact,  category: "artifacts" },
-  { id: 5, name: "Kundan Necklace",     image: null,          category: "jewelry" },
+  { id: 1, name: "Carved Ganesha Idol", image: imgGanesha,        category: "artifacts" },
+  { id: 2, name: "Kundan Bridal Set",   image: imgKundanSet,      category: "jewelry"   },
+  { id: 4, name: "Brass Shiva Idol",    image: imgShiva,          category: "artifacts" },
+  { id: 5, name: "Kundan Necklace",     image: imgKundanNecklace, category: "jewelry"   },
 ];
 
 export default function Products() {
@@ -87,24 +90,27 @@ export default function Products() {
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredProducts.map((product) => (
-              <div key={product.id} className="group border border-border hover:border-foreground transition-colors duration-300 p-6">
-                {product.image && (
-                  <div className="relative aspect-square overflow-hidden bg-muted mb-4">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                )}
-                <div className="text-center">
+              <div key={product.id} className="group border border-border hover:border-foreground transition-all duration-300 overflow-hidden">
+                {/* Image with warm gradient background */}
+                <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-[#f5ede0] via-[#fdf6ee] to-[#e8d5b7]">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                    style={{ mixBlendMode: "multiply" }}
+                  />
+                  {/* Subtle gold overlay on hover */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-300" />
+                </div>
+                {/* Card body */}
+                <div className="p-5 text-center border-t border-border bg-background">
                   <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-1">Price on Request</p>
-                  <h3 className="font-serif text-lg mb-3">{product.name}</h3>
+                  <h3 className="font-serif text-lg font-semibold text-foreground mb-4">{product.name}</h3>
                   <a
                     href={`https://wa.me/917558599155?text=Hi%2C%20I%20am%20interested%20in%20ordering%3A%20${encodeURIComponent(product.name)}%20%E2%80%94%20please%20share%20the%20price%20and%20availability.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#25D366] text-white text-[11px] font-semibold uppercase tracking-widest px-4 py-2 hover:bg-[#1ebe5d] transition-colors"
+                    className="inline-flex items-center gap-2 bg-[#25D366] text-white text-[11px] font-semibold uppercase tracking-widest px-5 py-2.5 hover:bg-[#1ebe5d] transition-colors"
                   >
                     <WhatsAppIcon className="w-3.5 h-3.5" />
                     Enquire on WhatsApp
