@@ -14,6 +14,14 @@ import p07 from "@/assets/images/portfolio-07.png";
 import p08 from "@/assets/images/portfolio-08.png";
 import p09 from "@/assets/images/portfolio-09.png";
 import p10 from "@/assets/images/portfolio-10.png";
+import p11 from "@/assets/images/portfolio-11.png";
+import p12 from "@/assets/images/portfolio-12.png";
+import p13 from "@/assets/images/portfolio-13.png";
+import p14 from "@/assets/images/portfolio-14.png";
+import p15 from "@/assets/images/portfolio-15.png";
+import p16 from "@/assets/images/portfolio-16.png";
+import p17 from "@/assets/images/portfolio-17.png";
+import p18 from "@/assets/images/portfolio-18.png";
 
 const ITEMS = [
   { img: p01, label: "Radha Figurine",                  tag: "Artifacts" },
@@ -26,9 +34,17 @@ const ITEMS = [
   { img: p08, label: "Little Krishna & Cow Key Holder",  tag: "Artifacts" },
   { img: p09, label: "Lotus Mandala Coaster Set",        tag: "Décor" },
   { img: p10, label: "Teal Mandala Coaster Set",         tag: "Décor" },
+  { img: p11, label: "Pink Rose Hoop Wall Hangings",     tag: "Hangings" },
+  { img: p12, label: "Peacock Medallion Hangings",       tag: "Hangings" },
+  { img: p13, label: "Labh–Radha Krishna Frame",         tag: "Artifacts" },
+  { img: p14, label: "Personalised Ring Décor",          tag: "Décor" },
+  { img: p15, label: "Temple Door Toran",                tag: "Hangings" },
+  { img: p16, label: "Lotus Diya Set",                   tag: "Décor" },
+  { img: p17, label: "Floral Gold Chain",                tag: "Hangings" },
+  { img: p18, label: "Star Wall Hangings",               tag: "Hangings" },
 ];
 
-const TAGS = ["All", "Artifacts", "Décor"];
+const TAGS = ["All", "Artifacts", "Décor", "Hangings"];
 
 export default function Portfolio() {
   const [active, setActive]   = useState("All");
