@@ -41,10 +41,10 @@ import p33 from "@/assets/images/portfolio-33.jpg";
 import p34 from "@/assets/images/portfolio-34.jpg";
 
 const ITEMS = [
-  { img: p01, label: "Radha Figurine",                  tag: "Murties"     },
-  { img: p02, label: "Radha–Krishna–Balram Set",         tag: "Murties"     },
+  { img: p01, label: "Radha Figurine",                  tag: "Wallpapers"  },
+  { img: p02, label: "Radha–Krishna–Balram Set",         tag: "Wallpapers"  },
   { img: p03, label: "Mandala Tealight Holders",         tag: "Diyas"       },
-  { img: p04, label: "Vitthal–Rukmini Murti",            tag: "Murties"     },
+  { img: p04, label: "Vitthal–Rukmini Murti",            tag: "Wallpapers"  },
   { img: p05, label: "Radha–Krishna Key Holder",         tag: "Key Holders" },
   { img: p06, label: "Seashell Coastal Key Holder",      tag: "Key Holders" },
   { img: p07, label: "Enchanted Cottage Key Holder",     tag: "Key Holders" },
@@ -76,7 +76,7 @@ const ITEMS = [
   { img: p34, label: "Rajasthani Couple Wall Panel",     tag: "Wall Art"    },
 ];
 
-const TAGS = ["All", "Murties", "Key Holders", "Diyas", "Frames", "Wall Art", "Hangings", "Décor"];
+const TAGS = ["All", "Wallpapers", "Key Holders", "Diyas", "Frames", "Wall Art", "Hangings", "Décor"];
 
 export default function Portfolio() {
   const [active, setActive]   = useState("All");
