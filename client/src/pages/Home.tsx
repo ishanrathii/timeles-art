@@ -21,17 +21,14 @@ const TRUST = [
 const PRODUCTS = [
   { name: "Carved Ganesha Idol",   cat: "Brass Artifacts",     price: "₹3,499", compare: "₹4,299", sale: true },
   { name: "Kundan Bridal Set",     cat: "Traditional Jewelry", price: "₹8,999", compare: "₹10,499", sale: true },
-  { name: "Wooden Wall Panel",     cat: "Home Décor",          price: "₹2,799", compare: null,      sale: false, newIn: true },
   { name: "Brass Diya Set",        cat: "Brass Artifacts",     price: "₹1,899", compare: "₹2,299", sale: true },
   { name: "Kundan Necklace",       cat: "Traditional Jewelry", price: "₹5,499", compare: null,      sale: false },
-  { name: "Rajasthani Wall Art",   cat: "Home Décor",          price: "₹3,299", compare: "₹3,999", sale: true },
 ];
 
 // Collections
 const COLLECTIONS = [
   { title: "Sacred Artifacts",  sub: "Brass & Bronze",  desc: "Handcrafted idols, diyas & temple pieces",  href: "/products?category=artifacts" },
   { title: "Royal Jewelry",     sub: "Kundan & Gold",   desc: "Bridal sets, necklaces & gold-plated jewels", href: "/products?category=jewelry" },
-  { title: "Heritage Décor",    sub: "Wood & Textiles", desc: "Wall panels, Rajasthani art & home accents",  href: "/products?category=decor" },
 ];
 
 const FAQ_ITEMS = [

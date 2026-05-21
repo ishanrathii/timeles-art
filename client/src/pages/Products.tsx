@@ -8,16 +8,12 @@ import { Button } from "@/components/ui/button";
 
 // Assets
 import prodArtifact from "@/assets/images/product-artifact.png";
-import prodJewelry from "@/assets/images/product-jewelry.png";
-import prodDecor from "@/assets/images/product-decor.png";
 
 const allProducts = [
   { id: 1, name: "Carved Ganesha Idol", image: prodArtifact, category: "artifacts" },
-  { id: 2, name: "Kundan Bridal Set", image: prodJewelry, category: "jewelry" },
-  { id: 3, name: "Wooden Wall Panel", image: prodDecor, category: "decor" },
-  { id: 4, name: "Brass Nataraja", image: prodArtifact, category: "artifacts" },
-  { id: 5, name: "Temple Temple Necklace", image: prodJewelry, category: "jewelry" },
-  { id: 6, name: "Brass Hanging Diya", image: prodDecor, category: "decor" },
+  { id: 2, name: "Kundan Bridal Set",   image: null,          category: "jewelry" },
+  { id: 4, name: "Brass Nataraja",      image: prodArtifact,  category: "artifacts" },
+  { id: 5, name: "Kundan Necklace",     image: null,          category: "jewelry" },
 ];
 
 export default function Products() {
@@ -26,9 +22,8 @@ export default function Products() {
   const searchParams = new URLSearchParams(window.location.search);
   const searchQuery = searchParams.get('search')?.toLowerCase() || "";
   
-  const defaultCategory = location.includes("category=jewelry") ? "jewelry" 
-                        : location.includes("category=decor") ? "decor" 
-                        : location.includes("category=artifacts") ? "artifacts" 
+  const defaultCategory = location.includes("category=jewelry") ? "jewelry"
+                        : location.includes("category=artifacts") ? "artifacts"
                         : "all";
 
   const [activeCategory, setActiveCategory] = React.useState(defaultCategory);
@@ -41,16 +36,13 @@ export default function Products() {
 
   const catLabel = activeCategory === "artifacts" ? "Brass Artifacts"
     : activeCategory === "jewelry" ? "Traditional Jewelry"
-    : activeCategory === "decor" ? "Heritage Home Décor"
     : "All Collections";
 
   const catDesc = activeCategory === "artifacts"
     ? "Handcrafted brass and bronze sacred artifacts sourced from master artisans across India. Ganesha idols, diyas, temple items and more."
     : activeCategory === "jewelry"
     ? "Traditional Kundan, gold-plated and bridal jewelry sets crafted by master jewellers. Premium quality, authentic Indian craftsmanship."
-    : activeCategory === "decor"
-    ? "Heritage home décor items including hand-carved wooden panels, Rajasthani wall art and traditional textiles for your home."
-    : "Discover Priya Art Gallery's complete collection of handcrafted brass artifacts, traditional jewelry and heritage home décor from Hingoli, Maharashtra.";
+    : "Discover Priya Art Gallery's complete collection of handcrafted brass artifacts and traditional jewelry from Hingoli, Maharashtra.";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -75,12 +67,11 @@ export default function Products() {
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {[
-              { id: "all", label: "All Items" },
+              { id: "all",       label: "All Items" },
               { id: "artifacts", label: "Brass Artifacts" },
-              { id: "jewelry", label: "Jewelry" },
-              { id: "decor", label: "Home Decor" }
+              { id: "jewelry",   label: "Jewelry" },
             ].map(cat => (
-              <Button 
+              <Button
                 key={cat.id}
                 variant={activeCategory === cat.id ? "default" : "outline"}
                 onClick={() => setActiveCategory(cat.id)}
@@ -94,19 +85,16 @@ export default function Products() {
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredProducts.map((product) => (
-              <div key={product.id} className="group">
-                <div className="relative aspect-square overflow-hidden bg-muted mb-4">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Button className="translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                      Add to Cart
-                    </Button>
+              <div key={product.id} className="group border border-border hover:border-foreground transition-colors duration-300 p-6">
+                {product.image && (
+                  <div className="relative aspect-square overflow-hidden bg-muted mb-4">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
                   </div>
-                </div>
+                )}
                 <div className="text-center">
                   <h3 className="font-serif text-lg mb-1">{product.name}</h3>
                 </div>

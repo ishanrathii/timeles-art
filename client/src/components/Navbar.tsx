@@ -1,8 +1,7 @@
 import { Link } from "wouter";
-import { Search, ShoppingBag, User, Menu, X, ChevronDown } from "lucide-react";
+import { ShoppingBag, User, Menu, X } from "lucide-react";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
-import { Input } from "@/components/ui/input";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -13,18 +12,11 @@ import {
 const NAV_LINKS = [
   { label: "Artifacts", href: "/products?category=artifacts" },
   { label: "Jewelry", href: "/products?category=jewelry" },
-  { label: "Home Décor", href: "/products?category=decor" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
-  const [searchOpen, setSearchOpen] = useState(false);
-  const searchRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (searchOpen) searchRef.current?.focus();
-  }, [searchOpen]);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background" role="banner" itemScope itemType="https://schema.org/WPHeader">
@@ -65,7 +57,6 @@ export default function Navbar() {
                     <div className="space-y-2 text-sm">
                       <Link href="/products?category=artifacts"><a className="block py-1 hover:text-muted-foreground">Sacred Brass Artifacts</a></Link>
                       <Link href="/products?category=jewelry"><a className="block py-1 hover:text-muted-foreground">Kundan & Gold Jewelry</a></Link>
-                      <Link href="/products?category=decor"><a className="block py-1 hover:text-muted-foreground">Heritage Home Décor</a></Link>
                     </div>
                   </div>
                 </nav>
@@ -101,31 +92,6 @@ export default function Navbar() {
 
           {/* Right: icons */}
           <div className="flex items-center gap-1">
-            {/* Search */}
-            <div className="relative flex items-center">
-              {searchOpen && (
-                <div className="absolute right-full mr-2 flex items-center">
-                  <Input
-                    ref={searchRef}
-                    type="search"
-                    placeholder="Search…"
-                    className="w-52 sm:w-64 h-8 text-sm border-foreground/30 rounded-none focus-visible:ring-0 focus-visible:border-foreground"
-                    onBlur={() => setTimeout(() => setSearchOpen(false), 150)}
-                    onKeyDown={e => {
-                      if (e.key === 'Enter') {
-                        const v = e.currentTarget.value.trim();
-                        if (v) window.location.href = `/products?search=${encodeURIComponent(v)}`;
-                      }
-                    }}
-                  />
-                </div>
-              )}
-              <button onClick={() => setSearchOpen(!searchOpen)}
-                className="p-2 text-foreground hover:text-muted-foreground transition-colors">
-                <Search className="h-[18px] w-[18px]" />
-              </button>
-            </div>
-
             <button className="p-2 text-foreground hover:text-muted-foreground transition-colors hidden md:block">
               <User className="h-[18px] w-[18px]" />
             </button>
@@ -144,7 +110,6 @@ export default function Navbar() {
           <div className="flex items-center gap-8 h-10 text-[12px] font-medium uppercase tracking-widest text-muted-foreground">
             <Link href="/products?category=artifacts"><a className="hover:text-foreground transition-colors">Brass Artifacts</a></Link>
             <Link href="/products?category=jewelry"><a className="hover:text-foreground transition-colors">Jewelry</a></Link>
-            <Link href="/products?category=decor"><a className="hover:text-foreground transition-colors">Home Décor</a></Link>
             <span className="ml-auto text-[11px]">Est. 2004 · Hingoli, Maharashtra</span>
           </div>
         </div>
