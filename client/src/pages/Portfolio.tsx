@@ -35,6 +35,10 @@ import p27 from "@/assets/images/portfolio-27.jpg";
 import p28 from "@/assets/images/portfolio-28.jpg";
 import p29 from "@/assets/images/portfolio-29.jpg";
 import p30 from "@/assets/images/portfolio-30.jpg";
+import p31 from "@/assets/images/portfolio-31.jpg";
+import p32 from "@/assets/images/portfolio-32.jpg";
+import p33 from "@/assets/images/portfolio-33.jpg";
+import p34 from "@/assets/images/portfolio-34.jpg";
 
 const ITEMS = [
   { img: p01, label: "Radha Figurine",                  tag: "Artifacts" },
@@ -66,6 +70,10 @@ const ITEMS = [
   { img: p28, label: "Mom's Cafe Wall Décor",            tag: "Décor"    },
   { img: p29, label: "Tirupati Balaji Frame",            tag: "Artifacts"},
   { img: p30, label: "Mosaic Circle Wall Hanging",       tag: "Hangings" },
+  { img: p31, label: "Fish Wall Key Holder",             tag: "Décor"    },
+  { img: p32, label: "Cottage Window Wall Art",          tag: "Décor"    },
+  { img: p33, label: "Cat Hammock Décor",                tag: "Décor"    },
+  { img: p34, label: "Rajasthani Couple Wall Panel",     tag: "Artifacts"},
 ];
 
 const TAGS = ["All", "Artifacts", "Décor", "Hangings"];
