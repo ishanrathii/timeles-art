@@ -35,61 +35,58 @@
   --font-serif: 'Playfair Display', serif;
 }
 
-/* CRIMSON & COPPER THEME
-   · Burnished copper  — polished brass & bronze artefacts
-   · Deep crimson      — Indian festive silks & temple vermilion
-   · Warm linen        — aged cloth, handloom textile backdrop
-   · Charcoal espresso — antique ink & aged teak
+/* ─── BRUTALIST THEME ─────────────────────────────────────────────────────
+   Raw structure. Thick ink borders. Offset hard shadows. No softness.
+   Palette: warm chalk · deep ink · copper vermilion · raw brass
 */
 :root {
-  --button-outline: rgba(0,0,0, .10);
-  --badge-outline: rgba(0,0,0, .05);
+  --button-outline: rgba(0,0,0, 1);
+  --badge-outline: rgba(0,0,0, .12);
+  --opaque-button-border-intensity: -12;
+  --elevate-1: rgba(0,0,0, .04);
+  --elevate-2: rgba(0,0,0, .08);
 
-  --opaque-button-border-intensity: -8;
+  /* Warm chalk — aged plaster */
+  --background: 36 22% 94%;
+  --foreground: 20 30% 6%;
+  --border: 20 30% 6%;
+  --card: 36 18% 97%;
+  --card-foreground: 20 30% 6%;
+  --card-border: 20 30% 6%;
 
-  --elevate-1: rgba(0,0,0, .025);
-  --elevate-2: rgba(0,0,0, .06);
+  --popover: 36 18% 97%;
+  --popover-foreground: 20 30% 6%;
+  --popover-border: 20 30% 6%;
 
-  /* Warm linen — handloom textile backdrop */
-  --background: 36 38% 95%;
-  --foreground: 12 45% 9%;
-  --border: 20 20% 78%;
-  --card: 36 28% 98%;
-  --card-foreground: 12 45% 9%;
-  --card-border: 20 20% 80%;
+  /* Copper vermilion — temple doors & polished brass */
+  --primary: 14 72% 44%;
+  --primary-foreground: 36 22% 97%;
 
-  --popover: 36 28% 98%;
-  --popover-foreground: 12 45% 9%;
-  --popover-border: 20 20% 80%;
+  /* Deep ink — woodblock print */
+  --secondary: 20 30% 6%;
+  --secondary-foreground: 36 22% 94%;
 
-  /* Burnished copper — polished brass & bronze */
-  --primary: 18 72% 48%;
-  --primary-foreground: 36 38% 97%;
+  /* Pale sand */
+  --muted: 34 18% 88%;
+  --muted-foreground: 20 20% 25%;
 
-  /* Deep crimson — temple vermilion & festive silk */
-  --secondary: 350 52% 20%;
-  --secondary-foreground: 36 35% 95%;
+  /* Raw brass accent */
+  --accent: 36 55% 85%;
+  --accent-foreground: 14 72% 28%;
 
-  /* Warm sand muted */
-  --muted: 30 20% 90%;
-  --muted-foreground: 12 25% 28%;
-
-  /* Soft rose-copper accent */
-  --accent: 18 55% 89%;
-  --accent-foreground: 18 72% 25%;
-
-  --destructive: 0 65% 48%;
+  --destructive: 0 72% 44%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 20 20% 82%;
-  --ring: 18 72% 48%;
+  --input: 20 15% 80%;
+  --ring: 14 72% 44%;
 
-  --radius: 0.25rem;
+  /* Hard zero — no softness */
+  --radius: 0rem;
 
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08);
-  --shadow: 0 4px 8px -1px rgb(0 0 0 / 0.12), 0 2px 4px -2px rgb(0 0 0 / 0.08);
-  --shadow-md: 0 10px 20px -3px rgb(0 0 0 / 0.12), 0 4px 8px -4px rgb(0 0 0 / 0.08);
-  --shadow-lg: 0 20px 30px -5px rgb(0 0 0 / 0.15), 0 8px 12px -6px rgb(0 0 0 / 0.10);
+  --shadow-sm: 3px 3px 0px #120b06;
+  --shadow:    4px 4px 0px #120b06;
+  --shadow-md: 6px 6px 0px #120b06;
+  --shadow-lg: 8px 8px 0px #120b06;
 }
 
 @layer base {
@@ -156,4 +153,19 @@
     100% { transform: translateX(-50%); }
   }
   .animate-marquee { animation: marquee 28s linear infinite; }
+
+  /* Brutalist offset shadows */
+  .brutal-shadow-sm  { box-shadow: var(--shadow-sm); }
+  .brutal-shadow     { box-shadow: var(--shadow); }
+  .brutal-shadow-md  { box-shadow: var(--shadow-md); }
+  .brutal-shadow-lg  { box-shadow: var(--shadow-lg); }
+
+  /* Brutalist hover lift */
+  .brutal-hover {
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .brutal-hover:hover {
+    box-shadow: var(--shadow-md);
+    transform: translate(-1px, -1px);
+  }
 }
