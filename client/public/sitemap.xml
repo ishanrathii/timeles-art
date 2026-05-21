@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://priyaartgallery.in/</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://priyaartgallery.in/opengraph.jpg</image:loc>
+      <image:title>Priya Art Gallery – Brass Artifacts, Kundan Jewelry &amp; Heritage Décor</image:title>
+      <image:caption>Priya Art Gallery in Hingoli, Maharashtra – handcrafted Indian art and artifacts since 2004</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Products – All -->
+  <url>
+    <loc>https://priyaartgallery.in/products</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Products – Brass Artifacts -->
+  <url>
+    <loc>https://priyaartgallery.in/products?category=artifacts</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Products – Jewelry -->
+  <url>
+    <loc>https://priyaartgallery.in/products?category=jewelry</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Products – Décor -->
+  <url>
+    <loc>https://priyaartgallery.in/products?category=decor</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Contact / About -->
+  <url>
+    <loc>https://priyaartgallery.in/contact</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

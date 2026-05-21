@@ -1,7 +1,9 @@
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowRight, Truck, Award, RotateCcw, Star } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
+import { ArrowRight, Truck, Award, RotateCcw, Star, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 // Assets
 import heroBg from "@/assets/images/hero-bg.png";
@@ -38,28 +40,93 @@ const COLLECTIONS = [
   { title: "Heritage Décor",    sub: "Wood & Textiles", img: catDecor,     href: "/products?category=decor" },
 ];
 
+const FAQ_ITEMS = [
+  {
+    q: "Where is Priya Art Gallery located?",
+    a: "Priya Art Gallery is located at Main Market Road, Near Gandhi Chowk, Hingoli, Maharashtra 431513. You can call us at +91 75585 99155 or chat on WhatsApp."
+  },
+  {
+    q: "Does Priya Art Gallery offer free shipping?",
+    a: "Yes! We offer free shipping across India on all orders. Cash on Delivery (COD) is also available. We ensure museum-quality packaging for every item."
+  },
+  {
+    q: "What products does Priya Art Gallery sell?",
+    a: "We specialise in three collections: Brass & Bronze Artifacts (idols, diyas, temple items), Traditional Jewelry (Kundan, gold-plated, bridal sets), and Heritage Home Décor (wooden panels, Rajasthani wall art, textiles)."
+  },
+  {
+    q: "How long has Priya Art Gallery been in business?",
+    a: "Priya Art Gallery was established in 2004 — we have over 20 years of experience curating handcrafted Indian art from master artisans across Maharashtra and India."
+  },
+  {
+    q: "Are the items authentic and handcrafted?",
+    a: "Absolutely. Every piece is sourced directly from verified master artisans. We guarantee authenticity, traditional craftsmanship, and museum-quality finish on all our products."
+  },
+];
+
+function FAQItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-border last:border-b-0" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+      <button
+        className="w-full flex items-center justify-between py-4 text-left text-sm font-semibold text-foreground hover:text-muted-foreground transition-colors"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+      >
+        <span itemProp="name">{q}</span>
+        <ChevronDown className={`w-4 h-4 shrink-0 ml-3 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="pb-4 text-sm text-muted-foreground leading-relaxed" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+          <span itemProp="text">{a}</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://priyaartgallery.in/#webpage",
+    "name": "Priya Art Gallery – Brass Artifacts, Kundan Jewelry & Heritage Décor",
+    "url": "https://priyaartgallery.in",
+    "description": "Shop handcrafted brass artifacts, traditional Kundan jewelry and premium heritage home décor at Priya Art Gallery, Hingoli, Maharashtra. Est. 2004. Free shipping across India.",
+    "isPartOf": { "@id": "https://priyaartgallery.in/#website" },
+    "about": { "@id": "https://priyaartgallery.in/#business" },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".speakable"]
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEOHead
+        title="Brass Artifacts, Kundan Jewelry & Heritage Décor | Hingoli, Maharashtra"
+        description="Priya Art Gallery, Hingoli – 20+ years of handcrafted Indian art. Shop brass artifacts, Kundan jewelry & heritage home décor. Free shipping across India. COD available."
+        canonical="https://priyaartgallery.in/"
+        structuredData={homeSchema}
+      />
       <Navbar />
 
       <main className="flex-1">
 
         {/* ── HERO ──────────────────────────────────────────────────────────── */}
-        <section className="relative h-[70vh] sm:h-[80vh] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[70vh] sm:h-[80vh] flex items-center justify-center overflow-hidden" aria-label="Hero banner">
           <img src={heroBg} alt="Gallery"
             className="absolute inset-0 w-full h-full object-cover object-center scale-[1.02]" />
           <div className="absolute inset-0 bg-black/40" />
 
           <div className="relative z-10 text-center text-white px-4">
-            <p className="text-xs sm:text-[11px] font-semibold uppercase tracking-[0.35em] mb-5 opacity-90">
+            <p className="text-xs sm:text-[11px] font-semibold uppercase tracking-[0.35em] mb-5 opacity-90 speakable">
               Est. 2004 · Hingoli, Maharashtra
             </p>
-            <h1 className="hero-title font-serif font-semibold mb-6 leading-tight">
+            <h1 className="hero-title font-serif font-semibold mb-6 leading-tight speakable" itemProp="headline">
               The New Season Edit<br />
               <span className="shimmer-warm italic font-light">The Art of Heritage</span>
             </h1>
-            <p className="text-sm sm:text-base max-w-md mx-auto mb-10 opacity-85 font-light leading-relaxed">
+            <p className="text-sm sm:text-base max-w-md mx-auto mb-10 opacity-85 font-light leading-relaxed speakable" itemProp="description">
               Embrace tradition and timeless craftsmanship. Curated pieces from master artisans across India.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -254,8 +321,37 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── FAQ SECTION (AEO / LLM) ──────────────────────────────────────── */}
+        <section className="py-14 sm:py-20 bg-background border-y border-border" aria-label="Frequently Asked Questions"
+          itemScope itemType="https://schema.org/FAQPage">
+          <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
+            <div className="text-center mb-10">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Help Centre</p>
+              <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">Frequently Asked Questions</h2>
+            </div>
+            <div className="divide-y divide-border">
+              {FAQ_ITEMS.map((item) => (
+                <FAQItem key={item.q} q={item.q} a={item.a} />
+              ))}
+            </div>
+            <p className="mt-8 text-center text-sm text-muted-foreground">
+              Still have questions?{" "}
+              <a href="https://wa.me/917558599155" target="_blank" rel="noopener noreferrer"
+                className="text-foreground font-semibold underline underline-offset-2 hover:text-muted-foreground transition-colors">
+                Chat with us on WhatsApp
+              </a>{" "}
+              or{" "}
+              <Link href="/contact">
+                <a className="text-foreground font-semibold underline underline-offset-2 hover:text-muted-foreground transition-colors">
+                  visit our gallery
+                </a>
+              </Link>.
+            </p>
+          </div>
+        </section>
+
         {/* ── GET DISCOUNT CTA ──────────────────────────────────────────────── */}
-        <section className="py-14 sm:py-20 bg-foreground text-background text-center">
+        <section className="py-14 sm:py-20 bg-foreground text-background text-center" aria-label="Exclusive discount offer">
           <div className="container mx-auto px-4">
             <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-background/60 mb-4">Exclusive Offer</p>
             <h2 className="font-serif text-3xl sm:text-4xl font-semibold mb-3">

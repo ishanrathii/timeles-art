@@ -1,13 +1,31 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export default function Contact() {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://priyaartgallery.in/contact#webpage",
+    "name": "Contact Priya Art Gallery – Visit Us in Hingoli",
+    "url": "https://priyaartgallery.in/contact",
+    "description": "Contact Priya Art Gallery in Hingoli, Maharashtra. Find our address, phone number, opening hours, and send us a message. We are open Mon-Sat 10am-8:30pm.",
+    "isPartOf": { "@id": "https://priyaartgallery.in/#website" },
+    "about": { "@id": "https://priyaartgallery.in/#business" }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEOHead
+        title="Contact Us – Visit Priya Art Gallery in Hingoli"
+        description="Visit Priya Art Gallery at Main Market Road, Near Gandhi Chowk, Hingoli, Maharashtra 431513. Call +91 75585 99155 or WhatsApp us. Open Mon-Sat 10am-8:30pm."
+        canonical="https://priyaartgallery.in/contact"
+        structuredData={contactSchema}
+      />
       <Navbar />
 
       <main className="flex-1">
@@ -22,9 +40,13 @@ export default function Contact() {
 
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
-            {/* Contact Information */}
-            <div>
+
+            {/* Contact Information – microdata reinforces LocalBusiness for Google */}
+            <div itemScope itemType="https://schema.org/LocalBusiness">
+              <meta itemProp="name" content="Priya Art Gallery" />
+              <meta itemProp="telephone" content="+917558599155" />
+              <meta itemProp="email" content="priya03kabra@gmail.com" />
+              <meta itemProp="url" content="https://priyaartgallery.in" />
               <h2 className="font-serif text-3xl mb-8">Visit The Gallery</h2>
               
               <div className="space-y-8">
@@ -39,10 +61,13 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-foreground/70 hover:text-primary transition-colors"
+                      itemProp="address" itemScope itemType="https://schema.org/PostalAddress"
                     >
-                      Main Market Road, Near Gandhi Chowk<br />
-                      Hingoli, Maharashtra 431513<br />
-                      India
+                      <span itemProp="streetAddress">Main Market Road, Near Gandhi Chowk</span><br />
+                      <span itemProp="addressLocality">Hingoli</span>,{" "}
+                      <span itemProp="addressRegion">Maharashtra</span>{" "}
+                      <span itemProp="postalCode">431513</span><br />
+                      <span itemProp="addressCountry">India</span>
                     </a>
                     <a
                       href="https://www.google.com/maps/dir/?api=1&destination=Main+Market+Road,+Hingoli,+Maharashtra+431513,+India"

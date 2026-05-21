@@ -26,7 +26,7 @@ export default function Navbar() {
   }, [searchOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white">
+    <header className="sticky top-0 z-50 w-full bg-background" role="banner" itemScope itemType="https://schema.org/WPHeader">
       {/* ── Announcement bar ── */}
       <div className="bg-foreground text-background text-center py-2 text-[11px] font-medium tracking-[0.15em] uppercase">
         Free Shipping in India &nbsp;·&nbsp; COD Available &nbsp;·&nbsp; Museum-Quality Prints
@@ -44,7 +44,7 @@ export default function Navbar() {
                   <Menu className="h-5 w-5" />
                 </button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] bg-white p-0 flex flex-col rounded-none border-r border-border">
+              <SheetContent side="left" className="w-[300px] bg-background p-0 flex flex-col rounded-none border-r border-border">
                 <div className="flex items-center justify-between px-6 py-5 border-b border-border">
                   <SheetTitle className="font-serif text-xl font-semibold tracking-tight">
                     Priya Art Gallery
@@ -89,7 +89,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-7 text-[13px] font-medium text-foreground">
+          <nav className="hidden md:flex items-center gap-7 text-[13px] font-medium text-foreground" aria-label="Main navigation" role="navigation">
             <Link href="/"><a className="hover:text-muted-foreground transition-colors">Home</a></Link>
             {NAV_LINKS.map(l => (
               <Link key={l.href} href={l.href}>
@@ -138,7 +138,7 @@ export default function Navbar() {
       </div>
 
       {/* ── Category nav strip (desktop) ── */}
-      <div className="hidden md:block border-b border-border bg-white">
+      <div className="hidden md:block border-b border-border bg-background">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-8 h-10 text-[12px] font-medium uppercase tracking-widest text-muted-foreground">
             <Link href="/products?category=artifacts"><a className="hover:text-foreground transition-colors">Brass Artifacts</a></Link>

@@ -3,6 +3,7 @@ import React from "react";
 import { useLocation } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 
 // Assets
@@ -38,8 +39,26 @@ export default function Products() {
     return matchesCategory && matchesSearch;
   });
 
+  const catLabel = activeCategory === "artifacts" ? "Brass Artifacts"
+    : activeCategory === "jewelry" ? "Traditional Jewelry"
+    : activeCategory === "decor" ? "Heritage Home Décor"
+    : "All Collections";
+
+  const catDesc = activeCategory === "artifacts"
+    ? "Handcrafted brass and bronze sacred artifacts sourced from master artisans across India. Ganesha idols, diyas, temple items and more."
+    : activeCategory === "jewelry"
+    ? "Traditional Kundan, gold-plated and bridal jewelry sets crafted by master jewellers. Premium quality, authentic Indian craftsmanship."
+    : activeCategory === "decor"
+    ? "Heritage home décor items including hand-carved wooden panels, Rajasthani wall art and traditional textiles for your home."
+    : "Discover Priya Art Gallery's complete collection of handcrafted brass artifacts, traditional jewelry and heritage home décor from Hingoli, Maharashtra.";
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEOHead
+        title={`${catLabel} – Priya Art Gallery`}
+        description={catDesc}
+        canonical={`https://priyaartgallery.in/products${activeCategory !== "all" ? `?category=${activeCategory}` : ""}`}
+      />
       <Navbar />
 
       <main className="flex-1">

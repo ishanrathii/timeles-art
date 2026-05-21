@@ -37,44 +37,44 @@
    Warm off-white background. Subtle hover states. No harsh shadows.
 */
 :root {
-  /* Pure canvas */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 13%;          /* #222 near-black */
-  --border: 0 0% 88%;              /* soft light grey */
+  /* ── Warm Cream Palette ── */
+  --background: 36 30% 97%;        /* #faf7f2 warm cream */
+  --foreground: 20 15% 13%;        /* #201d1a near-black warm */
+  --border: 30 20% 86%;            /* #e2d9cc warm grey */
 
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 13%;
+  --card: 36 25% 98%;              /* #fdfaf6 light cream card */
+  --card-foreground: 20 15% 13%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 13%;
+  --popover: 36 25% 98%;
+  --popover-foreground: 20 15% 13%;
 
-  /* Primary — dark ink, used for buttons & key accents */
-  --primary: 0 0% 20%;             /* #333333 */
-  --primary-foreground: 0 0% 100%;
+  /* Primary — deep warm ink */
+  --primary: 20 15% 16%;           /* #2a2520 deep warm black */
+  --primary-foreground: 36 30% 97%;
 
-  /* Secondary — off-white section backgrounds */
-  --secondary: 30 10% 96%;         /* warm off-white #f6f4f1 */
-  --secondary-foreground: 0 0% 13%;
+  /* Secondary — deeper cream for section backgrounds */
+  --secondary: 34 25% 92%;         /* #f0e9df warm sand */
+  --secondary-foreground: 20 15% 13%;
 
   /* Muted */
-  --muted: 0 0% 95%;
-  --muted-foreground: 0 0% 45%;    /* #737373 mid-grey */
+  --muted: 34 18% 90%;             /* #ede5da */
+  --muted-foreground: 25 10% 46%;  /* #7a7068 warm mid-grey */
 
-  /* Accent — warm blush for badges / highlights */
-  --accent: 15 60% 94%;            /* very soft peach */
-  --accent-foreground: 15 40% 30%;
+  /* Accent — soft warm blush */
+  --accent: 28 55% 91%;            /* #f5e4d0 warm peach */
+  --accent-foreground: 20 40% 28%;
 
   --destructive: 0 72% 44%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 0 0% 88%;
-  --ring: 0 0% 20%;
+  --input: 30 20% 84%;
+  --ring: 20 15% 16%;
 
   /* Gentle rounding */
   --radius: 0.25rem;
 
   /* Sale badge red */
-  --sale-color: #c0392b;
+  --sale-color: #b83232;
 }
 
 @layer base {
