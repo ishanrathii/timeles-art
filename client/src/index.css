@@ -4,10 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-card: hsl(var(--card));
@@ -25,68 +25,56 @@
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
   --color-border: hsl(var(--border));
-  --color-primary-border: hsl(var(--primary-border));
-  --color-accent-border: hsl(var(--accent-border));
-  --color-card-border: hsl(var(--card-border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  
+
   --font-sans: 'Plus Jakarta Sans', sans-serif;
   --font-serif: 'Playfair Display', serif;
 }
 
-/* ─── BRUTALIST THEME ─────────────────────────────────────────────────────
-   Raw structure. Thick ink borders. Offset hard shadows. No softness.
-   Palette: warm chalk · deep ink · copper vermilion · raw brass
+/* ─── CLEAN EDITORIAL GALLERY THEME ──────────────────────────────────────────
+   Inspired by Dessine Art. Pure white, dark ink text, minimal borders.
+   Warm off-white background. Subtle hover states. No harsh shadows.
 */
 :root {
-  --button-outline: rgba(0,0,0, 1);
-  --badge-outline: rgba(0,0,0, .12);
-  --opaque-button-border-intensity: -12;
-  --elevate-1: rgba(0,0,0, .04);
-  --elevate-2: rgba(0,0,0, .08);
+  /* Pure canvas */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 13%;          /* #222 near-black */
+  --border: 0 0% 88%;              /* soft light grey */
 
-  /* Warm chalk — aged plaster */
-  --background: 36 22% 94%;
-  --foreground: 20 30% 6%;
-  --border: 20 30% 6%;
-  --card: 36 18% 97%;
-  --card-foreground: 20 30% 6%;
-  --card-border: 20 30% 6%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 13%;
 
-  --popover: 36 18% 97%;
-  --popover-foreground: 20 30% 6%;
-  --popover-border: 20 30% 6%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 13%;
 
-  /* Copper vermilion — temple doors & polished brass */
-  --primary: 14 72% 44%;
-  --primary-foreground: 36 22% 97%;
+  /* Primary — dark ink, used for buttons & key accents */
+  --primary: 0 0% 20%;             /* #333333 */
+  --primary-foreground: 0 0% 100%;
 
-  /* Deep ink — woodblock print */
-  --secondary: 20 30% 6%;
-  --secondary-foreground: 36 22% 94%;
+  /* Secondary — off-white section backgrounds */
+  --secondary: 30 10% 96%;         /* warm off-white #f6f4f1 */
+  --secondary-foreground: 0 0% 13%;
 
-  /* Pale sand */
-  --muted: 34 18% 88%;
-  --muted-foreground: 20 20% 25%;
+  /* Muted */
+  --muted: 0 0% 95%;
+  --muted-foreground: 0 0% 45%;    /* #737373 mid-grey */
 
-  /* Raw brass accent */
-  --accent: 36 55% 85%;
-  --accent-foreground: 14 72% 28%;
+  /* Accent — warm blush for badges / highlights */
+  --accent: 15 60% 94%;            /* very soft peach */
+  --accent-foreground: 15 40% 30%;
 
   --destructive: 0 72% 44%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 20 15% 80%;
-  --ring: 14 72% 44%;
+  --input: 0 0% 88%;
+  --ring: 0 0% 20%;
 
-  /* Hard zero — no softness */
-  --radius: 0rem;
+  /* Gentle rounding */
+  --radius: 0.25rem;
 
-  --shadow-sm: 3px 3px 0px #120b06;
-  --shadow:    4px 4px 0px #120b06;
-  --shadow-md: 6px 6px 0px #120b06;
-  --shadow-lg: 8px 8px 0px #120b06;
+  /* Sale badge red */
+  --sale-color: #c0392b;
 }
 
 @layer base {
@@ -94,7 +82,7 @@
     @apply border-border outline-none;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground;
+    @apply font-sans antialiased bg-background text-foreground selection:bg-foreground selection:text-background;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
@@ -102,70 +90,68 @@
 }
 
 @layer utilities {
-  .text-shadow {
-    text-shadow: 0 2px 8px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.75);
+  /* ── Marquee ─── */
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
-  .glass {
-    @apply bg-black/30 backdrop-blur-md border border-white/10;
-  }
-  .border-bronze {
-    border: 1px solid rgba(212, 170, 60, 0.35);
-  }
-  /* Fluid hero title — scales from mobile to desktop */
-  .hero-title {
-    font-size: clamp(2.8rem, 10vw, 7rem);
-    line-height: 1.05;
-  }
-  /* Copper shimmer sweep */
-  .shimmer-gold {
+  .animate-marquee { animation: marquee 32s linear infinite; }
+
+  /* ── Shimmer for hero text ─── */
+  .shimmer-warm {
     background: linear-gradient(
       90deg,
-      hsl(18 72% 48%) 0%,
-      hsl(28 85% 66%) 40%,
-      hsl(18 72% 48%) 60%,
-      hsl(12 65% 38%) 100%
+      hsl(20 60% 40%) 0%,
+      hsl(35 75% 58%) 40%,
+      hsl(20 60% 40%) 65%,
+      hsl(15 55% 32%) 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: shimmer 4s linear infinite;
+    animation: shimmer 5s linear infinite;
   }
   @keyframes shimmer {
     0%   { background-position: 200% center; }
     100% { background-position: -200% center; }
   }
-  /* Mandala divider line */
-  .divider-royal {
-    @apply relative flex items-center justify-center my-8;
+
+  /* ── Fluid hero title ─── */
+  .hero-title {
+    font-size: clamp(2.4rem, 7vw, 5.5rem);
+    line-height: 1.08;
   }
-  .divider-royal::before,
-  .divider-royal::after {
+
+  /* ── Product card image hover ─── */
+  .product-img-wrap {
+    @apply relative overflow-hidden bg-muted;
+  }
+  .product-img-wrap img {
+    @apply transition-transform duration-700 ease-in-out;
+  }
+  .product-img-wrap:hover img {
+    transform: scale(1.05);
+  }
+
+  /* ── Sale badge ─── */
+  .badge-sale {
+    background: var(--sale-color);
+    @apply text-white text-[10px] font-bold uppercase tracking-widest px-2 py-0.5;
+  }
+
+  /* ── New-in badge ─── */
+  .badge-new {
+    @apply bg-foreground text-background text-[10px] font-bold uppercase tracking-widest px-2 py-0.5;
+  }
+
+  /* ── Divider ─── */
+  .divider {
+    @apply relative flex items-center gap-4 my-8;
+  }
+  .divider::before,
+  .divider::after {
     content: '';
-    @apply flex-1 h-px bg-primary/30;
-  }
-  .divider-royal > span {
-    @apply mx-4 text-primary text-xl;
-  }
-  /* Marquee scroll */
-  @keyframes marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .animate-marquee { animation: marquee 28s linear infinite; }
-
-  /* Brutalist offset shadows */
-  .brutal-shadow-sm  { box-shadow: var(--shadow-sm); }
-  .brutal-shadow     { box-shadow: var(--shadow); }
-  .brutal-shadow-md  { box-shadow: var(--shadow-md); }
-  .brutal-shadow-lg  { box-shadow: var(--shadow-lg); }
-
-  /* Brutalist hover lift */
-  .brutal-hover {
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
-  }
-  .brutal-hover:hover {
-    box-shadow: var(--shadow-md);
-    transform: translate(-1px, -1px);
+    @apply flex-1 h-px bg-border;
   }
 }

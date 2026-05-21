@@ -1,175 +1,151 @@
 import { Link } from "wouter";
-import { Search, ShoppingBag, Menu, MapPin, Phone, Instagram } from "lucide-react";
+import { Search, ShoppingBag, User, Menu, X, ChevronDown } from "lucide-react";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState, useRef, useEffect } from "react";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
-  SheetHeader,
   SheetTitle
 } from "@/components/ui/sheet";
 
+const NAV_LINKS = [
+  { label: "Artifacts", href: "/products?category=artifacts" },
+  { label: "Jewelry", href: "/products?category=jewelry" },
+  { label: "Home Décor", href: "/products?category=decor" },
+  { label: "Contact", href: "/contact" },
+];
+
 export default function Navbar() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const searchInputRef = useRef<HTMLInputElement>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (isSearchOpen && searchInputRef.current) {
-      searchInputRef.current.focus();
-    }
-  }, [isSearchOpen]);
+    if (searchOpen) searchRef.current?.focus();
+  }, [searchOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background border-b-2 border-foreground">
-      {/* Top utility bar */}
-      <div className="hidden md:block border-b-2 border-foreground bg-foreground text-secondary-foreground">
-        <div className="container mx-auto px-4 h-8 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.25em]">
-          <span>Est. 2004 · Hingoli, Maharashtra</span>
-          <div className="flex items-center gap-6">
-            <a href="https://wa.me/917558599155" target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-primary transition-colors">
-              <Phone className="w-3 h-3" />
-              +91 75585 99155
-            </a>
-            <a href="mailto:priya03kabra@gmail.com"
-              className="hover:text-primary transition-colors">
-              priya03kabra@gmail.com
-            </a>
+    <header className="sticky top-0 z-50 w-full bg-white">
+      {/* ── Announcement bar ── */}
+      <div className="bg-foreground text-background text-center py-2 text-[11px] font-medium tracking-[0.15em] uppercase">
+        Free Shipping in India &nbsp;·&nbsp; COD Available &nbsp;·&nbsp; Museum-Quality Prints
+      </div>
+
+      {/* ── Main header ── */}
+      <div className="border-b border-border">
+        <div className="container mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+
+          {/* Left: hamburger (mobile) */}
+          <div className="flex items-center gap-3">
+            <Sheet>
+              <SheetTrigger asChild>
+                <button className="md:hidden p-1 -ml-1 text-foreground">
+                  <Menu className="h-5 w-5" />
+                </button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[300px] bg-white p-0 flex flex-col rounded-none border-r border-border">
+                <div className="flex items-center justify-between px-6 py-5 border-b border-border">
+                  <SheetTitle className="font-serif text-xl font-semibold tracking-tight">
+                    Priya Art Gallery
+                  </SheetTitle>
+                </div>
+                <nav className="flex-1 overflow-y-auto py-4 px-6">
+                  <div className="space-y-1">
+                    <Link href="/"><a className="block py-3 text-sm font-medium border-b border-border/60 hover:text-muted-foreground transition-colors">Home</a></Link>
+                    {NAV_LINKS.map(l => (
+                      <Link key={l.href} href={l.href}>
+                        <a className="block py-3 text-sm font-medium border-b border-border/60 hover:text-muted-foreground transition-colors">{l.label}</a>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="mt-8 space-y-4">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Collections</p>
+                    <div className="space-y-2 text-sm">
+                      <Link href="/products?category=artifacts"><a className="block py-1 hover:text-muted-foreground">Sacred Brass Artifacts</a></Link>
+                      <Link href="/products?category=jewelry"><a className="block py-1 hover:text-muted-foreground">Kundan & Gold Jewelry</a></Link>
+                      <Link href="/products?category=decor"><a className="block py-1 hover:text-muted-foreground">Heritage Home Décor</a></Link>
+                    </div>
+                  </div>
+                </nav>
+                <div className="p-6 border-t border-border space-y-3">
+                  <a href="https://wa.me/917558599155" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-sm font-medium hover:text-[#25D366] transition-colors">
+                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                    Chat on WhatsApp
+                  </a>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+
+          {/* Centre: Logo */}
+          <div className="flex-1 flex justify-center md:justify-start">
+            <Link href="/">
+              <a className="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-foreground hover:opacity-80 transition-opacity">
+                Priya Art Gallery
+              </a>
+            </Link>
+          </div>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-7 text-[13px] font-medium text-foreground">
+            <Link href="/"><a className="hover:text-muted-foreground transition-colors">Home</a></Link>
+            {NAV_LINKS.map(l => (
+              <Link key={l.href} href={l.href}>
+                <a className="hover:text-muted-foreground transition-colors">{l.label}</a>
+              </Link>
+            ))}
+          </nav>
+
+          {/* Right: icons */}
+          <div className="flex items-center gap-1">
+            {/* Search */}
+            <div className="relative flex items-center">
+              {searchOpen && (
+                <div className="absolute right-full mr-2 flex items-center">
+                  <Input
+                    ref={searchRef}
+                    type="search"
+                    placeholder="Search…"
+                    className="w-52 sm:w-64 h-8 text-sm border-foreground/30 rounded-none focus-visible:ring-0 focus-visible:border-foreground"
+                    onBlur={() => setTimeout(() => setSearchOpen(false), 150)}
+                    onKeyDown={e => {
+                      if (e.key === 'Enter') {
+                        const v = e.currentTarget.value.trim();
+                        if (v) window.location.href = `/products?search=${encodeURIComponent(v)}`;
+                      }
+                    }}
+                  />
+                </div>
+              )}
+              <button onClick={() => setSearchOpen(!searchOpen)}
+                className="p-2 text-foreground hover:text-muted-foreground transition-colors">
+                <Search className="h-[18px] w-[18px]" />
+              </button>
+            </div>
+
+            <button className="p-2 text-foreground hover:text-muted-foreground transition-colors hidden md:block">
+              <User className="h-[18px] w-[18px]" />
+            </button>
+
+            <button className="p-2 text-foreground hover:text-muted-foreground transition-colors relative">
+              <ShoppingBag className="h-[18px] w-[18px]" />
+              <span className="absolute top-1.5 right-1.5 w-[6px] h-[6px] rounded-full bg-foreground" />
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Main nav row */}
-      <div className="container mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-        {/* Mobile hamburger + logo */}
-        <div className="flex items-center gap-3">
-          <Sheet>
-            <SheetTrigger asChild>
-              <button className="md:hidden w-10 h-10 border-2 border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors">
-                <Menu className="h-5 w-5" />
-              </button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[380px] bg-background border-r-2 border-foreground p-0 flex flex-col rounded-none">
-              <div className="p-6 border-b-2 border-foreground">
-                <SheetTitle className="font-serif text-2xl font-bold">
-                  PRIYA <span className="text-primary">GALLERY</span>
-                </SheetTitle>
-              </div>
-
-              <div className="flex-1 overflow-y-auto py-4">
-                <nav className="flex flex-col px-4">
-                  <div className="px-2 py-2 text-[10px] font-black text-muted-foreground uppercase tracking-[0.3em]">Collections</div>
-                  {[
-                    { href: "/products?category=artifacts", label: "Brass Artifacts" },
-                    { href: "/products?category=jewelry", label: "Traditional Jewelry" },
-                    { href: "/products?category=decor", label: "Home Decor" },
-                  ].map(({ href, label }) => (
-                    <Link key={href} href={href}>
-                      <a className="px-2 py-3 border-b border-foreground/15 font-bold uppercase tracking-wide text-sm hover:text-primary hover:pl-4 transition-all">
-                        {label}
-                      </a>
-                    </Link>
-                  ))}
-
-                  <div className="mt-6 px-2 py-2 text-[10px] font-black text-muted-foreground uppercase tracking-[0.3em]">Navigate</div>
-                  {[
-                    { href: "/", label: "Home" },
-                    { href: "/contact", label: "Contact" },
-                  ].map(({ href, label }) => (
-                    <Link key={href} href={href}>
-                      <a className="px-2 py-3 border-b border-foreground/15 font-bold uppercase tracking-wide text-sm hover:text-primary hover:pl-4 transition-all">
-                        {label}
-                      </a>
-                    </Link>
-                  ))}
-                </nav>
-              </div>
-
-              <div className="p-4 border-t-2 border-foreground bg-muted/30 space-y-2">
-                <div className="px-2 py-2 text-[10px] font-black text-muted-foreground uppercase tracking-[0.3em] mb-1">Contact</div>
-                <div className="px-2 flex items-start gap-2 text-sm">
-                  <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                  <span className="font-medium">Main Market Road, Hingoli MH 431513</span>
-                </div>
-                <div className="px-2 flex items-center gap-2 text-sm">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <span className="font-medium">+91 75585 99155</span>
-                </div>
-                <div className="flex gap-3 px-2 pt-2">
-                  <a href="https://www.instagram.com/timeles_art_?igsh=MWtidjR3NjhqZWwyNw==" target="_blank" rel="noopener noreferrer"
-                    className="w-9 h-9 border-2 border-[#E1306C] flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-colors">
-                    <Instagram className="w-4 h-4 text-[#E1306C] group-hover:text-white" />
-                  </a>
-                  <a href="https://wa.me/917558599155" target="_blank" rel="noopener noreferrer"
-                    className="w-9 h-9 border-2 border-[#25D366] flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-colors">
-                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                  </a>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
-
-          <Link href="/">
-            <a className="font-serif font-black text-xl sm:text-2xl md:text-3xl tracking-tight leading-none">
-              PRIYA <span className="text-primary">ART</span>
-            </a>
-          </Link>
-        </div>
-
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-0">
-          {[
-            { href: "/", label: "Home" },
-            { href: "/products?category=artifacts", label: "Artifacts" },
-            { href: "/products?category=jewelry", label: "Jewelry" },
-            { href: "/products?category=decor", label: "Decor" },
-            { href: "/contact", label: "Contact" },
-          ].map(({ href, label }) => (
-            <Link key={href} href={href}>
-              <a className="px-4 py-2 border-r border-foreground/20 text-xs font-black uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors">
-                {label}
-              </a>
-            </Link>
-          ))}
-        </nav>
-
-        {/* Right icons */}
-        <div className="flex items-center gap-0 relative">
-          {/* Search */}
-          <div className="relative flex items-center">
-            <div className={`absolute right-full flex items-center transition-all duration-300 ease-in-out overflow-hidden ${isSearchOpen ? 'w-56 sm:w-72 opacity-100 mr-2' : 'w-0 opacity-0'}`}>
-              <Input
-                ref={searchInputRef}
-                type="search"
-                placeholder="Search artifacts, jewelry..."
-                className="w-full border-2 border-foreground rounded-none bg-background focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary text-sm font-medium"
-                onBlur={() => setTimeout(() => setIsSearchOpen(false), 200)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    const val = e.currentTarget.value.toLowerCase();
-                    if (val) window.location.href = `/products?search=${encodeURIComponent(val)}`;
-                  }
-                }}
-              />
-            </div>
-            <button
-              className="w-10 h-10 border-2 border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"
-              onClick={() => {
-                setIsSearchOpen(!isSearchOpen);
-                if (!isSearchOpen) setTimeout(() => searchInputRef.current?.focus(), 100);
-              }}
-            >
-              <Search className="h-4 w-4" />
-            </button>
+      {/* ── Category nav strip (desktop) ── */}
+      <div className="hidden md:block border-b border-border bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex items-center gap-8 h-10 text-[12px] font-medium uppercase tracking-widest text-muted-foreground">
+            <Link href="/products?category=artifacts"><a className="hover:text-foreground transition-colors">Brass Artifacts</a></Link>
+            <Link href="/products?category=jewelry"><a className="hover:text-foreground transition-colors">Jewelry</a></Link>
+            <Link href="/products?category=decor"><a className="hover:text-foreground transition-colors">Home Décor</a></Link>
+            <span className="ml-auto text-[11px]">Est. 2004 · Hingoli, Maharashtra</span>
           </div>
-
-          <button className="w-10 h-10 border-2 border-l-0 border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors relative">
-            <ShoppingBag className="h-4 w-4" />
-            <span className="absolute top-1 right-1 h-2 w-2 bg-primary" />
-          </button>
         </div>
       </div>
     </header>
