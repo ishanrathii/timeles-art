@@ -26,7 +26,6 @@ import p19 from "@/assets/images/portfolio-19.jpg";
 import p20 from "@/assets/images/portfolio-20.jpg";
 import p21 from "@/assets/images/portfolio-21.jpg";
 import p22 from "@/assets/images/portfolio-22.jpg";
-import p23 from "@/assets/images/portfolio-23.jpg";
 import p24 from "@/assets/images/portfolio-24.jpg";
 import p25 from "@/assets/images/portfolio-25.jpg";
 
@@ -53,7 +52,6 @@ const ITEMS = [
   { img: p20, label: "Rose Tealight Rangoli Set",        tag: "Décor"    },
   { img: p21, label: "Pearl Hoop Floral Hangings",       tag: "Hangings" },
   { img: p22, label: "Colorful Petal Diya Set",          tag: "Décor"    },
-  { img: p23, label: "Lotus Decorative Tray",            tag: "Décor"    },
   { img: p24, label: "Labh Radha-Krishna Frame",         tag: "Artifacts"},
   { img: p25, label: "Ring Ceremony Décor",              tag: "Décor"    },
 ];
