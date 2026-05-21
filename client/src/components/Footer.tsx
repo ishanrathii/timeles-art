@@ -43,8 +43,8 @@ export default function Footer() {
               {[
                 { href: "/products?category=artifacts", label: "Brass Artifacts" },
                 { href: "/products?category=jewelry",   label: "Traditional Jewelry" },
-                { href: "/products?category=decor",     label: "Home Décor" },
                 { href: "/products",                    label: "All Collections" },
+                { href: "/portfolio",                   label: "Portfolio" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href}>

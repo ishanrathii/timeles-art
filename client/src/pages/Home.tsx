@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { ArrowRight, Truck, Award, RotateCcw, Star, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -27,8 +28,9 @@ const PRODUCTS = [
 
 // Collections
 const COLLECTIONS = [
-  { title: "Sacred Artifacts",  sub: "Brass & Bronze",  desc: "Handcrafted idols, diyas & temple pieces",  href: "/products?category=artifacts" },
-  { title: "Royal Jewelry",     sub: "Kundan & Gold",   desc: "Bridal sets, necklaces & gold-plated jewels", href: "/products?category=jewelry" },
+  { title: "Sacred Artifacts",  sub: "Brass & Bronze",  desc: "Handcrafted idols, diyas & temple pieces",       href: "/products?category=artifacts" },
+  { title: "Royal Jewelry",     sub: "Kundan & Gold",   desc: "Bridal sets, necklaces & gold-plated jewels",    href: "/products?category=jewelry" },
+  { title: "Our Portfolio",     sub: "All Creations",   desc: "Browse our complete gallery of handcrafted work", href: "/portfolio" },
 ];
 
 const FAQ_ITEMS = [
@@ -344,6 +346,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }

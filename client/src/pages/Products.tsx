@@ -4,7 +4,9 @@ import { useLocation } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { Button } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 // Assets
 import prodArtifact from "@/assets/images/product-artifact.png";
@@ -96,7 +98,16 @@ export default function Products() {
                   </div>
                 )}
                 <div className="text-center">
-                  <h3 className="font-serif text-lg mb-1">{product.name}</h3>
+                  <h3 className="font-serif text-lg mb-3">{product.name}</h3>
+                  <a
+                    href={`https://wa.me/917558599155?text=Hi, I'm interested in: ${encodeURIComponent(product.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-[#25D366] text-white text-[11px] font-semibold uppercase tracking-widest px-4 py-2 hover:bg-[#1ebe5d] transition-colors"
+                  >
+                    <WhatsAppIcon className="w-3.5 h-3.5" />
+                    Order on WhatsApp
+                  </a>
                 </div>
               </div>
             ))}
@@ -111,6 +122,7 @@ export default function Products() {
       </main>
 
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }

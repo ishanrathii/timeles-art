@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useState } from "react";
 import { X } from "lucide-react";
 
@@ -155,6 +156,7 @@ export default function Portfolio() {
       )}
 
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
