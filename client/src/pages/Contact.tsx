@@ -115,9 +115,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Contact Numbers</h3>
-                    <p className="text-foreground/70">
+                    <a href="tel:+917558599155"
+                      className="text-foreground/70 hover:text-foreground transition-colors underline underline-offset-2">
                       +91 75585 99155
-                    </p>
+                    </a>
                   </div>
                 </div>
 
@@ -127,9 +128,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Email</h3>
-                    <p className="text-foreground/70">
+                    <a href="mailto:priya03kabra@gmail.com"
+                      className="text-foreground/70 hover:text-foreground transition-colors underline underline-offset-2">
                       priya03kabra@gmail.com
-                    </p>
+                    </a>
                   </div>
                 </div>
               </div>
