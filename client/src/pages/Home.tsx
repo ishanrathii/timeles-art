@@ -14,10 +14,6 @@ import catDecor from "@/assets/images/category-decor.jpg";
 import prodArtifact from "@/assets/images/product-artifact.jpg";
 import prodJewelry from "@/assets/images/product-jewelry.jpg";
 import prodDecor from "@/assets/images/product-decor.jpg";
-import prodShellKey from "@/assets/images/product-shell-key.jpg";
-import prodFairyHouseKey from "@/assets/images/product-fairy-house-key.jpg";
-import prodKrishnaCowKey from "@/assets/images/product-krishna-cow-key.jpg";
-import prodRadhaKrishnaKey from "@/assets/images/product-radha-krishna-key.png";
 
 // Trust badge icons
 const TRUST = [
@@ -29,12 +25,12 @@ const TRUST = [
 
 // Featured products
 const PRODUCTS = [
-  { name: "Vitthal–Rukmini Murti Set",          img: prodArtifact,       cat: "Sacred Artifacts", price: "₹3,499", compare: "₹4,299", sale: true },
-  { name: "Radha–Krishna Key Holder",           img: prodRadhaKrishnaKey, cat: "Home Décor",       price: "₹999",  compare: "₹1,199", sale: true },
-  { name: "Seashell Coastal Scene Key Holder",  img: prodShellKey,       cat: "Home Décor",        price: "₹1,299", compare: null,      sale: false, newIn: true },
-  { name: "Little Krishna & Cow Key Holder",    img: prodKrishnaCowKey,  cat: "Sacred Artifacts",  price: "₹1,099", compare: "₹1,299", sale: true },
-  { name: "Enchanted Cottage Key Holder",       img: prodFairyHouseKey,  cat: "Home Décor",        price: "₹1,199", compare: null,      sale: false, newIn: true },
-  { name: "Mandala Tealight Holders",           img: prodJewelry,        cat: "Home Décor",        price: "₹1,299", compare: "₹1,599", sale: true },
+  { name: "Vitthal–Rukmini Murti Set",     img: prodArtifact, cat: "Sacred Artifacts",    price: "₹3,499", compare: "₹4,299", sale: true },
+  { name: "Mandala Tealight Holders",      img: prodJewelry,  cat: "Decorative Décor",    price: "₹1,299", compare: "₹1,599", sale: true },
+  { name: "Mandala Coaster Set",           img: prodDecor,    cat: "Home Décor",          price: "₹999",   compare: null,      sale: false, newIn: true },
+  { name: "Vitthal–Rukmini Wall Art",      img: prodArtifact, cat: "Sacred Artifacts",    price: "₹2,799", compare: "₹3,299", sale: true },
+  { name: "Pink Rose Tealight Set",        img: prodJewelry,  cat: "Decorative Décor",    price: "₹1,499", compare: null,      sale: false },
+  { name: "Lotus Mandala Coaster Set",     img: prodDecor,    cat: "Home Décor",          price: "₹1,199", compare: "₹1,499", sale: true },
 ];
 
 // Collections
