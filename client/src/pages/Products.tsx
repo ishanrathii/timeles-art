@@ -7,17 +7,17 @@ import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 
 // Assets
-import prodArtifact from "@/assets/images/product-artifact.jpg";
-import prodJewelry from "@/assets/images/product-jewelry.jpg";
-import prodDecor from "@/assets/images/product-decor.jpg";
+import prodArtifact from "@/assets/images/product-artifact.png";
+import prodJewelry from "@/assets/images/product-jewelry.png";
+import prodDecor from "@/assets/images/product-decor.png";
 
 const allProducts = [
-  { id: 1, name: "Vitthal–Rukmini Murti Set", image: prodArtifact, category: "artifacts" },
-  { id: 2, name: "Pink Rose Mandala Tealight Set", image: prodJewelry, category: "jewelry" },
-  { id: 3, name: "Teal & Pink Mandala Coasters", image: prodDecor, category: "decor" },
-  { id: 4, name: "Vitthal–Rukmini Wall Art", image: prodArtifact, category: "artifacts" },
-  { id: 5, name: "Orange-Blue Tealight Holders", image: prodJewelry, category: "jewelry" },
-  { id: 6, name: "Lotus Mandala Coaster Set", image: prodDecor, category: "decor" },
+  { id: 1, name: "Carved Ganesha Idol", image: prodArtifact, category: "artifacts" },
+  { id: 2, name: "Kundan Bridal Set", image: prodJewelry, category: "jewelry" },
+  { id: 3, name: "Wooden Wall Panel", image: prodDecor, category: "decor" },
+  { id: 4, name: "Brass Nataraja", image: prodArtifact, category: "artifacts" },
+  { id: 5, name: "Temple Temple Necklace", image: prodJewelry, category: "jewelry" },
+  { id: 6, name: "Brass Hanging Diya", image: prodDecor, category: "decor" },
 ];
 
 export default function Products() {

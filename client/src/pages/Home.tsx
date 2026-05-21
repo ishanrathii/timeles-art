@@ -6,14 +6,14 @@ import { ArrowRight, Truck, Award, RotateCcw, Star, ChevronDown } from "lucide-r
 import { useState } from "react";
 
 // Assets
-import heroBg from "@/assets/images/hero-bg.jpg";
-import textureBg from "@/assets/images/texture-bg.jpg";
-import catArtifacts from "@/assets/images/category-artifacts.jpg";
-import catJewelry from "@/assets/images/category-jewelry.jpg";
-import catDecor from "@/assets/images/category-decor.jpg";
-import prodArtifact from "@/assets/images/product-artifact.jpg";
-import prodJewelry from "@/assets/images/product-jewelry.jpg";
-import prodDecor from "@/assets/images/product-decor.jpg";
+import heroBg from "@/assets/images/hero-bg.png";
+import textureBg from "@/assets/images/texture-bg.png";
+import catArtifacts from "@/assets/images/category-artifacts.png";
+import catJewelry from "@/assets/images/category-jewelry.png";
+import catDecor from "@/assets/images/category-decor.png";
+import prodArtifact from "@/assets/images/product-artifact.png";
+import prodJewelry from "@/assets/images/product-jewelry.png";
+import prodDecor from "@/assets/images/product-decor.png";
 
 // Trust badge icons
 const TRUST = [
@@ -25,19 +25,19 @@ const TRUST = [
 
 // Featured products
 const PRODUCTS = [
-  { name: "Vitthal–Rukmini Murti Set",     img: prodArtifact, cat: "Sacred Artifacts",    price: "₹3,499", compare: "₹4,299", sale: true },
-  { name: "Mandala Tealight Holders",      img: prodJewelry,  cat: "Decorative Décor",    price: "₹1,299", compare: "₹1,599", sale: true },
-  { name: "Mandala Coaster Set",           img: prodDecor,    cat: "Home Décor",          price: "₹999",   compare: null,      sale: false, newIn: true },
-  { name: "Vitthal–Rukmini Wall Art",      img: prodArtifact, cat: "Sacred Artifacts",    price: "₹2,799", compare: "₹3,299", sale: true },
-  { name: "Pink Rose Tealight Set",        img: prodJewelry,  cat: "Decorative Décor",    price: "₹1,499", compare: null,      sale: false },
-  { name: "Lotus Mandala Coaster Set",     img: prodDecor,    cat: "Home Décor",          price: "₹1,199", compare: "₹1,499", sale: true },
+  { name: "Carved Ganesha Idol",   img: prodArtifact, cat: "Brass Artifacts",    price: "₹3,499", compare: "₹4,299", sale: true },
+  { name: "Kundan Bridal Set",     img: prodJewelry,  cat: "Traditional Jewelry", price: "₹8,999", compare: "₹10,499", sale: true },
+  { name: "Wooden Wall Panel",     img: prodDecor,    cat: "Home Décor",          price: "₹2,799", compare: null,      sale: false, newIn: true },
+  { name: "Brass Diya Set",        img: prodArtifact, cat: "Brass Artifacts",    price: "₹1,899", compare: "₹2,299", sale: true },
+  { name: "Kundan Necklace",       img: prodJewelry,  cat: "Traditional Jewelry", price: "₹5,499", compare: null,      sale: false },
+  { name: "Rajasthani Wall Art",   img: prodDecor,    cat: "Home Décor",          price: "₹3,299", compare: "₹3,999", sale: true },
 ];
 
 // Collections
 const COLLECTIONS = [
-  { title: "Sacred Artifacts",  sub: "Deity Figurines & Wall Art",  img: catArtifacts, href: "/products?category=artifacts" },
-  { title: "Decorative Décor",  sub: "Tealights & Key Holders",     img: catJewelry,   href: "/products?category=jewelry" },
-  { title: "Heritage Décor",    sub: "Coasters & Home Accents",     img: catDecor,     href: "/products?category=decor" },
+  { title: "Sacred Artifacts",  sub: "Brass & Bronze",  img: catArtifacts, href: "/products?category=artifacts" },
+  { title: "Royal Jewelry",     sub: "Kundan & Gold",   img: catJewelry,   href: "/products?category=jewelry" },
+  { title: "Heritage Décor",    sub: "Wood & Textiles", img: catDecor,     href: "/products?category=decor" },
 ];
 
 const FAQ_ITEMS = [
