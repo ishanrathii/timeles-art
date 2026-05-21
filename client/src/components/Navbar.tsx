@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ShoppingBag, User, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { useState } from "react";
 import {
@@ -11,7 +11,6 @@ import {
 
 const NAV_LINKS = [
   { label: "Artifacts", href: "/products?category=artifacts" },
-  { label: "Jewelry", href: "/products?category=jewelry" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
 ];
@@ -56,7 +55,6 @@ export default function Navbar() {
                     <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Collections</p>
                     <div className="space-y-2 text-sm">
                       <Link href="/products?category=artifacts"><a className="block py-1 hover:text-muted-foreground">Sacred Brass Artifacts</a></Link>
-                      <Link href="/products?category=jewelry"><a className="block py-1 hover:text-muted-foreground">Kundan & Gold Jewelry</a></Link>
                     </div>
                   </div>
                 </nav>
@@ -90,17 +88,6 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Right: icons */}
-          <div className="flex items-center gap-1">
-            <button className="p-2 text-foreground hover:text-muted-foreground transition-colors hidden md:block">
-              <User className="h-[18px] w-[18px]" />
-            </button>
-
-            <button className="p-2 text-foreground hover:text-muted-foreground transition-colors relative">
-              <ShoppingBag className="h-[18px] w-[18px]" />
-              <span className="absolute top-1.5 right-1.5 w-[6px] h-[6px] rounded-full bg-foreground" />
-            </button>
-          </div>
         </div>
       </div>
 
@@ -109,7 +96,6 @@ export default function Navbar() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-8 h-10 text-[12px] font-medium uppercase tracking-widest text-muted-foreground">
             <Link href="/products?category=artifacts"><a className="hover:text-foreground transition-colors">Brass Artifacts</a></Link>
-            <Link href="/products?category=jewelry"><a className="hover:text-foreground transition-colors">Jewelry</a></Link>
             <span className="ml-auto text-[11px]">Est. 2004 · Hingoli, Maharashtra</span>
           </div>
         </div>
