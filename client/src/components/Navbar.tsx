@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { label: "Artifacts", href: "/products?category=artifacts" },
   { label: "Jewelry", href: "/products?category=jewelry" },
   { label: "Home Décor", href: "/products?category=decor" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
 ];
 
