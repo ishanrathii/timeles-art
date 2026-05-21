@@ -98,15 +98,16 @@ export default function Products() {
                   </div>
                 )}
                 <div className="text-center">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-1">Price on Request</p>
                   <h3 className="font-serif text-lg mb-3">{product.name}</h3>
                   <a
-                    href={`https://wa.me/917558599155?text=Hi, I'm interested in: ${encodeURIComponent(product.name)}`}
+                    href={`https://wa.me/917558599155?text=Hi%2C%20I%20am%20interested%20in%20ordering%3A%20${encodeURIComponent(product.name)}%20%E2%80%94%20please%20share%20the%20price%20and%20availability.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#25D366] text-white text-[11px] font-semibold uppercase tracking-widest px-4 py-2 hover:bg-[#1ebe5d] transition-colors"
                   >
                     <WhatsAppIcon className="w-3.5 h-3.5" />
-                    Order on WhatsApp
+                    Enquire on WhatsApp
                   </a>
                 </div>
               </div>

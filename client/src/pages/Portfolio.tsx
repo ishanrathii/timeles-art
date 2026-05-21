@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useState } from "react";
 import { X } from "lucide-react";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 import p01 from "@/assets/images/portfolio-01.png";
 import p02 from "@/assets/images/portfolio-02.png";
@@ -145,11 +146,20 @@ export default function Portfolio() {
             <img
               src={ITEMS[lightbox].img}
               alt={ITEMS[lightbox].label}
-              className="w-full max-h-[80vh] object-contain"
+              className="w-full max-h-[70vh] object-contain"
             />
             <div className="mt-4 text-center">
               <p className="text-white/60 text-[11px] uppercase tracking-widest mb-1">{ITEMS[lightbox].tag}</p>
-              <p className="text-white font-serif text-xl">{ITEMS[lightbox].label}</p>
+              <p className="text-white font-serif text-xl mb-4">{ITEMS[lightbox].label}</p>
+              <a
+                href={`https://wa.me/917558599155?text=Hi%2C%20I%20am%20interested%20in%20ordering%3A%20${encodeURIComponent(ITEMS[lightbox].label)}%20%E2%80%94%20please%20share%20the%20price%20and%20availability.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#25D366] text-white text-[11px] font-semibold uppercase tracking-widest px-6 py-3 hover:bg-[#1ebe5d] transition-colors"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+                Enquire on WhatsApp
+              </a>
             </div>
           </div>
         </div>

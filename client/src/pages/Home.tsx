@@ -3,8 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
-import { ArrowRight, Truck, Award, RotateCcw, Star, ChevronDown } from "lucide-react";
-// Badge classes removed — no longer used
+import { ArrowRight, Truck, Award, RotateCcw, Star, ChevronDown, Instagram } from "lucide-react";
 import { useState } from "react";
 
 // Assets
@@ -248,6 +247,26 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── INSTAGRAM ─────────────────────────────────────────────────────── */}
+        <section className="py-14 sm:py-20 border-y border-border bg-secondary">
+          <div className="container mx-auto px-4 sm:px-6 text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Follow Our Journey</p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground mb-3">We're on Instagram</h2>
+            <p className="text-sm text-muted-foreground max-w-md mx-auto mb-8">
+              See our latest creations, behind-the-scenes craftsmanship and new arrivals — follow us for daily inspiration.
+            </p>
+            <a
+              href="https://www.instagram.com/timeles_art_?igsh=MWtidjR3NjhqZWwyNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:opacity-90 transition-opacity"
+            >
+              <Instagram className="w-4 h-4" />
+              @timeles_art_
+            </a>
           </div>
         </section>
 
