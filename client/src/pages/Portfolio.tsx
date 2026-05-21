@@ -97,23 +97,23 @@ export default function Portfolio() {
         {/* Header */}
         <div className="bg-muted/30 py-16 border-b border-border">
           <div className="container mx-auto px-4 text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Our Work</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Shop Our Collection</p>
             <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4">Portfolio</h1>
             <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-              Every piece handcrafted with devotion. Explore our full collection of sacred artifacts,
-              decorative tealights, coaster sets and artisan key holders.
+              Every piece handcrafted with devotion — and available to order. Browse, pick your favourite,
+              and enquire directly on WhatsApp. We ship free across India.
             </p>
           </div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 py-12">
-          {/* Filter tabs */}
-          <div className="flex justify-center gap-3 mb-10">
+          {/* Filter tabs — scrollable on mobile */}
+          <div className="flex overflow-x-auto gap-2 sm:gap-3 mb-10 pb-1 justify-start sm:justify-center">
             {TAGS.map(tag => (
               <button
                 key={tag}
                 onClick={() => setActive(tag)}
-                className={`text-xs font-semibold uppercase tracking-widest px-6 py-2.5 border transition-colors duration-200 ${
+                className={`shrink-0 text-xs font-semibold uppercase tracking-widest px-5 py-2.5 border transition-colors duration-200 ${
                   active === tag
                     ? "bg-foreground text-background border-foreground"
                     : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
@@ -124,23 +124,47 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* Masonry grid */}
-          <div className="columns-2 sm:columns-3 lg:columns-4 gap-4 space-y-4">
+          {/* Product grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
             {filtered.map((item) => (
               <div
                 key={item.label}
-                className="break-inside-avoid group cursor-pointer relative overflow-hidden"
-                onClick={() => setLightbox(ITEMS.indexOf(item))}
+                className="group border border-border hover:border-foreground transition-colors duration-300 overflow-hidden flex flex-col"
               >
-                <img
-                  src={item.img}
-                  alt={item.label}
-                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105 block"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100">
-                  <span className="text-[10px] font-semibold uppercase tracking-widest text-white/70 mb-1">{item.tag}</span>
-                  <p className="text-white font-serif text-base font-semibold leading-tight">{item.label}</p>
+                {/* Image — click opens lightbox */}
+                <div
+                  className="relative overflow-hidden cursor-zoom-in aspect-square bg-muted/20"
+                  onClick={() => setLightbox(ITEMS.indexOf(item))}
+                >
+                  <img
+                    src={item.img}
+                    alt={item.label}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  {/* Zoom hint */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span className="bg-black/60 text-white text-[9px] font-semibold uppercase tracking-widest px-3 py-1.5">View Full</span>
+                  </div>
+                </div>
+
+                {/* Card body */}
+                <div className="p-4 flex flex-col gap-3 border-t border-border bg-background flex-1">
+                  <div>
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-1">{item.tag}</p>
+                    <h3 className="font-serif text-sm font-semibold text-foreground leading-snug">{item.label}</h3>
+                  </div>
+                  <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">Price on Request</p>
+                  <a
+                    href={`https://wa.me/917558599155?text=Hi%2C%20I%20am%20interested%20in%20ordering%3A%20${encodeURIComponent(item.label)}%20%E2%80%94%20please%20share%20the%20price%20and%20availability.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white text-[10px] font-semibold uppercase tracking-widest px-4 py-2.5 hover:bg-[#1ebe5d] transition-colors"
+                    onClick={e => e.stopPropagation()}
+                  >
+                    <WhatsAppIcon className="w-3.5 h-3.5" />
+                    Enquire
+                  </a>
                 </div>
               </div>
             ))}
