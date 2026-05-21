@@ -35,12 +35,11 @@
   --font-serif: 'Playfair Display', serif;
 }
 
-/* SAFFRON PATINA THEME
-   Palette drawn from the products themselves:
-   · Saffron/amber  — the colour of raw brass & sacred Indian ceremonies
-   · Verdigris green — the living patina that forms on aged copper & bronze
-   · Champagne silk  — jewellery-box lining, aged parchment, warm light
-   · Deep teak       — the dark wood of antique display cabinets
+/* CRIMSON & COPPER THEME
+   · Burnished copper  — polished brass & bronze artefacts
+   · Deep crimson      — Indian festive silks & temple vermilion
+   · Warm linen        — aged cloth, handloom textile backdrop
+   · Charcoal espresso — antique ink & aged teak
 */
 :root {
   --button-outline: rgba(0,0,0, .10);
@@ -51,39 +50,39 @@
   --elevate-1: rgba(0,0,0, .025);
   --elevate-2: rgba(0,0,0, .06);
 
-  /* Champagne silk — like a jewellery box lining */
-  --background: 38 42% 97%;
-  --foreground: 18 55% 8%;
-  --border: 32 22% 80%;
-  --card: 38 30% 99%;
-  --card-foreground: 18 55% 8%;
-  --card-border: 32 22% 82%;
+  /* Warm linen — handloom textile backdrop */
+  --background: 36 38% 95%;
+  --foreground: 12 45% 9%;
+  --border: 20 20% 78%;
+  --card: 36 28% 98%;
+  --card-foreground: 12 45% 9%;
+  --card-border: 20 20% 80%;
 
-  --popover: 38 30% 99%;
-  --popover-foreground: 18 55% 8%;
-  --popover-border: 32 22% 82%;
+  --popover: 36 28% 98%;
+  --popover-foreground: 12 45% 9%;
+  --popover-border: 20 20% 80%;
 
-  /* Saffron / raw brass — sacred, warm, luminous */
-  --primary: 28 88% 46%;
-  --primary-foreground: 38 42% 97%;
+  /* Burnished copper — polished brass & bronze */
+  --primary: 18 72% 48%;
+  --primary-foreground: 36 38% 97%;
 
-  /* Verdigris — aged copper & bronze patina */
-  --secondary: 158 38% 18%;
-  --secondary-foreground: 38 35% 94%;
+  /* Deep crimson — temple vermilion & festive silk */
+  --secondary: 350 52% 20%;
+  --secondary-foreground: 36 35% 95%;
 
   /* Warm sand muted */
-  --muted: 34 22% 91%;
-  --muted-foreground: 18 30% 28%;
+  --muted: 30 20% 90%;
+  --muted-foreground: 12 25% 28%;
 
-  /* Soft amber glow accent */
-  --accent: 30 60% 90%;
-  --accent-foreground: 28 88% 28%;
+  /* Soft rose-copper accent */
+  --accent: 18 55% 89%;
+  --accent-foreground: 18 72% 25%;
 
-  --destructive: 0 62% 48%;
+  --destructive: 0 65% 48%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 32 22% 83%;
-  --ring: 28 88% 46%;
+  --input: 20 20% 82%;
+  --ring: 18 72% 48%;
 
   --radius: 0.25rem;
 
@@ -120,14 +119,14 @@
     font-size: clamp(2.8rem, 10vw, 7rem);
     line-height: 1.05;
   }
-  /* Saffron shimmer sweep */
+  /* Copper shimmer sweep */
   .shimmer-gold {
     background: linear-gradient(
       90deg,
-      hsl(28 88% 46%) 0%,
-      hsl(35 95% 64%) 40%,
-      hsl(28 88% 46%) 60%,
-      hsl(22 80% 38%) 100%
+      hsl(18 72% 48%) 0%,
+      hsl(28 85% 66%) 40%,
+      hsl(18 72% 48%) 60%,
+      hsl(12 65% 38%) 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
