@@ -3,7 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
-import { ArrowRight, Truck, Award, RotateCcw, Star, ChevronDown, Instagram } from "lucide-react";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
+import { ArrowRight, Truck, Award, RotateCcw, Star, ChevronDown, Instagram, Search, MessageCircle, Package } from "lucide-react";
 import { useState } from "react";
 
 // Assets
@@ -31,6 +32,30 @@ const COLLECTIONS = [
   { title: "Sacred Artifacts",  sub: "Brass & Bronze",  desc: "Handcrafted idols, diyas & temple pieces",       href: "/products?category=artifacts" },
   { title: "Royal Jewelry",     sub: "Kundan & Gold",   desc: "Bridal sets, necklaces & gold-plated jewels",    href: "/products?category=jewelry" },
   { title: "Our Portfolio",     sub: "All Creations",   desc: "Browse our complete gallery of handcrafted work", href: "/portfolio" },
+];
+
+const HOW_TO_ORDER = [
+  { icon: Search,        step: "01", title: "Browse & Pick",     desc: "Explore our portfolio and collections. Find the piece that speaks to you." },
+  { icon: MessageCircle, step: "02", title: "WhatsApp Us",        desc: "Tap 'Enquire on WhatsApp' — we'll confirm availability, price & customisation options within hours." },
+  { icon: Package,       step: "03", title: "Delivered to You",   desc: "We pack each piece with care and ship free across India. COD available." },
+];
+
+const TESTIMONIALS = [
+  {
+    name: "Riya Sharma",
+    location: "Mumbai",
+    text: "The Radha Krishna frame is absolutely stunning. The craftsmanship is unmatched and it arrived beautifully packaged. Will definitely order again!",
+  },
+  {
+    name: "Ankit Joshi",
+    location: "Pune",
+    text: "Ordered a custom key holder for my parents' anniversary. Priya Art Gallery created exactly what I envisioned. Highly recommend for personalised gifts!",
+  },
+  {
+    name: "Sunita Patil",
+    location: "Nagpur",
+    text: "The toran I purchased for my temple room is gorgeous. Excellent quality, fast delivery, and the owner was very helpful on WhatsApp throughout.",
+  },
 ];
 
 const FAQ_ITEMS = [
@@ -218,6 +243,39 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── HOW TO ORDER ──────────────────────────────────────────────────── */}
+        <section className="py-14 sm:py-20 border-y border-border">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center mb-12">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Simple Process</p>
+              <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">How to Order</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 max-w-4xl mx-auto">
+              {HOW_TO_ORDER.map(({ icon: Icon, step, title, desc }) => (
+                <div key={step} className="text-center">
+                  <div className="relative inline-flex items-center justify-center w-16 h-16 border border-border mb-5">
+                    <Icon className="w-6 h-6 text-foreground" strokeWidth={1.5} />
+                    <span className="absolute -top-2.5 -right-2.5 bg-foreground text-background text-[9px] font-bold w-5 h-5 flex items-center justify-center">{step}</span>
+                  </div>
+                  <h3 className="font-serif text-lg font-semibold text-foreground mb-2">{title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <a
+                href="https://wa.me/917558599155?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order.%20Can%20you%20please%20help%20me%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 bg-[#25D366] text-white text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-[#1ebe5d] transition-colors"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+                Start Your Order on WhatsApp
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* ── BANNER / QUOTE BREAK ──────────────────────────────────────────── */}
         <section className="relative h-[45vh] sm:h-[55vh] overflow-hidden flex items-center justify-center">
           <img src={textureBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
@@ -299,6 +357,62 @@ export default function Home() {
                 </a>
               </Link>
             </div>
+          </div>
+        </section>
+
+        {/* ── TESTIMONIALS ──────────────────────────────────────────────────── */}
+        <section className="py-14 sm:py-20 bg-secondary border-y border-border">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center mb-12">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Happy Customers</p>
+              <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">What People Say</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {TESTIMONIALS.map((t) => (
+                <div key={t.name} className="bg-background border border-border p-8">
+                  <div className="flex gap-0.5 mb-5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-foreground text-foreground" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 italic">"{t.text}"</p>
+                  <div className="border-t border-border pt-4">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-foreground">{t.name}</p>
+                    <p className="text-[11px] text-muted-foreground mt-0.5">{t.location}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── CUSTOM ORDERS ─────────────────────────────────────────────────── */}
+        <section className="py-14 sm:py-20 border-b border-border">
+          <div className="container mx-auto px-4 sm:px-6 max-w-3xl text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Made Just for You</p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground mb-4">Custom Orders Welcome</h2>
+            <div className="w-8 h-px bg-foreground mx-auto mb-6" />
+            <p className="text-sm text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">
+              Want a personalised key holder with a name, a custom frame for a special occasion, or a specific murti for your home temple?
+              Share your idea with us — we'll craft it exactly the way you imagine.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 text-left max-w-2xl mx-auto">
+              {["Name & message engraving", "Custom size & colour", "Wedding & gifting orders"].map((item) => (
+                <div key={item} className="flex items-center gap-2.5">
+                  <div className="w-1.5 h-1.5 bg-foreground rounded-full shrink-0" />
+                  <span className="text-sm text-muted-foreground">{item}</span>
+                </div>
+              ))}
+            </div>
+            <a
+              href="https://wa.me/917558599155?text=Hi%2C%20I%20have%20a%20custom%20order%20request.%20Can%20you%20help%20me%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 bg-[#25D366] text-white text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-[#1ebe5d] transition-colors"
+            >
+              <WhatsAppIcon className="w-4 h-4" />
+              Enquire About Custom Orders
+            </a>
           </div>
         </section>
 

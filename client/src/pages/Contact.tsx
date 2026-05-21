@@ -6,8 +6,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName,  setLastName]  = useState("");
+  const [email,     setEmail]     = useState("");
+  const [subject,   setSubject]   = useState("");
+  const [message,   setMessage]   = useState("");
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const text = `Hi, I'm ${firstName} ${lastName} (${email}).\n\nSubject: ${subject}\n\n${message}`;
+    const url = `https://wa.me/917558599155?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
+  }
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -86,7 +99,7 @@ export default function Contact() {
                 <div className="rounded overflow-hidden border border-border/50 shadow-md w-full h-52">
                   <iframe
                     title="Priya Art Gallery location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.5!2d77.1497!3d19.7167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd1d3b7a1a1a1a1%3A0x1!2sMain+Market+Road%2C+Hingoli%2C+Maharashtra+431513!5e0!3m2!1sen!2sin!4v1"
+                    src="https://maps.google.com/maps?q=Hingoli+Market,+Hingoli,+Maharashtra+431513&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -140,34 +153,37 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="bg-card p-8 md:p-10 border border-border/50 shadow-xl rounded-sm">
               <h2 className="font-serif text-3xl mb-6">Send a Message</h2>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">First Name</label>
-                    <Input placeholder="John" className="bg-background" />
+                    <Input placeholder="John" className="bg-background" value={firstName} onChange={e => setFirstName(e.target.value)} required />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Last Name</label>
-                    <Input placeholder="Doe" className="bg-background" />
+                    <Input placeholder="Doe" className="bg-background" value={lastName} onChange={e => setLastName(e.target.value)} />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Email Address</label>
-                  <Input type="email" placeholder="john@example.com" className="bg-background" />
+                  <Input type="email" placeholder="john@example.com" className="bg-background" value={email} onChange={e => setEmail(e.target.value)} />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Subject</label>
-                  <Input placeholder="Inquiry about..." className="bg-background" />
+                  <Input placeholder="Inquiry about..." className="bg-background" value={subject} onChange={e => setSubject(e.target.value)} required />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Message</label>
-                  <Textarea placeholder="How can we help you?" className="min-h-[150px] bg-background" />
+                  <Textarea placeholder="How can we help you?" className="min-h-[150px] bg-background" value={message} onChange={e => setMessage(e.target.value)} required />
                 </div>
 
-                <Button className="w-full text-lg py-6" size="lg">Send Message</Button>
+                <Button className="w-full text-lg py-6" size="lg" type="submit">
+                  Send via WhatsApp
+                </Button>
+                <p className="text-xs text-center text-muted-foreground">Clicking the button will open WhatsApp with your message pre-filled.</p>
               </form>
             </div>
             
