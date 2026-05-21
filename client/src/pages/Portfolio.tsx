@@ -30,6 +30,11 @@ import p21 from "@/assets/images/portfolio-21.jpg";
 import p22 from "@/assets/images/portfolio-22.jpg";
 import p24 from "@/assets/images/portfolio-24.jpg";
 import p25 from "@/assets/images/portfolio-25.jpg";
+import p26 from "@/assets/images/portfolio-26.jpg";
+import p27 from "@/assets/images/portfolio-27.jpg";
+import p28 from "@/assets/images/portfolio-28.jpg";
+import p29 from "@/assets/images/portfolio-29.jpg";
+import p30 from "@/assets/images/portfolio-30.jpg";
 
 const ITEMS = [
   { img: p01, label: "Radha Figurine",                  tag: "Artifacts" },
@@ -56,6 +61,11 @@ const ITEMS = [
   { img: p22, label: "Colorful Petal Diya Set",          tag: "Décor"    },
   { img: p24, label: "Labh Radha-Krishna Frame",         tag: "Artifacts"},
   { img: p25, label: "Ring Ceremony Décor",              tag: "Décor"    },
+  { img: p26, label: "Ganesha Om Wall Art",              tag: "Artifacts"},
+  { img: p27, label: "Tabla Music Key Holder",           tag: "Décor"    },
+  { img: p28, label: "Mom's Cafe Wall Décor",            tag: "Décor"    },
+  { img: p29, label: "Tirupati Balaji Frame",            tag: "Artifacts"},
+  { img: p30, label: "Mosaic Circle Wall Hanging",       tag: "Hangings" },
 ];
 
 const TAGS = ["All", "Artifacts", "Décor", "Hangings"];
