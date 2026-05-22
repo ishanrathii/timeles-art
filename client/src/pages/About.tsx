@@ -17,20 +17,20 @@ export default function About() {
   const aboutSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "@id": "https://priyaartgallery.in/about#webpage",
-    "name": "About Priya Art Gallery – Our Story",
-    "url": "https://priyaartgallery.in/about",
-    "description": "Learn the story behind Priya Art Gallery — a family-run handcraft studio in Hingoli, Maharashtra, crafting sacred art, wall décor, key holders and more since 2004.",
-    "isPartOf": { "@id": "https://priyaartgallery.in/#website" },
-    "about": { "@id": "https://priyaartgallery.in/#business" }
+    "@id": "https://timeles-art.in/about#webpage",
+    "name": "About Timeles Art – Our Story",
+    "url": "https://timeles-art.in/about",
+    "description": "Learn the story behind Timeles Art — a family-run handcraft studio in Hingoli, Maharashtra, crafting sacred art, wall décor, key holders and more since 2004.",
+    "isPartOf": { "@id": "https://timeles-art.in/#website" },
+    "about": { "@id": "https://timeles-art.in/#business" }
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
-        title="About Us – Priya Art Gallery, Hingoli"
-        description="The story behind Priya Art Gallery — a family-run handcraft studio in Hingoli, Maharashtra. Sacred artifacts, wall art, key holders and more. Est. 2004."
-        canonical="https://priyaartgallery.in/about"
+        title="About Us – Timeles Art, Hingoli"
+        description="The story behind Timeles Art — a family-run handcraft studio in Hingoli, Maharashtra. Sacred artifacts, wall art, key holders and more. Est. 2004."
+        canonical="https://timeles-art.in/about"
         structuredData={aboutSchema}
       />
       <Navbar />
@@ -56,7 +56,7 @@ export default function About() {
                 "Art is not a product — it is a feeling, a blessing, a piece of someone's soul."
               </p>
               <p>
-                Priya Art Gallery began in 2004 in Hingoli, Maharashtra — a small family studio with a simple belief:
+                Timeles Art began in 2004 in Hingoli, Maharashtra — a small family studio with a simple belief:
                 that handcrafted art should be accessible to every Indian home. What started as a passion for
                 traditional craft has grown into a beloved gallery trusted by hundreds of families across India.
               </p>

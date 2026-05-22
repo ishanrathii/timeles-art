@@ -4,9 +4,9 @@
  *
  * Usage:
  *   <SEOHead
- *     title="Brass Artifacts – Priya Art Gallery"
+ *     title="Brass Artifacts – Timeles Art"
  *     description="Shop handcrafted brass idols, diyas..."
- *     canonical="https://priyaartgallery.in/products?category=artifacts"
+ *     canonical="https://timeles-art.in/products?category=artifacts"
  *     type="CollectionPage"
  *   />
  */
@@ -23,8 +23,8 @@ interface SEOProps {
   structuredData?: object;
 }
 
-const SITE_NAME = "Priya Art Gallery";
-const BASE_URL  = "https://priyaartgallery.in";
+const SITE_NAME = "Timeles Art";
+const BASE_URL  = "https://timeles-art.in";
 const OG_IMAGE  = `${BASE_URL}/opengraph.jpg`;
 
 function setMeta(name: string, content: string, prop = false) {

@@ -42,7 +42,7 @@ const HOW_TO_ORDER = [
 
 const TESTIMONIALS = [
   { name: "Riya Sharma",    location: "Mumbai",     rating: 4.5, text: "The Radha Krishna frame is absolutely stunning. The craftsmanship is unmatched and it arrived beautifully packaged. Will definitely order again!" },
-  { name: "Ankit Joshi",    location: "Pune",       rating: 4,   text: "Ordered a custom key holder for my parents' anniversary. Priya Art Gallery created exactly what I envisioned. Highly recommend for personalised gifts!" },
+  { name: "Ankit Joshi",    location: "Pune",       rating: 4,   text: "Ordered a custom key holder for my parents' anniversary. Timeles Art created exactly what I envisioned. Highly recommend for personalised gifts!" },
   { name: "Sunita Patil",   location: "Nagpur",     rating: 4.5, text: "The toran I purchased for my temple room is gorgeous. Excellent quality, fast delivery, and the owner was very helpful on WhatsApp throughout." },
   { name: "Meera Desai",    location: "Ahmedabad",  rating: 4,   text: "Bought the Ganesha mandala wall panel for our new home. It is the centrepiece of our living room. Everyone who visits asks where we got it from!" },
   { name: "Rohit Kulkarni", location: "Nashik",     rating: 4.5, text: "Very happy with the Shubh Labh door hanging. The flowers look so real and the quality is premium. Packaging was also very secure." },
@@ -70,20 +70,20 @@ function StarRating({ rating }: { rating: number }) {
 
 const FAQ_ITEMS = [
   {
-    q: "Where is Priya Art Gallery located?",
-    a: "Priya Art Gallery is located at Main Market Road, Near Gandhi Chowk, Hingoli, Maharashtra 431513. You can call us at +91 75585 99155 or chat on WhatsApp."
+    q: "Where is Timeles Art located?",
+    a: "Timeles Art is located at Main Market Road, Near Gandhi Chowk, Hingoli, Maharashtra 431513. You can call us at +91 75585 99155 or chat on WhatsApp."
   },
   {
-    q: "Does Priya Art Gallery offer free shipping?",
+    q: "Does Timeles Art offer free shipping?",
     a: "Yes! We offer free shipping across India on all orders. Cash on Delivery (COD) is also available. We ensure museum-quality packaging for every item."
   },
   {
-    q: "What products does Priya Art Gallery sell?",
+    q: "What products does Timeles Art sell?",
     a: "We specialise in three collections: Brass & Bronze Artifacts (idols, diyas, temple items), Traditional Jewelry (Kundan, gold-plated, bridal sets), and Heritage Home Décor (wooden panels, Rajasthani wall art, textiles)."
   },
   {
-    q: "How long has Priya Art Gallery been in business?",
-    a: "Priya Art Gallery was established in 2004 — we have over 20 years of experience curating handcrafted Indian art from master artisans across Maharashtra and India."
+    q: "How long has Timeles Art been in business?",
+    a: "Timeles Art was established in 2004 — we have over 20 years of experience curating handcrafted Indian art from master artisans across Maharashtra and India."
   },
   {
     q: "Are the items authentic and handcrafted?",
@@ -116,12 +116,12 @@ export default function Home() {
   const homeSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://priyaartgallery.in/#webpage",
-    "name": "Priya Art Gallery – Brass Artifacts, Kundan Jewelry & Heritage Décor",
-    "url": "https://priyaartgallery.in",
-    "description": "Shop handcrafted brass artifacts, traditional Kundan jewelry and premium heritage home décor at Priya Art Gallery, Hingoli, Maharashtra. Est. 2004. Free shipping across India.",
-    "isPartOf": { "@id": "https://priyaartgallery.in/#website" },
-    "about": { "@id": "https://priyaartgallery.in/#business" },
+    "@id": "https://timeles-art.in/#webpage",
+    "name": "Timeles Art – Brass Artifacts, Kundan Jewelry & Heritage Décor",
+    "url": "https://timeles-art.in",
+    "description": "Shop handcrafted brass artifacts, traditional Kundan jewelry and premium heritage home décor at Timeles Art, Hingoli, Maharashtra. Est. 2004. Free shipping across India.",
+    "isPartOf": { "@id": "https://timeles-art.in/#website" },
+    "about": { "@id": "https://timeles-art.in/#business" },
     "speakable": {
       "@type": "SpeakableSpecification",
       "cssSelector": ["h1", ".speakable"]
@@ -132,8 +132,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
         title="Brass Artifacts, Kundan Jewelry & Heritage Décor | Hingoli, Maharashtra"
-        description="Priya Art Gallery, Hingoli – 20+ years of handcrafted Indian art. Shop brass artifacts, Kundan jewelry & heritage home décor. Free shipping across India. COD available."
-        canonical="https://priyaartgallery.in/"
+        description="Timeles Art, Hingoli – 20+ years of handcrafted Indian art. Shop brass artifacts, Kundan jewelry & heritage home décor. Free shipping across India. COD available."
+        canonical="https://timeles-art.in/"
         structuredData={homeSchema}
       />
       <Navbar />
@@ -295,7 +295,7 @@ export default function Home() {
             <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-light italic leading-tight mb-8">
               "Art is not what you see, but what<br className="hidden sm:block" /> you make others see."
             </h2>
-            <p className="text-[11px] font-semibold uppercase tracking-widest opacity-60">— Priya Art Gallery, Hingoli · Since 2004</p>
+            <p className="text-[11px] font-semibold uppercase tracking-widest opacity-60">— Timeles Art, Hingoli · Since 2004</p>
           </div>
         </section>
 
@@ -347,7 +347,7 @@ export default function Home() {
             </h2>
             <div className="w-8 h-px bg-foreground mx-auto mb-6" />
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              Located in the heart of Hingoli, Priya Art Gallery has been a beacon of traditional craftsmanship
+              Located in the heart of Hingoli, Timeles Art has been a beacon of traditional craftsmanship
               for over two decades. We source directly from master artisans across India, ensuring every piece
               tells a story of heritage, devotion, and unparalleled skill.
             </p>

@@ -40,7 +40,7 @@ export default function Navbar() {
               <SheetContent side="left" className="w-[300px] bg-background p-0 flex flex-col rounded-none border-r border-border">
                 <div className="flex items-center justify-between px-6 py-5 border-b border-border">
                   <SheetTitle className="font-serif text-xl font-semibold tracking-tight">
-                    Priya Art Gallery
+                    Timeles Art
                   </SheetTitle>
                 </div>
                 <nav className="flex-1 overflow-y-auto py-4 px-6">
@@ -74,7 +74,7 @@ export default function Navbar() {
           <div className="flex-1 flex justify-center md:justify-start">
             <Link href="/">
               <a className="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-foreground hover:opacity-80 transition-opacity">
-                Priya Art Gallery
+                Timeles Art
               </a>
             </Link>
           </div>

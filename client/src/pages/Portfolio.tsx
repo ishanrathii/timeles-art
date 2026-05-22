@@ -104,8 +104,8 @@ export default function Portfolio() {
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
         title="Portfolio – Handcrafted Collection"
-        description="Browse Priya Art Gallery's full portfolio — sacred artifacts, mandala décor, tealight holders, key holders and more from Hingoli, Maharashtra."
-        canonical="https://priyaartgallery.in/portfolio"
+        description="Browse Timeles Art's full portfolio — sacred artifacts, mandala décor, tealight holders, key holders and more from Hingoli, Maharashtra."
+        canonical="https://timeles-art.in/portfolio"
       />
       <Navbar />
 

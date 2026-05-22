@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1 space-y-4">
             <h3 className="font-serif text-xl font-semibold tracking-tight text-foreground">
-              Priya Art Gallery
+              Timeles Art
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Curators of fine Indian artifacts, traditional jewelry and elegant home décor.
@@ -118,7 +118,7 @@ export default function Footer() {
       <div className="border-t border-border">
         <div className="container mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Priya Art Gallery, Hingoli. All rights reserved.
+            &copy; {new Date().getFullYear()} Timeles Art, Hingoli. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">Handcrafted Heritage · Est. 2004</p>
         </div>

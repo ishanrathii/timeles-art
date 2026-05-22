@@ -47,9 +47,9 @@ export default function Products() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
-        title="Handcrafted Artifacts & Décor – Priya Art Gallery"
-        description="Shop handcrafted wall art, Ganesha frames, key holders, diyas and door hangings from Priya Art Gallery, Hingoli. Price on request. Free shipping across India."
-        canonical="https://priyaartgallery.in/products"
+        title="Handcrafted Artifacts & Décor – Timeles Art"
+        description="Shop handcrafted wall art, Ganesha frames, key holders, diyas and door hangings from Timeles Art, Hingoli. Price on request. Free shipping across India."
+        canonical="https://timeles-art.in/products"
       />
       <Navbar />
 

@@ -24,20 +24,20 @@ export default function Contact() {
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "@id": "https://priyaartgallery.in/contact#webpage",
-    "name": "Contact Priya Art Gallery – Visit Us in Hingoli",
-    "url": "https://priyaartgallery.in/contact",
-    "description": "Contact Priya Art Gallery in Hingoli, Maharashtra. Find our address, phone number, opening hours, and send us a message. We are open Mon-Sat 10am-8:30pm.",
-    "isPartOf": { "@id": "https://priyaartgallery.in/#website" },
-    "about": { "@id": "https://priyaartgallery.in/#business" }
+    "@id": "https://timeles-art.in/contact#webpage",
+    "name": "Contact Timeles Art – Visit Us in Hingoli",
+    "url": "https://timeles-art.in/contact",
+    "description": "Contact Timeles Art in Hingoli, Maharashtra. Find our address, phone number, opening hours, and send us a message. We are open Mon-Sat 10am-8:30pm.",
+    "isPartOf": { "@id": "https://timeles-art.in/#website" },
+    "about": { "@id": "https://timeles-art.in/#business" }
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
-        title="Contact Us – Visit Priya Art Gallery in Hingoli"
-        description="Visit Priya Art Gallery at Main Market Road, Near Gandhi Chowk, Hingoli, Maharashtra 431513. Call +91 75585 99155 or WhatsApp us. Open Mon-Sat 10am-8:30pm."
-        canonical="https://priyaartgallery.in/contact"
+        title="Contact Us – Visit Timeles Art in Hingoli"
+        description="Visit Timeles Art at Main Market Road, Near Gandhi Chowk, Hingoli, Maharashtra 431513. Call +91 75585 99155 or WhatsApp us. Open Mon-Sat 10am-8:30pm."
+        canonical="https://timeles-art.in/contact"
         structuredData={contactSchema}
       />
       <Navbar />
@@ -57,10 +57,10 @@ export default function Contact() {
 
             {/* Contact Information – microdata reinforces LocalBusiness for Google */}
             <div itemScope itemType="https://schema.org/LocalBusiness">
-              <meta itemProp="name" content="Priya Art Gallery" />
+              <meta itemProp="name" content="Timeles Art" />
               <meta itemProp="telephone" content="+917558599155" />
               <meta itemProp="email" content="priya03kabra@gmail.com" />
-              <meta itemProp="url" content="https://priyaartgallery.in" />
+              <meta itemProp="url" content="https://timeles-art.in" />
               <h2 className="font-serif text-3xl mb-8">Visit The Gallery</h2>
               
               <div className="space-y-8">
@@ -98,7 +98,7 @@ export default function Contact() {
                 {/* Google Maps Embed */}
                 <div className="rounded overflow-hidden border border-border/50 shadow-md w-full h-52">
                   <iframe
-                    title="Priya Art Gallery location"
+                    title="Timeles Art location"
                     src="https://maps.google.com/maps?q=Hingoli+Market,+Hingoli,+Maharashtra+431513&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
