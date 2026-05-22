@@ -93,6 +93,16 @@ const ITEMS = [
 
 const TAGS = ["All", "Wallpapers", "Key Holders", "Diyas", "Frames", "Wall Art", "Hangings", "Décor"];
 
+const STARTING_PRICE: Record<string, string> = {
+  "Wallpapers":   "₹699",
+  "Key Holders":  "₹299",
+  "Diyas":        "₹349",
+  "Frames":       "₹599",
+  "Wall Art":     "₹799",
+  "Hangings":     "₹499",
+  "Décor":        "₹349",
+};
+
 export default function Portfolio() {
   const urlTag = new URLSearchParams(window.location.search).get("tag") || "All";
   const [active, setActive]   = useState(urlTag);
@@ -170,7 +180,12 @@ export default function Portfolio() {
                     <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-1">{item.tag}</p>
                     <h3 className="font-serif text-sm font-semibold text-foreground leading-snug">{item.label}</h3>
                   </div>
-                  <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">Price on Request</p>
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="font-serif text-base font-semibold text-foreground">
+                      {STARTING_PRICE[item.tag] ?? "₹299"}
+                    </span>
+                    <span className="text-[9px] text-muted-foreground uppercase tracking-widest">onwards</span>
+                  </div>
                   <a
                     href={`https://wa.me/917558599155?text=Hi%2C%20I%20am%20interested%20in%20ordering%3A%20${encodeURIComponent(item.label)}%20%E2%80%94%20please%20share%20the%20price%20and%20availability.`}
                     target="_blank"
@@ -208,7 +223,10 @@ export default function Portfolio() {
             />
             <div className="mt-4 text-center">
               <p className="text-white/60 text-[11px] uppercase tracking-widest mb-1">{ITEMS[lightbox].tag}</p>
-              <p className="text-white font-serif text-xl mb-4">{ITEMS[lightbox].label}</p>
+              <p className="text-white font-serif text-xl mb-1">{ITEMS[lightbox].label}</p>
+              <p className="text-white/80 font-serif text-lg font-semibold mb-4">
+                {STARTING_PRICE[ITEMS[lightbox].tag] ?? "₹299"} <span className="text-white/50 text-xs font-normal uppercase tracking-widest">onwards</span>
+              </p>
               <a
                 href={`https://wa.me/917558599155?text=Hi%2C%20I%20am%20interested%20in%20ordering%3A%20${encodeURIComponent(ITEMS[lightbox].label)}%20%E2%80%94%20please%20share%20the%20price%20and%20availability.`}
                 target="_blank"
