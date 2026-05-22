@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Youtube } from "lucide-react";
 import { Link } from "wouter";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
@@ -32,6 +32,11 @@ export default function Footer() {
                 target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
                 className="w-8 h-8 border border-border rounded-full flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] transition-all group">
                 <WhatsAppIcon className="w-3.5 h-3.5 text-muted-foreground group-hover:text-white" />
+              </a>
+              <a href="https://www.youtube.com/@Timelesart"
+                target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+                className="w-8 h-8 border border-border rounded-full flex items-center justify-center hover:bg-[#FF0000] hover:border-[#FF0000] transition-all group">
+                <Youtube className="w-3.5 h-3.5 text-muted-foreground group-hover:text-white" />
               </a>
             </div>
           </div>
