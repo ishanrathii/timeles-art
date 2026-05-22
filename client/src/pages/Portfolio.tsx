@@ -44,6 +44,8 @@ import p36 from "@/assets/images/portfolio-36.png";
 import p37 from "@/assets/images/portfolio-37.png";
 import p38 from "@/assets/images/portfolio-38.png";
 import p39 from "@/assets/images/portfolio-39.png";
+import p40 from "@/assets/images/portfolio-40.png";
+import p41 from "@/assets/images/portfolio-41.png";
 
 const ITEMS = [
   { img: p01, label: "Radha Figurine",                  tag: "Wallpapers"  },
@@ -84,6 +86,8 @@ const ITEMS = [
   { img: p37, label: "Shubh Labh Door Hangings",         tag: "Hangings"    },
   { img: p38, label: "Ganesha Blessing Frame",           tag: "Frames"      },
   { img: p39, label: "Shri Ganeshay Namah Panel",        tag: "Frames"      },
+  { img: p40, label: "Sun Moon & Ganesha Wall Panel",    tag: "Wall Art"    },
+  { img: p41, label: "Radha Krishna Floral Mandala",     tag: "Wall Art"    },
 ];
 
 const TAGS = ["All", "Wallpapers", "Key Holders", "Diyas", "Frames", "Wall Art", "Hangings", "Décor"];
