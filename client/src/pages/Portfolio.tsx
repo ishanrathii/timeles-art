@@ -175,7 +175,7 @@ const STARTING_PRICE: Record<string, string> = {
   "Key Holders":  "₹299",
   "Diyas":        "₹349",
   "Plates":       "₹449",
-  "Frames":       "₹1,199",
+  "Frames":       "₹1,699",
   "Wall Art":     "₹799",
   "Hangings":     "₹499",
   "Décor":        "₹349",
