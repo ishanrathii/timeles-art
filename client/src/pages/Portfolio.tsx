@@ -39,6 +39,11 @@ import p31 from "@/assets/images/portfolio-31.jpg";
 import p32 from "@/assets/images/portfolio-32.jpg";
 import p33 from "@/assets/images/portfolio-33.jpg";
 import p34 from "@/assets/images/portfolio-34.jpg";
+import p35 from "@/assets/images/portfolio-35.png";
+import p36 from "@/assets/images/portfolio-36.png";
+import p37 from "@/assets/images/portfolio-37.png";
+import p38 from "@/assets/images/portfolio-38.png";
+import p39 from "@/assets/images/portfolio-39.png";
 
 const ITEMS = [
   { img: p01, label: "Radha Figurine",                  tag: "Wallpapers"  },
@@ -74,6 +79,11 @@ const ITEMS = [
   { img: p32, label: "Cottage Window Wall Art",          tag: "Wall Art"    },
   { img: p33, label: "Cat Hammock Décor",                tag: "Wall Art"    },
   { img: p34, label: "Rajasthani Couple Wall Panel",     tag: "Wall Art"    },
+  { img: p35, label: "Ganesha Mandala Wall Panel",       tag: "Wall Art"    },
+  { img: p36, label: "Vakratunda Shloka Wall Art",       tag: "Wall Art"    },
+  { img: p37, label: "Shubh Labh Door Hangings",         tag: "Hangings"    },
+  { img: p38, label: "Ganesha Blessing Frame",           tag: "Frames"      },
+  { img: p39, label: "Shri Ganeshay Namah Panel",        tag: "Frames"      },
 ];
 
 const TAGS = ["All", "Wallpapers", "Key Holders", "Diyas", "Frames", "Wall Art", "Hangings", "Décor"];
