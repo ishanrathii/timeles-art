@@ -47,6 +47,44 @@ import p38 from "@/assets/images/portfolio-38.png";
 import p39 from "@/assets/images/portfolio-39.png";
 import p40 from "@/assets/images/portfolio-40.png";
 import p41 from "@/assets/images/portfolio-41.png";
+import p42 from "@/assets/images/portfolio-42.png";
+import p43 from "@/assets/images/portfolio-43.png";
+import p44 from "@/assets/images/portfolio-44.png";
+import p45 from "@/assets/images/portfolio-45.png";
+import p46 from "@/assets/images/portfolio-46.png";
+import p47 from "@/assets/images/portfolio-47.png";
+import p48 from "@/assets/images/portfolio-48.png";
+import p49 from "@/assets/images/portfolio-49.png";
+import p50 from "@/assets/images/portfolio-50.png";
+import p51 from "@/assets/images/portfolio-51.png";
+import p52 from "@/assets/images/portfolio-52.png";
+import p53 from "@/assets/images/portfolio-53.png";
+import p54 from "@/assets/images/portfolio-54.png";
+import p55 from "@/assets/images/portfolio-55.png";
+import p56 from "@/assets/images/portfolio-56.png";
+import p57 from "@/assets/images/portfolio-57.png";
+import p58 from "@/assets/images/portfolio-58.png";
+import p59 from "@/assets/images/portfolio-59.png";
+import p60 from "@/assets/images/portfolio-60.png";
+import p61 from "@/assets/images/portfolio-61.png";
+import p62 from "@/assets/images/portfolio-62.png";
+import p63 from "@/assets/images/portfolio-63.png";
+import p64 from "@/assets/images/portfolio-64.png";
+import p65 from "@/assets/images/portfolio-65.png";
+import p66 from "@/assets/images/portfolio-66.png";
+import p67 from "@/assets/images/portfolio-67.png";
+import p68 from "@/assets/images/portfolio-68.png";
+import p69 from "@/assets/images/portfolio-69.png";
+import p70 from "@/assets/images/portfolio-70.png";
+import p71 from "@/assets/images/portfolio-71.png";
+import p72 from "@/assets/images/portfolio-72.png";
+import p73 from "@/assets/images/portfolio-73.png";
+import p74 from "@/assets/images/portfolio-74.png";
+import p75 from "@/assets/images/portfolio-75.png";
+import p76 from "@/assets/images/portfolio-76.png";
+import p77 from "@/assets/images/portfolio-77.png";
+import p78 from "@/assets/images/portfolio-78.png";
+import p79 from "@/assets/images/portfolio-79.png";
 
 const ITEMS = [
   { img: p01, label: "Radha Figurine",                  tag: "Wallpapers"  },
@@ -89,6 +127,45 @@ const ITEMS = [
   { img: p39, label: "Shri Ganeshay Namah Panel",        tag: "Frames"      },
   { img: p40, label: "Sun Moon & Ganesha Wall Panel",    tag: "Wall Art"    },
   { img: p41, label: "Radha Krishna Floral Mandala",     tag: "Wall Art"    },
+  // Batch 3 — May 23
+  { img: p42, label: "Love is Life Couple Wall Art",     tag: "Wall Art"    },
+  { img: p43, label: "Ring Ceremony Floral Basket",      tag: "Décor"       },
+  { img: p44, label: "Blue Rose Toran Chain",            tag: "Hangings"    },
+  { img: p45, label: "Baby Krishna Photo Hangings",      tag: "Hangings"    },
+  { img: p46, label: "Blue Gold Toran Chain",            tag: "Hangings"    },
+  { img: p47, label: "Orange Sunflower Diya Pair",       tag: "Diyas"       },
+  { img: p48, label: "Red Shubh Labh Hanging",           tag: "Hangings"    },
+  { img: p49, label: "Red Krishna Lotus Hanging",        tag: "Hangings"    },
+  { img: p50, label: "Orange Floral Toran",              tag: "Hangings"    },
+  { img: p51, label: "Pink Shubh Labh Hanging",          tag: "Hangings"    },
+  { img: p52, label: "Blue Krishna Lotus Hanging",       tag: "Hangings"    },
+  { img: p53, label: "Green Shubh Labh Hanging",         tag: "Hangings"    },
+  { img: p54, label: "Labh Shubh Lotus Hanging",         tag: "Hangings"    },
+  { img: p55, label: "Rose Shubh Labh Hanging",          tag: "Hangings"    },
+  { img: p56, label: "Mirror Shubh Labh Hanging",        tag: "Hangings"    },
+  { img: p57, label: "Dark Green Shubh Labh Hanging",    tag: "Hangings"    },
+  { img: p58, label: "Teal Gold Mandala Plate",          tag: "Décor"       },
+  { img: p59, label: "Peacock Feather Mandala Plate",    tag: "Décor"       },
+  { img: p60, label: "Teal Pearl Mandala Plate",         tag: "Décor"       },
+  { img: p61, label: "Nandi Blue Decorative Plate",      tag: "Décor"       },
+  { img: p62, label: "Pink Pearl Mandala Plate",         tag: "Décor"       },
+  { img: p63, label: "Purple Lotus Mandala Plate",       tag: "Décor"       },
+  { img: p64, label: "Red Lotus Pearl Plate",            tag: "Décor"       },
+  { img: p65, label: "White Nandi Blue Plate",           tag: "Décor"       },
+  { img: p66, label: "Pink Lotus Pearl Plate",           tag: "Décor"       },
+  { img: p67, label: "Yellow Floral Tile Wall Art",      tag: "Wall Art"    },
+  { img: p68, label: "Blue Lotus Diya",                  tag: "Diyas"       },
+  { img: p69, label: "Charan Paduka Décor",              tag: "Décor"       },
+  { img: p70, label: "Rangoli Diya Set",                 tag: "Diyas"       },
+  { img: p71, label: "Om Mandala Wall Art",              tag: "Wall Art"    },
+  { img: p72, label: "Swastik Wall Décor",               tag: "Wall Art"    },
+  { img: p73, label: "Shubh Labh Tiles Set",             tag: "Décor"       },
+  { img: p74, label: "Devi Face Wall Art",               tag: "Wall Art"    },
+  { img: p75, label: "Gold Diya Lamp",                   tag: "Diyas"       },
+  { img: p76, label: "Kalash Pair Décor",                tag: "Décor"       },
+  { img: p77, label: "Trishul Wall Décor",               tag: "Décor"       },
+  { img: p78, label: "Red Mandala Plate",                tag: "Décor"       },
+  { img: p79, label: "Mandala Coaster Set",              tag: "Décor"       },
 ];
 
 const TAGS = ["All", "Wallpapers", "Key Holders", "Diyas", "Frames", "Wall Art", "Hangings", "Décor"];
