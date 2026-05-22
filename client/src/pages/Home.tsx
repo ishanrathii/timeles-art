@@ -41,15 +41,15 @@ const HOW_TO_ORDER = [
 ];
 
 const TESTIMONIALS = [
-  { name: "Riya Sharma",    location: "Mumbai",    rating: 5,   text: "The Radha Krishna frame is absolutely stunning. The craftsmanship is unmatched and it arrived beautifully packaged. Will definitely order again!" },
-  { name: "Ankit Joshi",    location: "Pune",      rating: 4.5, text: "Ordered a custom key holder for my parents' anniversary. Priya Art Gallery created exactly what I envisioned. Highly recommend for personalised gifts!" },
-  { name: "Sunita Patil",   location: "Nagpur",    rating: 5,   text: "The toran I purchased for my temple room is gorgeous. Excellent quality, fast delivery, and the owner was very helpful on WhatsApp throughout." },
-  { name: "Meera Desai",    location: "Ahmedabad", rating: 4,   text: "Bought the Ganesha mandala wall panel for our new home. It is the centrepiece of our living room. Everyone who visits asks where we got it from!" },
-  { name: "Rohit Kulkarni", location: "Nashik",    rating: 4.5, text: "Very happy with the Shubh Labh door hanging. The flowers look so real and the quality is premium. Packaging was also very secure." },
-  { name: "Priya Nair",     location: "Hyderabad", rating: 5,   text: "The mandala tealight holders are absolutely beautiful. Lit them up on Diwali and the whole room glowed. Perfect gift item too!" },
-  { name: "Kavita More",    location: "Aurangabad", rating: 3.5, text: "Good quality products and friendly service. Delivery took a little longer than expected but the product was worth the wait." },
-  { name: "Suresh Rane",    location: "Kolhapur",  rating: 4,   text: "Ordered 3 key holders as housewarming gifts. All three were beautifully made and the recipients absolutely loved them. Will order again!" },
-  { name: "Deepa Iyer",     location: "Bangalore", rating: 5,   text: "The Vakratunda wall art I ordered is breathtaking. The detailing and colours are exactly as shown. Fast shipping and great packing!" },
+  { name: "Riya Sharma",    location: "Mumbai",     rating: 4.5, text: "The Radha Krishna frame is absolutely stunning. The craftsmanship is unmatched and it arrived beautifully packaged. Will definitely order again!" },
+  { name: "Ankit Joshi",    location: "Pune",       rating: 4,   text: "Ordered a custom key holder for my parents' anniversary. Priya Art Gallery created exactly what I envisioned. Highly recommend for personalised gifts!" },
+  { name: "Sunita Patil",   location: "Nagpur",     rating: 4.5, text: "The toran I purchased for my temple room is gorgeous. Excellent quality, fast delivery, and the owner was very helpful on WhatsApp throughout." },
+  { name: "Meera Desai",    location: "Ahmedabad",  rating: 4,   text: "Bought the Ganesha mandala wall panel for our new home. It is the centrepiece of our living room. Everyone who visits asks where we got it from!" },
+  { name: "Rohit Kulkarni", location: "Nashik",     rating: 4.5, text: "Very happy with the Shubh Labh door hanging. The flowers look so real and the quality is premium. Packaging was also very secure." },
+  { name: "Priya Nair",     location: "Hyderabad",  rating: 4,   text: "The mandala tealight holders are absolutely beautiful. Lit them up on Diwali and the whole room glowed. Perfect gift item too!" },
+  { name: "Kavita More",    location: "Aurangabad", rating: 4,   text: "Good quality products and friendly service. Delivery took a little longer than expected but the product was worth the wait." },
+  { name: "Suresh Rane",    location: "Kolhapur",   rating: 4.5, text: "Ordered 3 key holders as housewarming gifts. All three were beautifully made and the recipients absolutely loved them. Will order again!" },
+  { name: "Deepa Iyer",     location: "Bangalore",  rating: 4,   text: "The Vakratunda wall art I ordered is breathtaking. The detailing and colours are exactly as shown. Fast shipping and great packing!" },
 ];
 
 function StarRating({ rating }: { rating: number }) {
@@ -376,9 +376,14 @@ export default function Home() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Happy Customers</p>
             <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">What People Say</h2>
           </div>
-          <div className="flex animate-marquee-slow w-max">
+          {/* pause-on-hover via CSS class on the scrolling row */}
+          <div className="flex animate-marquee-slow hover:[animation-play-state:paused] w-max">
             {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
-              <div key={i} className="w-80 shrink-0 mx-3 bg-background border border-border p-7 flex flex-col">
+              <div
+                key={i}
+                className="w-80 shrink-0 mx-3 bg-background border border-border p-7 flex flex-col
+                           transition-all duration-300 hover:scale-[1.04] hover:shadow-xl hover:border-foreground hover:z-10"
+              >
                 <StarRating rating={t.rating} />
                 <p className="text-sm text-muted-foreground leading-relaxed my-5 italic flex-1">"{t.text}"</p>
                 <div className="border-t border-border pt-4">
