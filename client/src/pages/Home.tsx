@@ -445,21 +445,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── GET DISCOUNT CTA ──────────────────────────────────────────────── */}
-        <section className="py-14 sm:py-20 bg-foreground text-background text-center" aria-label="Exclusive discount offer">
+        {/* ── FINAL CTA ─────────────────────────────────────────────────────── */}
+        <section className="py-14 sm:py-20 bg-foreground text-background text-center">
           <div className="container mx-auto px-4">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-background/60 mb-4">Exclusive Offer</p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-semibold mb-3">
-              Get 10% Off Your First Order
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-background/60 mb-4">Ready to Order?</p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold mb-4">
+              Find Something You Love
             </h2>
-            <p className="text-sm text-background/70 mb-2">Valid on orders above ₹1,999</p>
-            <div className="inline-block border border-background/30 px-8 py-3 mt-4 mb-8">
-              <span className="font-mono text-lg font-bold tracking-widest">PRIYA10</span>
-            </div>
-            <div className="block">
-              <Link href="/products">
+            <p className="text-sm text-background/70 mb-8 max-w-md mx-auto">
+              Browse our full collection of 40+ handcrafted pieces. Free shipping across India on every order.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link href="/portfolio">
                 <a className="inline-block bg-white text-foreground text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-white/90 transition-colors">
-                  Shop Now
+                  Browse Portfolio
+                </a>
+              </Link>
+              <Link href="/about">
+                <a className="inline-block border border-background/40 text-background text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-background/10 transition-colors">
+                  Our Story
                 </a>
               </Link>
             </div>

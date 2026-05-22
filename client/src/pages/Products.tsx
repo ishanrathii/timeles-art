@@ -1,130 +1,134 @@
-import { useState } from "wouter"; // Actually we'll use React's useState
 import React from "react";
-import { useLocation } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
-import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
 
-// Assets
-import imgGanesha        from "@/assets/images/product-ganesha.jpg";
-import imgShiva          from "@/assets/images/product-nataraja.jpg";
-import imgKundanSet      from "@/assets/images/product-kundan-set.jpg";
-import imgKundanNecklace from "@/assets/images/product-kundan-necklace.jpg";
+// Real portfolio images
+import imgGanesha   from "@/assets/images/portfolio-38.png";
+import imgWallArt   from "@/assets/images/portfolio-35.png";
+import imgKeyHolder from "@/assets/images/portfolio-05.png";
+import imgDiya      from "@/assets/images/portfolio-03.png";
+import imgHanging   from "@/assets/images/portfolio-37.png";
+import imgFrame     from "@/assets/images/portfolio-39.png";
+import imgWallArt2  from "@/assets/images/portfolio-40.png";
+import imgMandala   from "@/assets/images/portfolio-41.png";
 
-const allProducts = [
-  { id: 1, name: "Carved Ganesha Idol", image: imgGanesha,        category: "artifacts" },
-  { id: 2, name: "Kundan Bridal Set",   image: imgKundanSet,      category: "jewelry"   },
-  { id: 4, name: "Brass Shiva Idol",    image: imgShiva,          category: "artifacts" },
-  { id: 5, name: "Kundan Necklace",     image: imgKundanNecklace, category: "jewelry"   },
+const ALL_PRODUCTS = [
+  { id: 1, name: "Ganesha Blessing Frame",        image: imgGanesha,    category: "frames"      },
+  { id: 2, name: "Ganesha Mandala Wall Panel",    image: imgWallArt,    category: "wall-art"    },
+  { id: 3, name: "Radha Krishna Floral Mandala",  image: imgMandala,    category: "wall-art"    },
+  { id: 4, name: "Sun Moon & Ganesha Wall Panel", image: imgWallArt2,   category: "wall-art"    },
+  { id: 5, name: "Shri Ganeshay Namah Panel",     image: imgFrame,      category: "frames"      },
+  { id: 6, name: "Radha Krishna Key Holder",      image: imgKeyHolder,  category: "key-holders" },
+  { id: 7, name: "Mandala Tealight Holders",      image: imgDiya,       category: "diyas"       },
+  { id: 8, name: "Shubh Labh Door Hangings",      image: imgHanging,    category: "hangings"    },
+];
+
+const CATEGORIES = [
+  { id: "all",         label: "All"         },
+  { id: "wall-art",    label: "Wall Art"    },
+  { id: "frames",      label: "Frames"      },
+  { id: "key-holders", label: "Key Holders" },
+  { id: "diyas",       label: "Diyas"       },
+  { id: "hangings",    label: "Hangings"    },
 ];
 
 export default function Products() {
-  const [location] = useLocation();
-  // Very simple parsing of query string for mockup purposes
-  const searchParams = new URLSearchParams(window.location.search);
-  const searchQuery = searchParams.get('search')?.toLowerCase() || "";
-  
-  const defaultCategory = location.includes("category=jewelry") ? "jewelry"
-                        : location.includes("category=artifacts") ? "artifacts"
-                        : "all";
+  const [activeCategory, setActiveCategory] = React.useState("all");
 
-  const [activeCategory, setActiveCategory] = React.useState(defaultCategory);
-
-  const filteredProducts = allProducts.filter(p => {
-    const matchesCategory = activeCategory === "all" || p.category === activeCategory;
-    const matchesSearch = searchQuery ? p.name.toLowerCase().includes(searchQuery) : true;
-    return matchesCategory && matchesSearch;
-  });
-
-  const catLabel = activeCategory === "artifacts" ? "Brass Artifacts"
-    : activeCategory === "jewelry" ? "Traditional Jewelry"
-    : "All Collections";
-
-  const catDesc = activeCategory === "artifacts"
-    ? "Handcrafted brass and bronze sacred artifacts sourced from master artisans across India. Ganesha idols, diyas, temple items and more."
-    : activeCategory === "jewelry"
-    ? "Traditional Kundan, gold-plated and bridal jewelry sets crafted by master jewellers. Premium quality, authentic Indian craftsmanship."
-    : "Discover Priya Art Gallery's complete collection of handcrafted brass artifacts and traditional jewelry from Hingoli, Maharashtra.";
+  const filtered = ALL_PRODUCTS.filter(
+    p => activeCategory === "all" || p.category === activeCategory
+  );
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
-        title={`${catLabel} – Priya Art Gallery`}
-        description={catDesc}
-        canonical={`https://priyaartgallery.in/products${activeCategory !== "all" ? `?category=${activeCategory}` : ""}`}
+        title="Handcrafted Artifacts & Décor – Priya Art Gallery"
+        description="Shop handcrafted wall art, Ganesha frames, key holders, diyas and door hangings from Priya Art Gallery, Hingoli. Price on request. Free shipping across India."
+        canonical="https://priyaartgallery.in/products"
       />
       <Navbar />
 
       <main className="flex-1">
-        <div className="bg-muted/30 py-16">
+        <div className="bg-muted/30 py-16 border-b border-border">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="font-serif text-4xl md:text-5xl mb-4">Our Collection</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Browse our carefully curated selection of handcrafted items, from stunning jewelry to timeless home decor.
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Handcrafted</p>
+            <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4">Our Collection</h1>
+            <p className="text-sm text-muted-foreground max-w-xl mx-auto">
+              Every piece is made in our studio in Hingoli. Browse, pick what you love, and enquire on WhatsApp — we ship free across India.
             </p>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 py-12">
-          {/* Filters */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {[
-              { id: "all",       label: "All Items" },
-              { id: "artifacts", label: "Brass Artifacts" },
-              { id: "jewelry",   label: "Jewelry" },
-            ].map(cat => (
-              <Button
+        <div className="container mx-auto px-4 sm:px-6 py-12">
+          {/* Filter tabs */}
+          <div className="flex overflow-x-auto gap-2 sm:gap-3 mb-10 pb-1 justify-start sm:justify-center">
+            {CATEGORIES.map(cat => (
+              <button
                 key={cat.id}
-                variant={activeCategory === cat.id ? "default" : "outline"}
                 onClick={() => setActiveCategory(cat.id)}
-                className="rounded-full px-6"
+                className={`shrink-0 text-xs font-semibold uppercase tracking-widest px-5 py-2.5 border transition-colors duration-200 ${
+                  activeCategory === cat.id
+                    ? "bg-foreground text-background border-foreground"
+                    : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
+                }`}
               >
                 {cat.label}
-              </Button>
+              </button>
             ))}
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {filteredProducts.map((product) => (
-              <div key={product.id} className="group border border-border hover:border-foreground transition-all duration-300 overflow-hidden">
-                {/* Image with warm gradient background */}
-                <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-[#f5ede0] via-[#fdf6ee] to-[#e8d5b7]">
+          {/* Product grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
+            {filtered.map(product => (
+              <div key={product.id} className="group border border-border hover:border-foreground transition-colors duration-300 overflow-hidden flex flex-col">
+                <div className="relative aspect-square overflow-hidden bg-muted/20">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
-                    style={{ mixBlendMode: "multiply" }}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
                   />
-                  {/* Subtle gold overlay on hover */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-300" />
                 </div>
-                {/* Card body */}
-                <div className="p-5 text-center border-t border-border bg-background">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-1">Price on Request</p>
-                  <h3 className="font-serif text-lg font-semibold text-foreground mb-4">{product.name}</h3>
+                <div className="p-4 flex flex-col gap-3 border-t border-border bg-background flex-1">
+                  <div>
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-1">
+                      {CATEGORIES.find(c => c.id === product.category)?.label}
+                    </p>
+                    <h3 className="font-serif text-sm font-semibold text-foreground leading-snug">{product.name}</h3>
+                  </div>
+                  <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">Price on Request</p>
                   <a
                     href={`https://wa.me/917558599155?text=Hi%2C%20I%20am%20interested%20in%20ordering%3A%20${encodeURIComponent(product.name)}%20%E2%80%94%20please%20share%20the%20price%20and%20availability.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#25D366] text-white text-[11px] font-semibold uppercase tracking-widest px-5 py-2.5 hover:bg-[#1ebe5d] transition-colors"
+                    className="mt-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white text-[10px] font-semibold uppercase tracking-widest px-4 py-2.5 hover:bg-[#1ebe5d] transition-colors"
                   >
                     <WhatsAppIcon className="w-3.5 h-3.5" />
-                    Enquire on WhatsApp
+                    Enquire
                   </a>
                 </div>
               </div>
             ))}
           </div>
-          
-          {filteredProducts.length === 0 && (
-            <div className="text-center py-20 text-muted-foreground">
-              No products found in this category.
-            </div>
-          )}
+
+          {/* Link to full portfolio */}
+          <div className="mt-14 text-center border-t border-border pt-12">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">See Everything</p>
+            <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground mb-4">Browse All 40+ Items</h2>
+            <p className="text-sm text-muted-foreground mb-6 max-w-md mx-auto">
+              This page shows our featured pieces. Visit the full Portfolio to see every item available to order.
+            </p>
+            <Link href="/portfolio">
+              <a className="inline-flex items-center gap-2 bg-foreground text-background text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-foreground/85 transition-colors">
+                View Full Portfolio <ArrowRight className="w-3 h-3" />
+              </a>
+            </Link>
+          </div>
         </div>
       </main>
 

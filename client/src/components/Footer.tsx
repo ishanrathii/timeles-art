@@ -41,10 +41,10 @@ export default function Footer() {
             <h4 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-foreground mb-5">Shop</h4>
             <ul className="space-y-3">
               {[
-                { href: "/products?category=artifacts", label: "Brass Artifacts" },
-                { href: "/products?category=jewelry",   label: "Traditional Jewelry" },
-                { href: "/products",                    label: "All Collections" },
-                { href: "/portfolio",                   label: "Portfolio" },
+                { href: "/products",  label: "Featured Items"  },
+                { href: "/portfolio", label: "Full Portfolio"  },
+                { href: "/portfolio?tag=Wall Art",    label: "Wall Art"     },
+                { href: "/portfolio?tag=Key Holders", label: "Key Holders"  },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href}>
@@ -60,10 +60,10 @@ export default function Footer() {
             <h4 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-foreground mb-5">Information</h4>
             <ul className="space-y-3">
               {[
-                { href: "/",        label: "Home" },
-                { href: "/contact", label: "About Us" },
-                { href: "/contact", label: "Contact" },
-                { href: "/contact", label: "Visit Gallery" },
+                { href: "/",        label: "Home"         },
+                { href: "/about",   label: "About Us"     },
+                { href: "/contact", label: "Contact"      },
+                { href: "/contact", label: "Visit Gallery"},
               ].map(({ href, label }) => (
                 <li key={label}>
                   <Link href={href}>

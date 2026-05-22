@@ -10,9 +10,10 @@ import {
 } from "@/components/ui/sheet";
 
 const NAV_LINKS = [
-  { label: "Artifacts", href: "/products?category=artifacts" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Contact", href: "/contact" },
+  { label: "Artifacts", href: "/products"   },
+  { label: "Portfolio", href: "/portfolio"  },
+  { label: "About",     href: "/about"      },
+  { label: "Contact",   href: "/contact"    },
 ];
 
 export default function Navbar() {
