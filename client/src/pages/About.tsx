@@ -105,15 +105,23 @@ export default function About() {
             <div className="text-center mb-10">
               <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Our Craft</p>
               <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">What We Make</h2>
+              <p className="text-sm text-muted-foreground mt-3">Click any category to browse those items in the portfolio.</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {[
-                "Sacred Wall Art", "Ganesha & Deity Frames", "Door Torans & Hangings",
-                "Mandala Diyas", "Personalised Key Holders", "Custom Orders",
+                { label: "Sacred Wall Art",          href: "/portfolio?tag=Wall+Art"    },
+                { label: "Ganesha & Deity Frames",   href: "/portfolio?tag=Frames"      },
+                { label: "Door Torans & Hangings",   href: "/portfolio?tag=Hangings"    },
+                { label: "Mandala Diyas",            href: "/portfolio?tag=Diyas"       },
+                { label: "Personalised Key Holders", href: "/portfolio?tag=Key+Holders" },
+                { label: "Custom Orders",            href: "/contact"                   },
               ].map(item => (
-                <div key={item} className="border border-border p-5 text-center">
-                  <p className="text-sm font-medium text-foreground">{item}</p>
-                </div>
+                <Link key={item.label} href={item.href}>
+                  <a className="group border border-border hover:border-foreground hover:bg-foreground transition-all duration-200 p-5 text-center block">
+                    <p className="text-sm font-medium text-foreground group-hover:text-background transition-colors">{item.label}</p>
+                    <p className="text-[10px] text-muted-foreground group-hover:text-background/70 mt-1 transition-colors">Browse →</p>
+                  </a>
+                </Link>
               ))}
             </div>
           </div>

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
-import { ArrowRight, Truck, Award, RotateCcw, Star, ChevronDown, Instagram, Search, MessageCircle, Package } from "lucide-react";
+import { ArrowRight, Truck, Award, RotateCcw, Star, ChevronDown, Instagram, Search, MessageCircle, Package, StarHalf } from "lucide-react";
 import { useState } from "react";
 
 // Assets
@@ -41,22 +41,32 @@ const HOW_TO_ORDER = [
 ];
 
 const TESTIMONIALS = [
-  {
-    name: "Riya Sharma",
-    location: "Mumbai",
-    text: "The Radha Krishna frame is absolutely stunning. The craftsmanship is unmatched and it arrived beautifully packaged. Will definitely order again!",
-  },
-  {
-    name: "Ankit Joshi",
-    location: "Pune",
-    text: "Ordered a custom key holder for my parents' anniversary. Priya Art Gallery created exactly what I envisioned. Highly recommend for personalised gifts!",
-  },
-  {
-    name: "Sunita Patil",
-    location: "Nagpur",
-    text: "The toran I purchased for my temple room is gorgeous. Excellent quality, fast delivery, and the owner was very helpful on WhatsApp throughout.",
-  },
+  { name: "Riya Sharma",    location: "Mumbai",    rating: 5,   text: "The Radha Krishna frame is absolutely stunning. The craftsmanship is unmatched and it arrived beautifully packaged. Will definitely order again!" },
+  { name: "Ankit Joshi",    location: "Pune",      rating: 4.5, text: "Ordered a custom key holder for my parents' anniversary. Priya Art Gallery created exactly what I envisioned. Highly recommend for personalised gifts!" },
+  { name: "Sunita Patil",   location: "Nagpur",    rating: 5,   text: "The toran I purchased for my temple room is gorgeous. Excellent quality, fast delivery, and the owner was very helpful on WhatsApp throughout." },
+  { name: "Meera Desai",    location: "Ahmedabad", rating: 4,   text: "Bought the Ganesha mandala wall panel for our new home. It is the centrepiece of our living room. Everyone who visits asks where we got it from!" },
+  { name: "Rohit Kulkarni", location: "Nashik",    rating: 4.5, text: "Very happy with the Shubh Labh door hanging. The flowers look so real and the quality is premium. Packaging was also very secure." },
+  { name: "Priya Nair",     location: "Hyderabad", rating: 5,   text: "The mandala tealight holders are absolutely beautiful. Lit them up on Diwali and the whole room glowed. Perfect gift item too!" },
+  { name: "Kavita More",    location: "Aurangabad", rating: 3.5, text: "Good quality products and friendly service. Delivery took a little longer than expected but the product was worth the wait." },
+  { name: "Suresh Rane",    location: "Kolhapur",  rating: 4,   text: "Ordered 3 key holders as housewarming gifts. All three were beautifully made and the recipients absolutely loved them. Will order again!" },
+  { name: "Deepa Iyer",     location: "Bangalore", rating: 5,   text: "The Vakratunda wall art I ordered is breathtaking. The detailing and colours are exactly as shown. Fast shipping and great packing!" },
 ];
+
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <div className="flex gap-0.5">
+      {[1, 2, 3, 4, 5].map(i => {
+        if (i <= Math.floor(rating)) {
+          return <Star key={i} className="w-3.5 h-3.5 fill-foreground text-foreground" />;
+        } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
+          return <StarHalf key={i} className="w-3.5 h-3.5 fill-foreground text-foreground" />;
+        } else {
+          return <Star key={i} className="w-3.5 h-3.5 text-border" />;
+        }
+      })}
+    </div>
+  );
+}
 
 const FAQ_ITEMS = [
   {
@@ -187,10 +197,10 @@ export default function Home() {
             <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">Shop by Category</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 items-stretch">
             {COLLECTIONS.map((c, i) => (
               <Link key={i} href={c.href}>
-                <a className="group block border border-border hover:border-foreground transition-colors duration-300 p-8 sm:p-10">
+                <a className="group flex flex-col h-full border border-border hover:border-foreground transition-colors duration-300 p-8 sm:p-10">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-4">{c.sub}</p>
                   <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground leading-tight mb-3 group-hover:text-muted-foreground transition-colors">{c.title}</h3>
                   <div className="w-6 h-px bg-border group-hover:w-12 group-hover:bg-foreground transition-all duration-300 mb-4" />
@@ -360,29 +370,23 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── TESTIMONIALS ──────────────────────────────────────────────────── */}
-        <section className="py-14 sm:py-20 bg-secondary border-y border-border">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="text-center mb-12">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Happy Customers</p>
-              <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">What People Say</h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {TESTIMONIALS.map((t) => (
-                <div key={t.name} className="bg-background border border-border p-8">
-                  <div className="flex gap-0.5 mb-5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-foreground text-foreground" />
-                    ))}
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 italic">"{t.text}"</p>
-                  <div className="border-t border-border pt-4">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-foreground">{t.name}</p>
-                    <p className="text-[11px] text-muted-foreground mt-0.5">{t.location}</p>
-                  </div>
+        {/* ── TESTIMONIALS (auto-scroll) ─────────────────────────────────── */}
+        <section className="py-14 sm:py-20 bg-secondary border-y border-border overflow-hidden">
+          <div className="text-center mb-12 px-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Happy Customers</p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-foreground">What People Say</h2>
+          </div>
+          <div className="flex animate-marquee-slow w-max">
+            {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
+              <div key={i} className="w-80 shrink-0 mx-3 bg-background border border-border p-7 flex flex-col">
+                <StarRating rating={t.rating} />
+                <p className="text-sm text-muted-foreground leading-relaxed my-5 italic flex-1">"{t.text}"</p>
+                <div className="border-t border-border pt-4">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-foreground">{t.name}</p>
+                  <p className="text-[11px] text-muted-foreground mt-0.5">{t.location}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </section>
 

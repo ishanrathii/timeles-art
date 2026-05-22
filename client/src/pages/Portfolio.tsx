@@ -6,6 +6,7 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
+
 import p01 from "@/assets/images/portfolio-01.png";
 import p02 from "@/assets/images/portfolio-02.png";
 import p03 from "@/assets/images/portfolio-03.png";
@@ -93,7 +94,8 @@ const ITEMS = [
 const TAGS = ["All", "Wallpapers", "Key Holders", "Diyas", "Frames", "Wall Art", "Hangings", "Décor"];
 
 export default function Portfolio() {
-  const [active, setActive]   = useState("All");
+  const urlTag = new URLSearchParams(window.location.search).get("tag") || "All";
+  const [active, setActive]   = useState(urlTag);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   const filtered = ITEMS.filter(i => active === "All" || i.tag === active);
