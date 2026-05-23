@@ -59,7 +59,7 @@ export default function Contact() {
             <div itemScope itemType="https://schema.org/LocalBusiness">
               <meta itemProp="name" content="Timeles Art" />
               <meta itemProp="telephone" content="+917558599155" />
-              <meta itemProp="email" content="priya03kabra@gmail.com" />
+              <meta itemProp="email" content="timelesart5@gmail.com" />
               <meta itemProp="url" content="https://timeles-art.in" />
               <h2 className="font-serif text-3xl mb-8">Visit The Gallery</h2>
               
@@ -141,9 +141,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Email</h3>
-                    <a href="mailto:priya03kabra@gmail.com"
+                    <a href="mailto:timelesart5@gmail.com"
                       className="text-foreground/70 hover:text-foreground transition-colors underline underline-offset-2">
-                      priya03kabra@gmail.com
+                      timelesart5@gmail.com
                     </a>
                   </div>
                 </div>
