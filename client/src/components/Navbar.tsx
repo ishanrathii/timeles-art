@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
-import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { useState } from "react";
 import {
   Sheet,
@@ -60,10 +59,9 @@ export default function Navbar() {
                   </div>
                 </nav>
                 <div className="p-6 border-t border-border space-y-3">
-                  <a href="https://wa.me/917558599155" target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-sm font-medium hover:text-[#25D366] transition-colors">
-                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                    Chat on WhatsApp
+                  <a href="mailto:timelesart5@gmail.com"
+                    className="flex items-center gap-3 text-sm font-medium hover:text-foreground transition-colors">
+                    Contact Us
                   </a>
                 </div>
               </SheetContent>

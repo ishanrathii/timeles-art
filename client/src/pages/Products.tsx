@@ -2,10 +2,8 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
-import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
 // Real portfolio images
 import imgGanesha   from "@/assets/images/portfolio-38.png";
@@ -59,7 +57,7 @@ export default function Products() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-3">Handcrafted</p>
             <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4">Our Collection</h1>
             <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-              Every piece is made in our studio in Hingoli. Browse, pick what you love, and enquire on WhatsApp — we ship free across India.
+              Every piece is made in our studio in Hingoli. Browse, pick what you love, and email us to enquire — we ship free across India.
             </p>
           </div>
         </div>
@@ -103,12 +101,10 @@ export default function Products() {
                   </div>
                   <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">Price on Request</p>
                   <a
-                    href={`https://wa.me/917558599155?text=Hi%2C%20I%20am%20interested%20in%20ordering%3A%20${encodeURIComponent(product.name)}%20%E2%80%94%20please%20share%20the%20price%20and%20availability.`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white text-[10px] font-semibold uppercase tracking-widest px-4 py-2.5 hover:bg-[#1ebe5d] transition-colors"
+                    href={`mailto:timelesart5@gmail.com?subject=Inquiry: ${encodeURIComponent(product.name)}&body=Hi, I am interested in ordering: ${encodeURIComponent(product.name)} — please share the price and availability.`}
+                    className="mt-auto inline-flex items-center justify-center gap-2 bg-foreground text-background text-[10px] font-semibold uppercase tracking-widest px-4 py-2.5 hover:bg-foreground/85 transition-colors"
                   >
-                    <WhatsAppIcon className="w-3.5 h-3.5" />
+                    <Mail className="w-3.5 h-3.5" />
                     Enquire
                   </a>
                 </div>
@@ -133,7 +129,6 @@ export default function Products() {
       </main>
 
       <Footer />
-      <WhatsAppFloat />
     </div>
   );
 }

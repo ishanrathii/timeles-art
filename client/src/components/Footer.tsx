@@ -1,7 +1,5 @@
-import { MapPin, Phone, Mail, Instagram, Youtube } from "lucide-react";
+import { MapPin, Mail, Instagram, Youtube } from "lucide-react";
 import { Link } from "wouter";
-import { WhatsAppIcon } from "@/components/WhatsAppIcon";
-
 const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Main+Market+Road,+Hingoli,+Maharashtra+431513,+India";
 const DIRS_URL = "https://www.google.com/maps/dir/?api=1&destination=Main+Market+Road,+Hingoli,+Maharashtra+431513,+India";
 
@@ -27,11 +25,6 @@ export default function Footer() {
                 target="_blank" rel="noopener noreferrer" aria-label="Instagram"
                 className="w-8 h-8 border border-border rounded-full flex items-center justify-center hover:bg-[#E1306C] hover:border-[#E1306C] hover:text-white transition-all group">
                 <Instagram className="w-3.5 h-3.5 text-muted-foreground group-hover:text-white" />
-              </a>
-              <a href="https://wa.me/917558599155"
-                target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-                className="w-8 h-8 border border-border rounded-full flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] transition-all group">
-                <WhatsAppIcon className="w-3.5 h-3.5 text-muted-foreground group-hover:text-white" />
               </a>
               <a href="https://www.youtube.com/@Timelesart"
                 target="_blank" rel="noopener noreferrer" aria-label="YouTube"
@@ -100,17 +93,17 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-muted-foreground shrink-0" />
-                <a href="https://wa.me/917558599155" target="_blank" rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-[#25D366] transition-colors">
-                  +91 75585 99155
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-muted-foreground shrink-0" />
                 <a href="mailto:timelesart5@gmail.com"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors break-all">
                   timelesart5@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-muted-foreground shrink-0" />
+                <a href="mailto:ishanrathi.co.in@gmail.com"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors break-all">
+                  ishanrathi.co.in@gmail.com
                 </a>
               </li>
             </ul>

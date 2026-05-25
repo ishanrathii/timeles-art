@@ -1,11 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Mail, Clock } from "lucide-react";
 import { useState } from "react";
 
 export default function Contact() {
@@ -17,9 +16,8 @@ export default function Contact() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const text = `Hi, I'm ${firstName} ${lastName} (${email}).\n\nSubject: ${subject}\n\n${message}`;
-    const url = `https://wa.me/917558599155?text=${encodeURIComponent(text)}`;
-    window.open(url, "_blank");
+    const body = `Hi, I'm ${firstName} ${lastName}.\n\nEmail: ${email}\nSubject: ${subject}\n\n${message}`;
+    window.location.href = `mailto:timelesart5@gmail.com?subject=${encodeURIComponent(subject || "Inquiry")}&body=${encodeURIComponent(body)}`;
   }
   const contactSchema = {
     "@context": "https://schema.org",
@@ -36,7 +34,7 @@ export default function Contact() {
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
         title="Contact Us – Visit Timeles Art in Hingoli"
-        description="Visit Timeles Art at Main Market Road, Near Gandhi Chowk, Hingoli, Maharashtra 431513. Call +91 75585 99155 or WhatsApp us. Open Mon-Sat 10am-8:30pm."
+        description="Visit Timeles Art at Main Market Road, Near Gandhi Chowk, Hingoli, Maharashtra 431513. Email us at timelesart5@gmail.com. Open Mon-Sat 10am-8:30pm."
         canonical="https://timeles-art.in/contact"
         structuredData={contactSchema}
       />
@@ -58,7 +56,6 @@ export default function Contact() {
             {/* Contact Information – microdata reinforces LocalBusiness for Google */}
             <div itemScope itemType="https://schema.org/LocalBusiness">
               <meta itemProp="name" content="Timeles Art" />
-              <meta itemProp="telephone" content="+917558599155" />
               <meta itemProp="email" content="timelesart5@gmail.com" />
               <meta itemProp="url" content="https://timeles-art.in" />
               <h2 className="font-serif text-3xl mb-8">Visit The Gallery</h2>
@@ -124,26 +121,17 @@ export default function Contact() {
 
                 <div className="flex gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Contact Numbers</h3>
-                    <a href="tel:+917558599155"
-                      className="text-foreground/70 hover:text-foreground transition-colors underline underline-offset-2">
-                      +91 75585 99155
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Email</h3>
                     <a href="mailto:timelesart5@gmail.com"
-                      className="text-foreground/70 hover:text-foreground transition-colors underline underline-offset-2">
+                      className="text-foreground/70 hover:text-foreground transition-colors underline underline-offset-2 block">
                       timelesart5@gmail.com
+                    </a>
+                    <a href="mailto:ishanrathi.co.in@gmail.com"
+                      className="text-foreground/70 hover:text-foreground transition-colors underline underline-offset-2 block mt-1">
+                      ishanrathi.co.in@gmail.com
                     </a>
                   </div>
                 </div>
@@ -181,9 +169,9 @@ export default function Contact() {
                 </div>
 
                 <Button className="w-full text-lg py-6" size="lg" type="submit">
-                  Send via WhatsApp
+                  Send Message
                 </Button>
-                <p className="text-xs text-center text-muted-foreground">Clicking the button will open WhatsApp with your message pre-filled.</p>
+                <p className="text-xs text-center text-muted-foreground">Clicking the button will open your email client with your message pre-filled.</p>
               </form>
             </div>
             
@@ -192,7 +180,6 @@ export default function Contact() {
       </main>
 
       <Footer />
-      <WhatsAppFloat />
     </div>
   );
 }
