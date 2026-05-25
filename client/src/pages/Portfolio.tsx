@@ -1,8 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { useState } from "react";
-import { X, Mail } from "lucide-react";
+import { X } from "lucide-react";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 
 import p01 from "@/assets/images/portfolio-01.png";
@@ -203,7 +205,7 @@ export default function Portfolio() {
             <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4">Portfolio</h1>
             <p className="text-sm text-muted-foreground max-w-xl mx-auto">
               Every piece handcrafted with devotion — and available to order. Browse, pick your favourite,
-              and email us to enquire. We ship free across India.
+              and enquire directly on WhatsApp. We ship free across India.
             </p>
           </div>
         </div>
@@ -263,11 +265,13 @@ export default function Portfolio() {
                     <span className="text-[9px] text-muted-foreground uppercase tracking-widest">onwards</span>
                   </div>
                   <a
-                    href={`mailto:timelesart5@gmail.com?subject=Inquiry: ${encodeURIComponent(item.label)}&body=Hi, I am interested in ordering: ${encodeURIComponent(item.label)} — please share the price and availability.`}
-                    className="mt-auto inline-flex items-center justify-center gap-2 bg-foreground text-background text-[10px] font-semibold uppercase tracking-widest px-4 py-2.5 hover:bg-foreground/85 transition-colors"
+                    href={`https://wa.me/917558599155?text=Hi%2C%20I%20am%20interested%20in%20ordering%3A%20${encodeURIComponent(item.label)}%20%E2%80%94%20please%20share%20the%20price%20and%20availability.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white text-[10px] font-semibold uppercase tracking-widest px-4 py-2.5 hover:bg-[#1ebe5d] transition-colors"
                     onClick={e => e.stopPropagation()}
                   >
-                    <Mail className="w-3.5 h-3.5" />
+                    <WhatsAppIcon className="w-3.5 h-3.5" />
                     Enquire
                   </a>
                 </div>
@@ -302,11 +306,13 @@ export default function Portfolio() {
                 {STARTING_PRICE[ITEMS[lightbox].tag] ?? "₹299"} <span className="text-white/50 text-xs font-normal uppercase tracking-widest">onwards</span>
               </p>
               <a
-                href={`mailto:timelesart5@gmail.com?subject=Inquiry: ${encodeURIComponent(ITEMS[lightbox].label)}&body=Hi, I am interested in ordering: ${encodeURIComponent(ITEMS[lightbox].label)} — please share the price and availability.`}
-                className="inline-flex items-center gap-2 bg-white text-black text-[11px] font-semibold uppercase tracking-widest px-6 py-3 hover:bg-white/90 transition-colors"
+                href={`https://wa.me/917558599155?text=Hi%2C%20I%20am%20interested%20in%20ordering%3A%20${encodeURIComponent(ITEMS[lightbox].label)}%20%E2%80%94%20please%20share%20the%20price%20and%20availability.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#25D366] text-white text-[11px] font-semibold uppercase tracking-widest px-6 py-3 hover:bg-[#1ebe5d] transition-colors"
               >
-                <Mail className="w-4 h-4" />
-                Enquire via Email
+                <WhatsAppIcon className="w-4 h-4" />
+                Enquire on WhatsApp
               </a>
             </div>
           </div>
@@ -314,6 +320,7 @@ export default function Portfolio() {
       )}
 
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }

@@ -1,14 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { Link } from "wouter";
-import { ArrowRight, Heart, Award, Truck, Users, Mail } from "lucide-react";
+import { ArrowRight, Heart, Award, Truck, Users } from "lucide-react";
 
 const VALUES = [
   { icon: Heart,  title: "Made with Devotion",   desc: "Every piece is crafted with love, prayer and attention to detail — not mass-produced." },
   { icon: Award,  title: "Authentic Craft",       desc: "We source directly from skilled artisans who carry forward generations of traditional knowledge." },
   { icon: Truck,  title: "Delivered Carefully",   desc: "Each item is packed with museum-grade care and shipped free across India." },
-  { icon: Users,  title: "Personal Service",      desc: "We are a family business. When you contact us, you speak to the owner directly." },
+  { icon: Users,  title: "Personal Service",      desc: "We are a family business. When you WhatsApp us, you speak to the owner directly." },
 ];
 
 export default function About() {
@@ -134,11 +136,13 @@ export default function About() {
             </h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
-                href="mailto:timelesart5@gmail.com?subject=Hello from your About page&body=Hi, I visited your About page and would love to know more about your work!"
-                className="inline-flex items-center gap-2.5 bg-background text-foreground text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-background/90 transition-colors"
+                href="https://wa.me/917558599155?text=Hi%2C%20I%20visited%20your%20About%20page%20and%20would%20love%20to%20know%20more%20about%20your%20work!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 bg-[#25D366] text-white text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-[#1ebe5d] transition-colors"
               >
-                <Mail className="w-4 h-4" />
-                Email Us
+                <WhatsAppIcon className="w-4 h-4" />
+                Chat with Us
               </a>
               <Link href="/portfolio">
                 <a className="inline-flex items-center gap-2 border border-background/40 text-background text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-background/10 transition-colors">
@@ -152,6 +156,7 @@ export default function About() {
       </main>
 
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }

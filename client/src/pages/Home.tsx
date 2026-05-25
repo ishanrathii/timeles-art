@@ -2,7 +2,9 @@ import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import { ArrowRight, Truck, Award, RotateCcw, Star, ChevronDown, Instagram, Search, MessageCircle, Package, StarHalf, Mail } from "lucide-react";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
+import { ArrowRight, Truck, Award, RotateCcw, Star, ChevronDown, Instagram, Search, MessageCircle, Package, StarHalf } from "lucide-react";
 import { useState } from "react";
 
 // Assets
@@ -34,14 +36,14 @@ const COLLECTIONS = [
 
 const HOW_TO_ORDER = [
   { icon: Search,        step: "01", title: "Browse & Pick",     desc: "Explore our portfolio and collections. Find the piece that speaks to you." },
-  { icon: Mail,          step: "02", title: "Email Us",           desc: "Tap 'Enquire via Email' — we'll confirm availability, price & customisation options within hours." },
+  { icon: MessageCircle, step: "02", title: "WhatsApp Us",        desc: "Tap 'Enquire on WhatsApp' — we'll confirm availability, price & customisation options within hours." },
   { icon: Package,       step: "03", title: "Delivered to You",   desc: "We pack each piece with care and ship free across India. COD available." },
 ];
 
 const TESTIMONIALS = [
   { name: "Riya Sharma",    location: "Mumbai",     rating: 4.5, text: "The Radha Krishna frame is absolutely stunning. The craftsmanship is unmatched and it arrived beautifully packaged. Will definitely order again!" },
   { name: "Ankit Joshi",    location: "Pune",       rating: 4,   text: "Ordered a custom key holder for my parents' anniversary. Timeles Art created exactly what I envisioned. Highly recommend for personalised gifts!" },
-  { name: "Sunita Patil",   location: "Nagpur",     rating: 4.5, text: "The toran I purchased for my temple room is gorgeous. Excellent quality, fast delivery, and the owner was very helpful and responsive throughout." },
+  { name: "Sunita Patil",   location: "Nagpur",     rating: 4.5, text: "The toran I purchased for my temple room is gorgeous. Excellent quality, fast delivery, and the owner was very helpful on WhatsApp throughout." },
   { name: "Meera Desai",    location: "Ahmedabad",  rating: 4,   text: "Bought the Ganesha mandala wall panel for our new home. It is the centrepiece of our living room. Everyone who visits asks where we got it from!" },
   { name: "Rohit Kulkarni", location: "Nashik",     rating: 4.5, text: "Very happy with the Shubh Labh door hanging. The flowers look so real and the quality is premium. Packaging was also very secure." },
   { name: "Priya Nair",     location: "Hyderabad",  rating: 4,   text: "The mandala tealight holders are absolutely beautiful. Lit them up on Diwali and the whole room glowed. Perfect gift item too!" },
@@ -69,7 +71,7 @@ function StarRating({ rating }: { rating: number }) {
 const FAQ_ITEMS = [
   {
     q: "Where is Timeles Art located?",
-    a: "Timeles Art is located at Main Market Road, Near Gandhi Chowk, Hingoli, Maharashtra 431513. You can email us at timelesart5@gmail.com."
+    a: "Timeles Art is located at Main Market Road, Near Gandhi Chowk, Hingoli, Maharashtra 431513. You can call us at +91 75585 99155 or chat on WhatsApp."
   },
   {
     q: "Does Timeles Art offer free shipping?",
@@ -272,11 +274,13 @@ export default function Home() {
             </div>
             <div className="text-center mt-10">
               <a
-                href="mailto:timelesart5@gmail.com?subject=New Order Inquiry&body=Hi, I would like to place an order. Can you please help me?"
-                className="inline-flex items-center gap-2.5 bg-foreground text-background text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-foreground/85 transition-colors"
+                href="https://wa.me/917558599155?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order.%20Can%20you%20please%20help%20me%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 bg-[#25D366] text-white text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-[#1ebe5d] transition-colors"
               >
-                <Mail className="w-4 h-4" />
-                Start Your Order via Email
+                <WhatsAppIcon className="w-4 h-4" />
+                Start Your Order on WhatsApp
               </a>
             </div>
           </div>
@@ -410,10 +414,12 @@ export default function Home() {
               ))}
             </div>
             <a
-              href="mailto:timelesart5@gmail.com?subject=Custom Order Request&body=Hi, I have a custom order request. Can you help me?"
-              className="inline-flex items-center gap-2.5 bg-foreground text-background text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-foreground/85 transition-colors"
+              href="https://wa.me/917558599155?text=Hi%2C%20I%20have%20a%20custom%20order%20request.%20Can%20you%20help%20me%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 bg-[#25D366] text-white text-xs font-semibold uppercase tracking-widest px-8 py-3.5 hover:bg-[#1ebe5d] transition-colors"
             >
-              <Mail className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4" />
               Enquire About Custom Orders
             </a>
           </div>
@@ -434,9 +440,9 @@ export default function Home() {
             </div>
             <p className="mt-8 text-center text-sm text-muted-foreground">
               Still have questions?{" "}
-              <a href="mailto:timelesart5@gmail.com"
+              <a href="https://wa.me/917558599155" target="_blank" rel="noopener noreferrer"
                 className="text-foreground font-semibold underline underline-offset-2 hover:text-muted-foreground transition-colors">
-                Email us
+                Chat with us on WhatsApp
               </a>{" "}
               or{" "}
               <Link href="/contact">
@@ -476,6 +482,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
