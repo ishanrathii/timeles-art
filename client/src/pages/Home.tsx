@@ -41,32 +41,16 @@ const HOW_TO_ORDER = [
 ];
 
 const TESTIMONIALS = [
-  { name: "Riya Sharma",    location: "Mumbai",     rating: 4.5, text: "The Radha Krishna frame is absolutely stunning. The craftsmanship is unmatched and it arrived beautifully packaged. Will definitely order again!" },
-  { name: "Ankit Joshi",    location: "Pune",       rating: 4,   text: "Ordered a custom key holder for my parents' anniversary. Timeles Art created exactly what I envisioned. Highly recommend for personalised gifts!" },
-  { name: "Sunita Patil",   location: "Nagpur",     rating: 4.5, text: "The toran I purchased for my temple room is gorgeous. Excellent quality, fast delivery, and the owner was very helpful on WhatsApp throughout." },
-  { name: "Meera Desai",    location: "Ahmedabad",  rating: 4,   text: "Bought the Ganesha mandala wall panel for our new home. It is the centrepiece of our living room. Everyone who visits asks where we got it from!" },
-  { name: "Rohit Kulkarni", location: "Nashik",     rating: 4.5, text: "Very happy with the Shubh Labh door hanging. The flowers look so real and the quality is premium. Packaging was also very secure." },
-  { name: "Priya Nair",     location: "Hyderabad",  rating: 4,   text: "The mandala tealight holders are absolutely beautiful. Lit them up on Diwali and the whole room glowed. Perfect gift item too!" },
-  { name: "Kavita More",    location: "Aurangabad", rating: 4,   text: "Good quality products and friendly service. Delivery took a little longer than expected but the product was worth the wait." },
-  { name: "Suresh Rane",    location: "Kolhapur",   rating: 4.5, text: "Ordered 3 key holders as housewarming gifts. All three were beautifully made and the recipients absolutely loved them. Will order again!" },
-  { name: "Deepa Iyer",     location: "Bangalore",  rating: 4,   text: "The Vakratunda wall art I ordered is breathtaking. The detailing and colours are exactly as shown. Fast shipping and great packing!" },
+  { name: "Riya Sharma",    location: "Mumbai",     text: "The Radha Krishna frame is absolutely stunning. The craftsmanship is unmatched and it arrived beautifully packaged. Will definitely order again!" },
+  { name: "Ankit Joshi",    location: "Pune",       text: "Ordered a custom key holder for my parents' anniversary. Timeles Art created exactly what I envisioned. Highly recommend for personalised gifts!" },
+  { name: "Sunita Patil",   location: "Nagpur",     text: "The toran I purchased for my temple room is gorgeous. Excellent quality, fast delivery, and the owner was very helpful on WhatsApp throughout." },
+  { name: "Meera Desai",    location: "Ahmedabad",  text: "Bought the Ganesha mandala wall panel for our new home. It is the centrepiece of our living room. Everyone who visits asks where we got it from!" },
+  { name: "Rohit Kulkarni", location: "Nashik",     text: "Very happy with the Shubh Labh door hanging. The flowers look so real and the quality is premium. Packaging was also very secure." },
+  { name: "Priya Nair",     location: "Hyderabad",  text: "The mandala tealight holders are absolutely beautiful. Lit them up on Diwali and the whole room glowed. Perfect gift item too!" },
+  { name: "Kavita More",    location: "Aurangabad", text: "Good quality products and friendly service. Delivery took a little longer than expected but the product was worth the wait." },
+  { name: "Suresh Rane",    location: "Kolhapur",   text: "Ordered 3 key holders as housewarming gifts. All three were beautifully made and the recipients absolutely loved them. Will order again!" },
+  { name: "Deepa Iyer",     location: "Bangalore",  text: "The Vakratunda wall art I ordered is breathtaking. The detailing and colours are exactly as shown. Fast shipping and great packing!" },
 ];
-
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-0.5">
-      {[1, 2, 3, 4, 5].map(i => {
-        if (i <= Math.floor(rating)) {
-          return <Star key={i} className="w-3.5 h-3.5 fill-foreground text-foreground" />;
-        } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
-          return <StarHalf key={i} className="w-3.5 h-3.5 fill-foreground text-foreground" />;
-        } else {
-          return <Star key={i} className="w-3.5 h-3.5 text-border" />;
-        }
-      })}
-    </div>
-  );
-}
 
 const FAQ_ITEMS = [
   {
@@ -384,7 +368,6 @@ export default function Home() {
                 className="w-80 shrink-0 mx-3 bg-background border border-border p-7 flex flex-col
                            transition-all duration-300 hover:scale-[1.04] hover:shadow-xl hover:border-foreground hover:z-10"
               >
-                <StarRating rating={t.rating} />
                 <p className="text-sm text-muted-foreground leading-relaxed my-5 italic flex-1">"{t.text}"</p>
                 <div className="border-t border-border pt-4">
                   <p className="text-xs font-semibold uppercase tracking-widest text-foreground">{t.name}</p>
