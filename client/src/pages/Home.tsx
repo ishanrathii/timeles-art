@@ -10,6 +10,10 @@ import { useState } from "react";
 // Assets
 import heroBg from "@/assets/images/hero-bg.png";
 import textureBg from "@/assets/images/texture-bg.png";
+import imgGaneshaIdol from "@/assets/images/product-artifact.png";
+import imgKundanBridal from "@/assets/images/product-jewelry.png";
+import imgDiyaSet from "@/assets/images/category-artifacts.png";
+import imgKundanNecklace from "@/assets/images/category-jewelry.png";
 
 // Trust badge icons
 const TRUST = [
@@ -21,10 +25,10 @@ const TRUST = [
 
 // Featured products
 const PRODUCTS = [
-  { name: "Carved Ganesha Idol",   cat: "Brass Artifacts"     },
-  { name: "Kundan Bridal Set",     cat: "Traditional Jewelry" },
-  { name: "Brass Diya Set",        cat: "Brass Artifacts"     },
-  { name: "Kundan Necklace",       cat: "Traditional Jewelry" },
+  { name: "Carved Ganesha Idol",   cat: "Brass Artifacts",     image: imgGaneshaIdol   },
+  { name: "Kundan Bridal Set",     cat: "Traditional Jewelry", image: imgKundanBridal  },
+  { name: "Brass Diya Set",        cat: "Brass Artifacts",     image: imgDiyaSet       },
+  { name: "Kundan Necklace",       cat: "Traditional Jewelry", image: imgKundanNecklace },
 ];
 
 // Collections
@@ -214,14 +218,24 @@ export default function Home() {
             </div>
 
             {/* Product grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
               {PRODUCTS.map((p, i) => (
-                <div key={i} className="group cursor-pointer border border-border hover:border-foreground transition-colors duration-300 p-4">
-                  <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground mb-1">{p.cat}</p>
-                  <h4 className="font-serif text-sm font-semibold text-foreground leading-snug mb-3 line-clamp-2 group-hover:text-muted-foreground transition-colors">
-                    {p.name}
-                  </h4>
-                  <div className="w-4 h-px bg-border group-hover:w-8 group-hover:bg-foreground transition-all duration-300" />
+                <div key={i} className="group cursor-pointer border border-border hover:border-foreground transition-colors duration-300">
+                  <div className="relative aspect-square overflow-hidden bg-muted/20">
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-4 border-t border-border">
+                    <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground mb-1">{p.cat}</p>
+                    <h4 className="font-serif text-sm font-semibold text-foreground leading-snug mb-3 line-clamp-2 group-hover:text-muted-foreground transition-colors">
+                      {p.name}
+                    </h4>
+                    <div className="w-4 h-px bg-border group-hover:w-8 group-hover:bg-foreground transition-all duration-300" />
+                  </div>
                 </div>
               ))}
             </div>
