@@ -1,11 +1,11 @@
-# Priya Art Gallery – Robots.txt
-# https://priyaartgallery.in/
+# Timeles Art – Robots.txt
+# https://timeles-art.in/
 
 User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://priyaartgallery.in/sitemap.xml
+Sitemap: https://timeles-art.in/sitemap.xml
 
 # Allow all major bots explicitly
 User-agent: Googlebot
