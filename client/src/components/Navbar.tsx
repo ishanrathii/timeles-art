@@ -86,7 +86,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-7 text-[13px] font-medium text-foreground" aria-label="Main navigation" role="navigation">
+          <nav className="hidden md:flex items-center gap-7 text-[15px] font-semibold text-foreground" aria-label="Main navigation" role="navigation">
             <Link href="/"><a className={`hover:text-muted-foreground transition-colors ${underlineHover}`}>Home</a></Link>
             {NAV_LINKS.map(l => (
               <Link key={l.href} href={l.href}>
@@ -101,7 +101,7 @@ export default function Navbar() {
       {/* ── Category nav strip (desktop) ── */}
       <div className="hidden md:block border-b border-border bg-background">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-8 h-10 text-[12px] font-medium uppercase tracking-widest text-muted-foreground">
+          <div className="flex items-center gap-8 h-10 text-[13px] font-semibold uppercase tracking-widest text-foreground/80">
             <Link href="/products?category=artifacts"><a className={`hover:text-foreground transition-colors ${underlineHover}`}>Brass Artifacts</a></Link>
             <span className="ml-auto text-[11px]">Est. 2004 · Hingoli, Maharashtra</span>
           </div>
