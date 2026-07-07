@@ -16,6 +16,12 @@ const NAV_LINKS = [
   { label: "Contact",   href: "/contact"    },
 ];
 
+// Animated hover underline: a hairline in the link's own colour grows
+// from the left edge to full width on hover
+const underlineHover =
+  "relative pb-0.5 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 " +
+  "after:bg-current after:transition-[width] after:duration-300 after:ease-out hover:after:w-full";
+
 export default function Navbar() {
 
   return (
@@ -81,10 +87,10 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-7 text-[13px] font-medium text-foreground" aria-label="Main navigation" role="navigation">
-            <Link href="/"><a className="hover:text-muted-foreground transition-colors">Home</a></Link>
+            <Link href="/"><a className={`hover:text-muted-foreground transition-colors ${underlineHover}`}>Home</a></Link>
             {NAV_LINKS.map(l => (
               <Link key={l.href} href={l.href}>
-                <a className="hover:text-muted-foreground transition-colors">{l.label}</a>
+                <a className={`hover:text-muted-foreground transition-colors ${underlineHover}`}>{l.label}</a>
               </Link>
             ))}
           </nav>
@@ -96,7 +102,7 @@ export default function Navbar() {
       <div className="hidden md:block border-b border-border bg-background">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-8 h-10 text-[12px] font-medium uppercase tracking-widest text-muted-foreground">
-            <Link href="/products?category=artifacts"><a className="hover:text-foreground transition-colors">Brass Artifacts</a></Link>
+            <Link href="/products?category=artifacts"><a className={`hover:text-foreground transition-colors ${underlineHover}`}>Brass Artifacts</a></Link>
             <span className="ml-auto text-[11px]">Est. 2004 · Hingoli, Maharashtra</span>
           </div>
         </div>
